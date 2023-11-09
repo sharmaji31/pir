@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &gt;stdio.h&lt;<br>
+#include &gt;stdlib.h&lt;<br>
+#include &gt;stdbool.h&lt;<br>
+int INT_MAX 100;<br>
+struct TreeNode<br>
+ {<br>
+    int val;<br>
+    struct TreeNode *left;<br>
+    struct TreeNode *right;<br>
+};<br>
+struct TreeNode* newNode(int data) <br>
+{<br>
+    struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+    node->val = data;<br>
+    node->left = node->right = NULL;<br>
+    return node;<br>
+}<br>
+bool hasDeadEnd(struct TreeNode* root, int min, int max)<br>
+ {<br>
+    if (root == NULL) <br>
+    {<br>
+        return false;<br>
+    }<br>
+    if (root->val >= min && root->val <= max) <br>
+    {<br>
+        return true;<br>
+    }<br>
+    bool leftDeadEnd = hasDeadEnd(root->left, min, root->val - 1);<br>
+    bool rightDeadEnd = hasDeadEnd(root->right, root->val + 1, max);<br>
+
+    
+    return leftDeadEnd || rightDeadEnd;<br>
+}<br>
+
+int main() <br>
+{<br>
+    struct TreeNode* root = newNode(10);<br>
+    root->left = newNode(5);<br>
+    root->right = newNode(15);<br>
+    root->left->left = newNode(3);<br>
+    root->left->right = newNode(7);<br>
+    root->right->left = newNode(12);<br>
+    root->right->right = newNode(20);<br>
+    if (hasDeadEnd(root, 1, INT_MAX))<br>
+     {<br>
+        printf("The binary tree contains a dead end.\n");<br>
+    } <br>
+    else <br>
+    {<br>
+        printf("The binary tree does not contain a dead end.\n");<br>
+    }<br>
+    free(root->right->right);<br>
+    free(root->right->left);<br>
+    free(root->right);<br>
+    free(root->left->right);<br>
+    free(root->left->left);<br>
+    free(root->left);<br>
+    free(root);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+The binary tree contains a dead end.<br>
+
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

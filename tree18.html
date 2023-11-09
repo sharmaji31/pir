@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+struct TreeNode <br>
+{<br>
+    int data;<br>
+    struct TreeNode* left;<br>
+    struct TreeNode* right;<br>
+};<br>
+struct TreeNode* createNode(int value) 
+{<br>
+
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+    newNode->data = value;<br>
+    newNode->left = newNode->right = NULL;<br>
+    return newNode;<br>
+}<br>
+struct TreeNode* insertNode(struct TreeNode* root, int value) <br>
+{<br>
+    if (root == NULL)<br>
+     {<br>
+        return createNode(value);<br>
+    }<br>
+
+    if (value < root->data)<br>
+     {<br>
+        root->left = insertNode(root->left, value);<br>
+    } <br>
+    else if (value > root->data) <br>
+    {<br>
+        root->right = insertNode(root->right, value);<br>
+    }<br>
+
+    return root;<br>
+}<br>
+struct TreeNode* findMin(struct TreeNode* root) <br>
+{<br>
+    while (root->left != NULL)<br>
+     {<br>
+        root = root->left;<br>
+    }<br>
+    return root;<br>
+}<br>
+struct TreeNode* deleteNode(struct TreeNode* root, int key) <br>
+{<br>
+    if (root == NULL)<br>
+     {<br>
+        return root;<br>
+    }<br>
+
+    if (key < root->data) <br>
+    {<br>
+        root->left = deleteNode(root->left, key);<br>
+    } <br>
+    else if (key > root->data)<br>
+     {<br>
+        root->right = deleteNode(root->right, key);<br>
+    } else 
+    {<br>
+        if (root->left == NULL)<br>
+        {<br>
+            struct TreeNode* temp = root->right;<br>
+            free(root);<br>
+            return temp;<br>
+        } <br>
+        else if (root->right == NULL)<br>
+         {<br>
+            struct TreeNode* temp = root->left;<br>
+            free(root);<br>
+            return temp;<br>
+        }<br>
+        struct TreeNode* temp = findMin(root->right);<br>
+        root->data = temp->data;<br>
+        root->right = deleteNode(root->right, temp->data);<br>
+    }<br>
+    return root;<br>
+}<br>
+struct TreeNode* searchNode(struct TreeNode* root, int key) <br>
+{<br>
+    if (root == NULL || root->data == key) <br>
+    {<br>
+        return root;<br>
+    }<br>
+
+    if (key < root->data) <br>
+    {<br>
+        return searchNode(root->left, key);<br>
+    }<br>
+    else <br>
+    {<br>
+        return searchNode(root->right, key);<br>
+    }<br>
+}<br>
+void preorderTraversal(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+    printf("%d ", root->data);<br>
+    preorderTraversal(root->left);<br>
+    preorderTraversal(root->right);<br>
+}<br>
+void inorderTraversal(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+    inorderTraversal(root->left);<br>
+    printf("%d ", root->data);<br>
+    inorderTraversal(root->right);<br>
+}<br>
+void postorderTraversal(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+    postorderTraversal(root->left);<br>
+    postorderTraversal(root->right);<br>
+    printf("%d ", root->data);<br>
+}<br>
+
+int main() <br>
+{<br>
+    struct TreeNode* root = NULL;<br>
+
+    int keys[] = {50, 30, 70, 20, 40, 60, 80};<br>
+    int n = sizeof(keys) / sizeof(keys[0]);<br>
+
+    for (int i = 0; i < n; i++)<br>
+    {<br>
+        root = insertNode(root, keys[i]);<br>
+    }<br>
+    printf("Inorder traversal of the BST: ");<br>
+    inorderTraversal(root);<br>
+    printf("\n");<br>
+
+    printf("Preorder traversal of the BST: ");<br>
+    preorderTraversal(root);<br>
+    printf("\n");<br>
+
+    printf("Postorder traversal of the BST: ");<br>
+    postorderTraversal(root);<br>
+    printf("\n");<br>
+
+    int searchKey = 40;<br>
+    struct TreeNode* searchResult = searchNode(root, searchKey);<br>
+    if (searchResult != NULL) <br>
+    {<br>
+        printf("Node with key %d found in the BST.\n", searchKey);<br>
+    } <br>
+    else <br>
+    {<br>
+        printf("Node with key %d not found in the BST.\n", searchKey);<br>
+    }<br>
+
+    int deleteKey = 30;<br>
+    root = deleteNode(root, deleteKey);<br>
+    printf("Inorder traversal after deleting node with key %d: ", deleteKey);<br>
+    inorderTraversal(root);<br>
+    printf("\n");<br>
+
+    struct TreeNode* minNode = findMin(root);<br>
+    printf("Minimum element in the BST: %d\n", minNode->data);<br>
+
+    free(root);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Inorder traversal of the BST: 20 30 40 50 60 70 80<br>
+Preorder traversal of the BST: 50 30 20 40 70 60 80<br>
+Postorder traversal of the BST: 20 40 30 60 80 70 50<br>
+Node with key 40 found in the BST.<br>
+Inorder traversal after deleting node with key 30: 20 40 50 60 70 80<br>
+Minimum element in the BST: 20<br>
+
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+struct TreeNode <br>
+{<br>
+    int data;<br>
+    struct TreeNode* left;<br>
+    struct TreeNode* right;<br>
+};<br>
+struct TreeNode* createNode(int value) <br>
+{<br>
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+    newNode->data = value;
+    newNode->left = newNode->right = NULL;<br>
+    return newNode;<br>
+}<br>
+struct TreeNode* insertNode(struct TreeNode* root, int value) <br>
+{<br>
+    if (root == NULL) <br>
+    {<br>
+        return createNode(value);<br>
+    }<br>
+
+    if (value < root->data)<br>
+    {<br>
+        root->left = insertNode(root->left, value);<br>
+    } else if (value > root->data) <br>
+    {<br>
+        root->right = insertNode(root->right, value);<br>
+    }<br>
+
+    return root;<br>
+}<br>
+
+void findInorderPredecessorSuccessor(struct TreeNode* root, int key, int* predecessor, int* successor) <br>
+{<br>
+    if (root == NULL) <br>
+    {<br>
+        return;<br>
+    }<br>
+
+    if (root->data == key) <br>
+    {<br>
+        
+        if (root->left != NULL) <br>
+        {<br>
+            struct TreeNode* temp = root->left;<br>
+            while (temp->right != NULL)<br> {<br>
+                temp = temp->right;<br>
+            }<br>
+            *predecessor = temp->data;<br>
+        }<br>
+
+        if (root->right != NULL) <br>
+        {<br>
+            struct TreeNode* temp = root->right;<br>
+            while (temp->left != NULL) <br>
+            {<br>
+                temp = temp->left;<br>
+            }<br>
+            *successor = temp->data;<br>
+        }<br>
+        return;<br>
+    }<br>
+
+    if (key < root->data) <br>
+    {<br>
+        *successor = root->data;<br>
+        findInorderPredecessorSuccessor(root->left, key, predecessor, successor);<br>
+    }<br>
+    
+    else <br>
+    {<br>
+        *predecessor = root->data;
+        findInorderPredecessorSuccessor(root->right, key, predecessor, successor);<br>
+    }<br>
+}<br>
+
+int main() <br>
+{<br>
+    struct TreeNode* root = NULL;<br>
+
+    int keys[] = {50, 30, 70, 20, 40, 60, 80};<br>
+    int n = sizeof(keys) / sizeof(keys[0]);<br>
+
+    for (int i = 0; i < n; i++) <br>
+    {<br>
+        root = insertNode(root, keys[i]);<br>
+    }<br>
+
+    int key=40;<br>
+    int predecessor = -1, successor = -1;<br>
+
+    findInorderPredecessorSuccessor(root, key, &predecessor, &successor);<br>
+
+    if (predecessor != -1) <br>
+    {<br>
+        printf("Inorder Predecessor of %d is: %d\n", key, predecessor);<br>
+    } <br>
+    else <br>
+    {<br>
+        printf("No Inorder Predecessor for %d\n", key);<br>
+    }<br>
+
+    if (successor != -1) <br>
+    {<br>
+        printf("Inorder Successor of %d is: %d\n", key, successor);<br>
+    } <br>
+    else <br>
+    {<br>
+        printf("No Inorder Successor for %d\n", key);<br>
+    }<br>
+    free(root);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Inorder Predecessor of 40 is: 30<br>
+Inorder Successor of 40 is: 50<br>
+
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

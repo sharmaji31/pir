@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+#include &lt;stdbool.h&gt;<br>
+struct TreeNode <br>
+{<br>
+    int data;<br>
+    struct TreeNode* left;<br>
+    struct TreeNode* right;<br>
+};<br>
+struct TreeNode* createNode(int value)<br>
+{<br>
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+    newNode->data = value<br>
+    newNode->left = newNode->right = NULL;<br>
+    return newNode;<br>
+}<br>
+
+struct TreeNode* insertNode(struct TreeNode* root, int value) <br>
+{<br>
+    if (root == NULL) <br>
+    {<br>
+        return createNode(value);<br>
+    }<br>
+
+    if (value <= root->data) <br>
+    {<br>
+        root->left = insertNode(root->left, value);<br>
+    } <br>
+    else <br>
+    {<br>
+        root->right = insertNode(root->right, value);<br>
+    }<br>
+
+    return root;<br>
+}<br>
+struct TreeNode* createAlmostCompleteBinaryTree() <br>
+{<br>
+    struct TreeNode* root = NULL;<br>
+    int value;<br>
+
+    printf("Enter elements to insert into the binary tree (-1 to stop):\n");<br>
+
+    while (1) <br>
+    {<br>
+        scanf("%d", &value);<br>
+
+        if (value == -1) <br>
+        {<br>
+            break;<br>
+        }<br>
+
+        root = insertNode(root, value);<br>
+    }<br>
+
+    return root;<br>
+}<br>
+bool isAlmostComplete(struct TreeNode* root, int index, int nodesCount) <br>
+{<br>
+    if (root == NULL) <br>
+    {<br>
+        return true;<br>
+    }<br>
+    if (index >= nodesCount) <br>
+    {<br>
+        return false;<br>
+    }<br>
+
+    return isAlmostComplete(root->left, 2 * index + 1, nodesCount) &&
+           isAlmostComplete(root->right, 2 * index + 2, nodesCount);<br>
+}<br>
+int countNodes(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) <br>
+    {<br>
+        return 0;<br>
+    }<br>
+
+    return 1 + countNodes(root->left) + countNodes(root->right);<br>
+}<br>
+
+void inorderTraversal(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+    inorderTraversal(root->left);<br>
+    printf("%d ", root->data);<br>
+    inorderTraversal(root->right);<br>
+}<br>
+
+void freeTree(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+    freeTree(root->left);<br>
+    freeTree(root->right);<br>
+    free(root);<br>
+}<br>
+
+int main() <br>
+{<br>
+    struct TreeNode* root = createAlmostCompleteBinaryTree();<br>
+    int nodesCount = countNodes(root);<br>
+    if (isAlmostComplete(root, 0, nodesCount)) <br>
+    {<br>
+        printf("The binary tree is almost complete.\n");<br>
+    } <br>
+    else <br>
+    {<br>
+        printf("The binary tree is not almost complete.\n");<br>
+    }<br>
+
+    printf("Inorder traversal of the binary tree: ");<br>
+    inorderTraversal(root);<br>
+    printf("\n");<br>
+    freeTree(root);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Enter elements to insert into the binary tree (-1 to stop):<br>
+4<br>
+6<br>
+2<br>
+7<br>
+-1<br>
+The binary tree is not almost complete.
+Inorder traversal of the binary tree: 2 4 6 7<br>
+
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

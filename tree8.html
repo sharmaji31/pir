@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+struct TreeNode <br>
+{<br>
+    int data;<br>
+    struct TreeNode* left;<br>
+    struct TreeNode* right;<br>
+};<br>
+struct ArrayNode <br>
+{<br>
+    int data;<br>
+    struct ArrayNode* left;<br>
+    struct ArrayNode* right;<br>
+};<br>
+struct ArrayNode* createArrayNode(int data) <br>
+{<br>
+    struct ArrayNode* newNode = (struct ArrayNode*)malloc(sizeof(struct ArrayNode));<br>
+    newNode->data = data;<br>
+    newNode->left = newNode->right = NULL;<br>
+    return newNode;<br>
+}<br>
+struct TreeNode* insert(struct TreeNode* root, int data)<br>
+ {<br>
+    if (root == NULL) <br>
+    {<br>
+        struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+        newNode->data = data;<br>
+        newNode->left = newNode->right = NULL;<br>
+        return newNode;<br>
+    }<br>
+
+    if (data < root->data) <br>
+    {<br>
+        root->left = insert(root->left, data);<br>
+    } <br>
+    else if (data > root->data) <br>
+    {<br>
+        root->right = insert(root->right, data);<br>
+    }<br>
+
+    return root;<br>
+}<br>
+void createSortedArray(struct TreeNode* root, int arr[], int* index) <br>
+{<br>
+    if (root == NULL) return;<br>
+
+    createSortedArray(root->left, arr, index);<br>
+    arr[*index] = root->data;<br>
+    (*index)++;<br>
+    createSortedArray(root->right, arr, index);<br>
+}<br>
+struct ArrayNode* sortedArrayToBST(int arr[], int start, int end)<br>
+ {<br>
+    if (start > end) return NULL;<br>
+
+    int mid = (start + end) / 2;<br>
+    struct ArrayNode* newNode = createArrayNode(arr[mid]);<br>
+
+    newNode->left = sortedArrayToBST(arr, start, mid - 1);<br>
+    newNode->right = sortedArrayToBST(arr, mid + 1, end);<br>
+
+    return newNode;<br>
+}<br>
+struct ArrayNode* binaryTreeToBST(struct TreeNode* root)<br>
+ {<br>
+    
+    int size = 0;<br>
+    createSortedArray(root, NULL, &size);<br>
+    int* sortedArray = (int*)malloc(size * sizeof(int));<br>
+    size = 0;<br>
+    createSortedArray(root, sortedArray, &size);<br>
+    struct ArrayNode* bstRoot = sortedArrayToBST(sortedArray, 0, size - 1);<br>
+    free(sortedArray);<br>
+
+    return bstRoot;<br>
+}<br>
+void printTree(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+
+    printTree(root->left);<br>
+    printf("%d ", root->data);<br>
+    printTree(root->right);<br>
+}<br>
+void freeTree(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+
+    freeTree(root->left);<br>
+    freeTree(root->right);<br>
+    free(root);<br>
+}<br>
+
+int main() <br>
+{<br>
+    struct TreeNode* treeRoot = NULL;<br>
+    treeRoot = insert(treeRoot, 30);<br>
+    treeRoot = insert(treeRoot, 20);<br>
+    treeRoot = insert(treeRoot, 40);<br>
+    treeRoot = insert(treeRoot, 10);<br>
+    treeRoot = insert(treeRoot, 25);<br>
+    printf("Original Binary Tree: ");<br>
+    printTree(treeRoot);<br>
+    printf("\n");<br>
+    struct ArrayNode* bstRoot = binaryTreeToBST(treeRoot);<br>
+    printf("Converted Binary Search Tree: ");<br>
+    printTree(bstRoot);<br>
+    printf("\n");<br>
+    freeTree(treeRoot);<br>
+    freeTree(bstRoot);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Original Binary Tree: 10 20 25 30 40<br>
+proot info: vpid 1: terminated with signal 11<br>
+
+[Process completed (code 255) - press Enter]<br>
+</p>
+</body>
+
+</html>

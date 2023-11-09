@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  #include&lt;stdio.h&gt;<br>
+  #include&lt;conio.h&gt;<br>
+  #include&lt;string.h&gt;<br>
+  void main() <br>
+  {<br>
+  int indi=0,lower=0,upper,middle,i;<br>
+  char arr[100],searchitem;
+  printf("Enter the string=");<br>
+  gets(arr);<br>
+  for(i=0;arr[i];i++);<br>
+  upper=i-1;<br>
+  printf("Enter the character=");<br>
+  scanf("%c",&searchitem);<br>
+  while(lower<=upper)<br>
+    {<br>
+    middle=(lower+upper)/2;<br>
+    if(arr[middle]==searchitem)<br>
+    {<br>
+    indi=1;<br>
+    break;<br>
+    }<br>
+    if(arr[middle]<searchitem)<br>
+      {<br>
+      lower=middle+1;<br>
+      }<br>
+      else<br>
+      {<br>
+      upper=middle-1;<br>
+      }<br>
+      }<br>
+      if(indi==1)<br>
+      { <br>
+      printf("item is found");<br>
+      }<br>
+      else<br>
+      { <br>
+      printf("item is not found");<br>
+      }<br>
+      getch();<br>
+      }<br>
+       <p>OUTPUT:<br>
+       Enter the string=pankaj<br>
+         Enter the character=p<br>
+         item is found</p>
+</body>
+</html>

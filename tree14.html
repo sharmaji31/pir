@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+struct TreeNode <br>
+{<br>
+    int data;<br>
+    struct TreeNode* left;<br>
+    struct TreeNode* right;<br>
+};<br>
+struct TreeNode* createNode(int value) <br>
+{<br>
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+    newNode->data = value;<br>
+    newNode->left = newNode->right = NULL;<br>
+    return newNode;<br>
+}<br>
+
+struct TreeNode* constructBSTFromPreorder(int preorder[], int size, int* index, int min, int max) <br>
+{<br>
+    if (*index >= size || preorder[*index] < min || preorder[*index] > max) <br>
+    {<br>
+        return NULL;<br>
+    }<br>
+
+    struct TreeNode* root = createNode(preorder[(*index)++]);<br>
+
+    root->left = constructBSTFromPreorder(preorder, size, index, min, root->data);<br>
+    root->right = constructBSTFromPreorder(preorder, size, index, root->data, max);<br>
+
+    return root;<br>
+}<br>
+void postorderTraversal(struct TreeNode* root) <br>
+{<br>
+    if (root == NULL) return;<br>
+    postorderTraversal(root->left);<br>
+    postorderTraversal(root->right);<br>
+    printf("%d ", root->data);<br>
+}<br>
+
+int main() <br>
+{<br>
+    int preorder[] = {8, 5, 1, 7, 10, 12};<br>
+    int INT_MAX=100;<br>
+    int INT_MIN=0;<br>
+    int size = sizeof(preorder) / sizeof(preorder[0]);<br>
+    int index = 0;<br>
+
+    struct TreeNode* root = constructBSTFromPreorder(preorder, size, &index, INT_MIN, INT_MAX);<br>
+
+    printf("Postorder traversal of the constructed BST: ");<br>
+    postorderTraversal(root);<br>
+    printf("\n");<br>
+    free(root);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Postorder traversal of the constructed BST: 1 7 5 12 10 8<br>
+
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

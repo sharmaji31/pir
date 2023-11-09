@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main() <br>
+{<br>
+int arr[5]={1,2,3,4,5},track=0,searchitem;<br>
+printf("Enter the search item=");<br>
+scanf("%d",&searchitem);<br>
+while(track<5)<br>
+  {<br>
+  if(arr[track]==searchitem)<br>
+  {<br>
+  printf("item is found");<br>
+  break;<br>
+  }<br>
+  track++;<br>
+  }<br>
+  if(track>=5)<br>
+  {<br>
+  printf("item is not found");<br>
+  }<br>
+  getch();<br>
+  }<br>
+    <p>OUTPUT:<br>
+      Enter the searchitem=3<br>
+      item is found</p>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+ #include &lt;stdio.h&gt;<br>
+ #include &lt;conio.h&gt; <br>
+ int linear(int [],int,int); <br>
+ void main() <br>
+ { <br>
+ int a[5]={1,2,3,4,5},i=0,search; <br>
+ printf("enter the ="); <br>
+ scanf("%d",&search); <br>
+
+ i=linear(a,i,search); <br>
+ if(a[i]==search) <br>
+ { <br>
+ printf("item is found"); <br>
+ } <br>
+ else <br>
+ { <br>
+ printf("item is not found"); <br>
+ } <br>
+ getch(); <br>
+ } <br>
+ int linear(int a[],int i,int search) <br>
+ { <br>
+ if(i>=5) <br>
+ { <br>
+ return i; <br>
+ } <br>
+ if(a[i]==search) <br>
+ { <br>
+ return i; <br>
+ } <br>
+ else <br>
+ { <br>
+ return linear(a,i+1,search); <br>
+ } <br>
+ } <br>
+
+   <p>OUTPUT:<br>
+     Enter the searchitem=3<br>
+     item is found</p>
+</body>
+
+</html>

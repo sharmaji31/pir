@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include &lt;stdio.h&gt;<br>
+          #include &lt;conio.h&ht;<br>
+          int recu(char [100],char,int,int);<br>
+            void main()<br>
+            {<br>
+            char arr[100],searchitem;<br>
+            int i=0,j=0;<br>
+            printf("enter the string =");<br>
+            gets(arr);<br>
+            printf("Enter the character=");<br>
+            scanf("%c",&searchitem);<br>
+            recu(arr,searchitem,i,j);<br>
+            getch();<br>
+            }<br>
+            int recu(char arr[100],char searchitem,int i,int j)<br>
+            {<br>
+            if(j<6)<br>
+            {<br>
+            if(arr[i]==searchitem)<br>
+            {<br>
+            printf("item is found");<br>
+            }<br>
+            return recu(arr,searchitem,i+1,j+1);<br>
+            }<br>
+            else<br>
+            {<br>
+            printf("item is not found");<br>
+            }<br>
+            }<br>
+           <p>OUTPUT:<br>
+             Enter the string=pankaj<br>
+             Enter the searchitem=p<br>
+             item is found</p>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+struct Node <br>
+{<br>
+    int data;<br>
+    struct Node* next;<br>
+};<br>
+struct Graph <br>
+{<br>
+    int numVertices;<br>
+    struct Node** adjLists;<br>
+};<br>
+struct Node* createNode(int value) <br>
+{<br>
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));<br>
+    newNode->data = value;<br>
+    newNode->next = NULL;<br>
+    return newNode;<br>
+}<br>
+struct Graph* createGraph(int vertices)<br> {<br>
+    struct Graph* graph = (struct Graph*)malloc(sizeof(struct Graph));<br>
+    graph->numVertices = vertices;<br>
+    graph->adjLists = (struct Node**)malloc(vertices * sizeof(struct Node*));<br>
+
+    for (int i = 0; i < vertices; i++) {
+        graph->adjLists[i] = NULL;<br>
+    }<br>
+
+    return graph;<br>
+}<br>
+void addEdge(struct Graph* graph, int src, int dest) <br>
+{<br>
+    struct Node* newNode = createNode(dest);<br>
+    newNode->next = graph->adjLists[src];<br>
+    graph->adjLists[src] = newNode;<br>
+}<br>
+void removeEdge(struct Graph* graph, int src, int dest) <br>
+{<br>
+    struct Node* current = graph->adjLists[src];<br>
+    struct Node* prev = NULL;<br>
+
+    while (current != NULL)<br>
+     {<br>
+        if (current->data == dest) <br>
+        {<br>
+            if (prev == NULL)<br>
+            {<br>
+                graph->adjLists[src] = current->next;<br>
+            } <br>
+            else<br>
+             {<br>
+                prev->next = current->next;<br>
+            }<br>
+            free(current);<br>
+            return;<br>
+        }<br>
+        prev = current;<br>
+        current = current->next;<br>
+    }<br>
+}<br>
+void deleteGraph(struct Graph* graph)<br>
+ {<br>
+    for (int i = 0; i < graph->numVertices; i++) <br>
+    {<br>
+        struct Node* current = graph->adjLists[i];<br>
+        while (current != NULL) <br>
+        {<br>
+            struct Node* temp = current;<br>
+            current = current->next;<br>
+            free(temp);<br>
+        }<br>
+    }<br>
+    free(graph->adjLists);<br>
+    free(graph);<br>
+}<br>
+
+int main() <br>
+{<br>
+    int vertices = 5;<br>
+    struct Graph* graph = createGraph(vertices);<br>
+
+    addEdge(graph, 0, 1);<br>
+    addEdge(graph, 0, 2);<br>
+    addEdge(graph, 1, 2);<br>
+    addEdge(graph, 2, 3);<br>
+    printf("Graph with edges:\n");<br>
+    for (int i = 0; i < vertices; i++) <br>
+    {<br>
+        struct Node* current = graph->adjLists[i];<br>
+        printf("Vertex %d: ", i);<br>
+        while (current != NULL) <br>
+        {<br>
+            printf("%d -> ", current->data);<br>
+            current = current->next;<br>
+        }<br>
+        printf("NULL\n");<br>
+    }<br>
+
+    removeEdge(graph, 0, 2);<br>
+    removeEdge(graph, 2, 3);<br>
+
+    printf("\nGraph after removing edges:\n");<br>
+    for (int i = 0; i < vertices; i++) <br>
+    {<br>
+        struct Node* current = graph->adjLists[i];<br>
+        printf("Vertex %d: ", i);<br>
+        while (current != NULL)<br>
+         {<br>
+            printf("%d -> ", current->data);<br>
+            current = current->next;<br>
+        }<br>
+        printf("NULL\n");<br>
+    }<br>
+    deleteGraph(graph);<br>
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Graph with edges:<br>
+Vertex 0: 2 -> 1 -> NULL<br>
+Vertex 1: 2 -> NULL<br>
+Vertex 2: 3 -> NULL<br>
+Vertex 3: NULL<br>
+Vertex 4: NULL<br>
+
+Graph after removing edges:<br>
+Vertex 0: 1 -> NULL<br>
+Vertex 1: 2 -> NULL<br>
+Vertex 2: NULL<br>
+Vertex 3: NULL<br>
+Vertex 4: NULL<br>
+
+[Process completed - press Enter]
+</p>
+</body>
+
+</html>

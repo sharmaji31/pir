@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+struct TreeNode <br>{<br>
+    int data;<br>
+    struct TreeNode* left;<br>
+    struct TreeNode* right;<br>
+};<br>
+struct TreeNode* createNode(int value)<br> {<br>
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+    newNode->data = value;<br>
+    newNode->left = newNode->right = NULL;<br>
+    return newNode;<br>
+}<br>
+struct TreeNode* constructBSTFromArray(int arr[], int start, int end)<br> {<br>
+    if (start > end) <br>{<br>
+        return NULL;<br>
+    }<br>
+
+    int mid = (start + end) / 2;<br>
+    struct TreeNode* root = createNode(arr[mid]);<br>
+
+    root->left = constructBSTFromArray(arr, start, mid - 1);<br>
+    root->right = constructBSTFromArray(arr, mid + 1, end);<br>
+
+    return root;<br>
+}<br>
+void kthSmallestUtil(struct TreeNode* root, int k, int* count, int* result) <br>{<br>
+    if (root == NULL || *count >= k) <br>{<br>
+        return;<br>
+    }<br>
+    kthSmallestUtil(root->left, k, count, result);<br>
+    (*count)++;<br>
+    if (*count == k)<br> {<br>
+        *result = root->data;<br>
+        return;<br>
+        }<br>
+    kthSmallestUtil(root->right, k, count, result);<br>
+}<br>
+
+int kthSmallest(struct TreeNode* root, int k) <br>{<br>
+    int count = 0;<br>
+    int result = -1;<br>
+
+    kthSmallestUtil(root, k, &count, &result);<br>
+
+    return result;<br>
+}<br>
+
+int main()<br> {<br>
+    int arr[] = {1, 5, 7, 8, 10, 12};<br>
+    int size = sizeof(arr) / sizeof(arr[0]);<br>
+
+    struct TreeNode* root = constructBSTFromArray(arr, 0, size - 1);<br>
+    int k=3;<br>
+    int kthSmallestElement = kthSmallest(root, k);<br>
+
+    if (kthSmallestElement != -1) <br>{<br>
+        printf("The kth smallest element in the BST is: %d\n", k, kthSmallestElement);<br>
+    } <br>else <br>{<br>
+        printf("Invalid value of k.\n");<br>
+    }<br>
+    free(root);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+The kth smallest element in the BST is: 3<br>
+
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

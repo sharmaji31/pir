@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt; <br>
+  void main() <br>
+  {<br>
+  int arr[5]={1,2,3,4,5},indi=0,searchitem,lower=0,upper=4,middle;<br>
+  printf("Enter the search item=");<br>
+  scanf("%d",&searchitem);<br>
+  while(lower<=upper)<br>
+    {<br>
+    middle=(lower+upper)/2;<br>
+    if(arr[middle]==searchitem)<br>
+    {<br>
+    indi=1;<br>
+    break;<br>
+    }<br>
+    if(arr[middle]<searchitem)<br>
+      {<br>
+      lower=middle+1;<br>
+      }<br>
+      else<br>
+      {<br>
+      upper=middle-1;<br>
+      }<br>
+      }<br>
+      if(indi==1)<br>
+      { <br>
+      printf("item is found");<br>
+      }<br>
+      else<br>
+      { <br>
+      printf("item is not found");<br>
+      }<br>
+      getch();<br>
+      }<br>
+      
+        <p>OUTPUT:<br>
+          Enter the searchitem=3<br>
+          item is found</p>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h<br>
+#include &lt;stdbool.h&gt;<br>
+
+struct Node <br>
+{<br>
+    int data;<br>
+    struct Node* next;<br>
+};<br>
+
+struct Graph <br>
+{<br>
+    int numVertices;<br>
+    struct Node** adjLists;<br>
+};<br>
+
+struct Node* createNode(int value) <br>
+{<br>
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));<br>
+    newNode->data = value;<br>
+    newNode->next = NULL;<br>
+    return newNode;<br>
+}<br>
+
+struct Graph* createGraph(int vertices)<br> 
+{<br>
+    struct Graph* graph = (struct Graph*)malloc(sizeof(struct Graph));<br>
+    graph->numVertices = vertices;<br>
+    graph->adjLists = (struct Node**)malloc(vertices * sizeof(struct Node*));<br>
+
+    for (int i = 0; i < vertices; i++) 
+    {<br>
+        graph->adjLists[i] = NULL;<br>
+    }<br>
+
+    return graph;<br>
+}<br>
+
+void addEdge(struct Graph* graph, int src, int dest) <br>
+{<br>
+    struct Node* newNode = createNode(dest);<br>
+    newNode->next = graph->adjLists[src];<br>
+    graph->adjLists[src] = newNode;<br>
+}<br>
+
+void BFS(struct Graph* graph, int startVertex) <br>
+{<br>
+    bool* visited = (bool*)malloc(graph->numVertices * sizeof(bool));<br>
+    for (int i = 0; i < graph->numVertices; i++) <br>
+    {<br>
+        visited[i] = false;<br>
+    }<br>
+
+    int queue[graph->numVertices];<br>
+    int front = -1, rear = -1;<br>
+
+    visited[startVertex] = true;<br>
+    queue[++rear] = startVertex;<br>
+
+    while (front != rear) <br>
+    {<br>
+        startVertex = queue[++front];<br>
+        printf("%d ", startVertex);<br>
+
+        struct Node* temp = graph->adjLists[startVertex];<br>
+        while (temp) <br>
+        {<br>
+            int adjVertex = temp->data;<br>
+            if (!visited[adjVertex]) <br>
+            {<br>
+                visited[adjVertex] = true;<br>
+                queue[++rear] = adjVertex;<br>
+            }<br>
+            temp = temp->next;<br>
+        }<br>
+    }<br>
+    free(visited);<br>
+}<br>
+
+void deleteGraph(struct Graph* graph) <br>
+{<br>
+    for (int i = 0; i < graph->numVertices; i++) <br>
+    {<br>
+        struct Node* current = graph->adjLists[i];<br>
+        while (current != NULL) <br>
+        {<br>
+            struct Node* temp = current;<br>
+            current = current->next;<br>
+            free(temp);<br>
+        }<br>
+    }<br>
+    free(graph->adjLists);<br>
+    free(graph);<br>
+}<br>
+
+int main() <br>
+{<br>
+    int vertices = 5;<br>
+    struct Graph* graph = createGraph(vertices);<br>
+
+    addEdge(graph, 0, 1);<br>
+    addEdge(graph, 0, 2);<br>
+    addEdge(graph, 1, 2);<br>
+    addEdge(graph, 2, 0);<br>
+    addEdge(graph, 2, 3);<br>
+    addEdge(graph, 3, 3);<br>
+
+    int startVertex = 2;<br>
+    printf("Breadth-First Search starting from vertex %d:\n", startVertex);<br>
+    BFS(graph, startVertex);<br>
+
+    deleteGraph(graph);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Breadth-First Search starting from vertex 2:
+2 3 0 1<br>
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

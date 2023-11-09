@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct no<br>
+{<br>
+int data;<br>
+struct no *left;<br>
+struct no *right;<br>
+};<br>
+void main()<br>
+{<br>
+int a[4],a1[4],i,j,temp,hemp,s,m;<br>
+for(i=0;i<4;i++)<br>
+{<br>
+printf("enter the preorder=");<br>
+scanf("%d",&a[i]);<br>
+}<br>
+for(j=0;j<4;j++)<br>
+{<br>
+printf("enter the inorder=");<br>
+scanf("%d",&a1[j]);<br>
+}<br>
+tree(a,a1,i,j,temp,hemp,m);<br>
+getch();<br>
+}<br>
+int tree(int a[],int a1[],int i,int j,int temp,int hemp,int s,int m)<br>
+{<br>
+struct no *start=NULL;<br>
+struct no *new=NULL;<br>
+struct no *pointer=NULL;<br>
+struct no *p=NULL;<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct no));<br>
+start->data=a[0];<br>
+start->left=NULL;<br>
+start->right=NULL;<br>
+pointer=start;<br>
+p=start;<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+if(a1[j]==a[0])<br>
+{<br>
+temp=j;<br>
+s=j;<br>
+m=j;<br>
+}<br>
+}<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=0;j<=s;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->left=new;<br>
+pointer=pointer->left;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=s;j<temp;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->right=new;<br>
+pointer=pointer->right;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+hemp=j;<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=3;i++)<br>
+{<br>
+for(j=m;j<=3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=4;i++)<br>
+{<br>
+for(j=m;j<3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+printf("According to pre-order and in-order after traversing from left to right tree look like:-\n");<br>
+pointer=start;<br>
+p=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->left;<br>
+}<br>
+pointer=start->left;<br>
+pointer=pointer->right;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->right;<br>
+}<br>
+p=p->right;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->right;<br>
+}<br>
+p=start->right;<br>
+p=p->left;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->left;<br>
+}<br>
+}<br><br>
+  <p>OUTPUT:<br>
+    Enter the pre-order=1<br>
+    Enter the pre-order=2<br>
+    Enter the pre-order=4<br>
+    Enter the pre-order=3<br>
+    Enter the in-order=4<br>
+    Enter the in-order=2<br>
+    Enter the in-order=1<br>
+    Enter the in-order=3<br>
+    According to pre-order and in-order traversal of tree ,tree look like=<br>
+    1,2,4,3</p>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+int vertices, edges;<br>
+printf("Enter the number of vertices: ");<br>
+scanf("%d", &vertices);<br>
+printf("Enter the number of edges: ");<br>
+scanf("%d", &edges);<br>
+int adjacencyMatrix[vertices][vertices]; <br>
+for (int i = 0; i < vertices; i++) <br>
+{<br>
+for (int j = 0; j < vertices; j++) <br>
+{<br>
+adjacencyMatrix[i][j] = 0;<br>
+}<br>
+}<br>
+for (int i = 0; i < edges; i++)<br>
+{<br>
+int from, to;<br>
+printf("Enter edge (from to): ");<br>
+scanf("%d %d", &from, &to);<br>
+if(from >= 0 && from < vertices && to >= 0 && to < vertices) <br>
+{<br>
+adjacencyMatrix[from][to] = 1;<br>
+adjacencyMatrix[to][from] = 1; <br>
+}<br>
+else <br>
+{<br>
+printf("Invalid input. Vertex numbers should be between 0 and %d.\n", vertices - 1);<br>
+i--; <br>
+}<br>
+}<br>
+printf("Adjacency Matrix:\n");<br>
+for (int i = 0; i < vertices; i++) <br>
+{<br>
+for (int j = 0; j < vertices; j++) <br>
+{<br>
+printf("%d ", adjacencyMatrix[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+    return 0;<br>
+} <br><br>
+    <p>OUTPUT:<br>
+    Enter the number of vertices: 3<br>
+    Enter the number of edges: 3<br>
+    Enter edge (from to): 0<br>
+    1<br>
+    Enter edge (from to): 1<br>
+    0<br>
+    Enter edge (from to): 2<br>
+    1<br>
+    Adjacency Matrix:<br>
+    0 1 0<br>
+    1 0 1<br>
+    0 1 0<br>
+    </p>
+</body>
+</html>

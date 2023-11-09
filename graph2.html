@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gtl<br>
+#include &lt;stdbool.h&gt;<br>
+int graph[100][100];<br>
+bool visited[100];<br>
+int queue[100];<br>
+int front = -1, rear = -1;<br>
+void enqueue(int node) <br>
+{<br>
+if (rear == 100- 1) <br>
+{<br>
+printf("Queue is full.\n");<br>
+return;<br>
+}<br>
+if (front == -1) <br>
+{<br>
+front = 0;<br>
+}<br>
+rear++;<br>
+queue[rear] = node;<br>
+}<br>
+int dequeue()<br>
+{<br>
+if (front == -1) <br>
+{<br>
+printf("Queue is empty.\n");<br>
+return -1;<br>
+}<br>
+int node = queue[front];<br>
+if (front == rear) <br>
+{<br>
+front = rear = -1;<br>
+} <br>
+else <br>
+{<br>
+front++;<br>
+}<br>
+return node;<br>
+}<br>
+void breadthFirstTraversal(int start, int numNodes) <br>
+{<br>
+visited[start] = true;<br>
+enqueue(start);<br>
+while (front != -1) <br>
+{<br>
+int currentNode = dequeue();<br>
+printf("%d ", currentNode);<br>
+for (int i = 0; i < numNodes; i++) <br>
+{<br>
+if (graph[currentNode][i] == 1 && !visited[i]) <br>
+{<br>
+visited[i] = true;<br>
+enqueue(i);<br>
+}<br>
+}<br>
+}<br>
+}<br>
+int main() <br>
+{<br>
+int numNodes, numEdges;<br>
+printf("Enter the number of nodes and edges: ");<br>
+scanf("%d %d", &numNodes, &numEdges);<br>
+for (int i = 0; i < numNodes; i++) <br>
+{<br>
+visited[i] = false;<br>
+for (int j = 0; j < numNodes; j++) <br>
+{<br>
+graph[i][j] = 0;<br>
+}<br>
+}<br>
+printf("Enter the edges (format: source destination):\n");<br>
+for (int i = 0; i < numEdges; i++) <br>
+{<br>
+int source, destination;<br>
+scanf("%d %d", &source, &destination);<br>
+graph[source][destination] = 1;<br>
+}<br>
+int startNode;<br>
+printf("Enter the starting node: ");<br>
+scanf("%d", &startNode);<br>
+printf("Breadth-First Traversal starting from node %d: ", startNode);<br>
+breadthFirstTraversal(startNode, numNodes);<br>
+return 0;<br>
+}<br><br>
+    <p>OUTPUT:<br>
+    Enter the number of nodes and edges: 2
+    1<br>
+    Enter the edges (format: source destination):
+    1
+    2<br>
+    Enter the starting node: 1<br>
+    Breadth-First Traversal starting from node 1: 1</p>
+</body>
+
+</html>

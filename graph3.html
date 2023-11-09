@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdbool.h&gt;<br>
+int adjacencyMatrix[100][100];<br>
+bool visited[100];<br>
+int queue[100];<br>
+int front = -1, rear = -1;<br>
+
+void enqueue(int node)<br>
+ {<br>
+    if (rear == 100 - 1)<br>
+     {<br>
+        printf("Queue is full. Cannot enqueue.\n");<br>
+        return;<br>
+    }<br>
+    if (front == -1)<br>
+     {<br>
+        front = 0;<br>
+    }<br>
+    rear++;<br>
+    queue[rear] = node;<br>
+}<br>
+int dequeue()<br>
+ {<br>
+    if (front == -1) <br>
+    {<br>
+        printf("Queue is empty. Cannot dequeue.\n");<br>
+        return -1;<br>
+    }<br>
+    int node = queue[front];<br>
+    front++;<br>
+    if (front > rear)<br>
+     {<br>
+        front = rear = -1;<br>
+    }<br>
+    return node;<br>
+}<br>
+
+void BFS(int start, int nodes)<br>
+ {<br>
+    for (int i = 0; i < nodes; i++) <br>
+    {<br>
+        visited[i] = false;<br>
+    }<br>
+
+    visited[start] = true;<br>
+    enqueue(start);<br>
+
+    while (front != -1)<br>
+     {<br>
+        int currentNode = dequeue();<br>
+        printf("%d ", currentNode);<br>
+
+        for (int i = 0; i < nodes; i++)<br>
+         {<br>
+            if (adjacencyMatrix[currentNode][i] && !visited[i])<br>
+             {<br>
+                visited[i] = true;<br>
+                enqueue(i);<br>
+            }<br>
+        }<br>
+    }<br>
+}<br>
+
+int main() <br>
+{<br>
+    int nodes;<br>
+    printf("Enter the number of nodes: ");<br>
+    scanf("%d", &nodes);<br>
+
+    printf("Enter the adjacency matrix:\n");<br>
+    for (int i = 0; i < nodes; i++)<br>
+     {<br>
+        for (int j = 0; j < nodes; j++)<br>
+         {<br>
+            scanf("%d", &adjacencyMatrix[i][j]);<br>
+        }<br>
+    }<br>
+    int startNode;<br>
+    printf("Enter the starting node: ");<br>
+    scanf("%d", &startNode);<br>
+
+    printf("Breadth-First Search starting from node %d: ", startNode);<br>
+    BFS(startNode, nodes);<br>
+
+    return 0;<br>
+}<br><br>
+<p>OUTPUT:<br>
+Enter the number of nodes: 2<br>
+Enter the adjacency matrix:<br>
+1<br>
+0<br>
+1<br>
+0<br>
+Enter the starting node: 1<br>
+Breadth-First Search starting from node 1: 1 0<br>
+[Process completed - press Enter]<br>
+</p>
+</body>
+
+</html>

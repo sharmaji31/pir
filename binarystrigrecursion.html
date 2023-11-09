@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include&lt;stdio.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+int find(int,char,int,int,char[100],int);<br>
+void main() <br>
+{<br>
+int indi=0,lower=0,upper=0,middle,i; <br>
+char arr[100],searchitem;<br>
+printf("enter the string=");<br>
+gets(arr);<br>
+for(i=0;arr[i];i++);<br>
+upper=i;<br>
+printf("Enter the search item=");<br>
+scanf("%c",&searchitem);<br>
+indi=find(indi,searchitem,lower,upper,arr,middle);<br>
+if(indi==1)<br>
+{<br>
+printf("value is found");<br>
+}<br>
+else<br>
+{<br>
+printf("value is not found");<br>
+}<br>
+getch();<br>
+}<br>
+int find(int indi,char searchitem,int lower,int upper,char arr[100],int middle)<br>
+{<br>
+if(lower<upper)<br>
+{<br>
+  middle=(lower+upper)/2;<br>
+  if(arr[middle]==searchitem)<br>
+  {<br>
+  indi=1;<br>
+  return indi;<br>
+  }<br>
+  if(arr[middle]<searchitem)<br>
+    {<br>
+    lower=middle+1;<br>
+    return find(indi,searchitem,lower,upper,arr,middle);<br>
+    }<br>
+    else<br>
+    {<br>
+    upper=middle-1; <br>
+    return find(indi,searchitem,lower,upper,arr,middle);<br>
+    }<br>
+    }<br>
+    else <br>
+    {<br>
+    return indi;<br>
+    }<br>
+    }<br>
+           <p>OUTPUT:<br>
+             Enter the string=pankaj<br>
+             Enter the character=p<br>
+             item is found</p>
+</body>
+</html>
