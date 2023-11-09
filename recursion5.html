@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  void main()<br>
+  {<br>
+  int n,f=1,i=1;<br>
+  printf("enter the number=");<br>
+  scanf("%d",&n);<br>
+  fact(n,f,i);<br>
+  getch();<br>
+  }<br>
+  int fact(int n,int f,int i)<br>
+  {<br>
+  if(i<=n)<br>
+    {<br>
+    f=f*i;<br>
+    return fact(n,f,i+1);<br>
+    }<br>
+    printf("factorial of number=%d",f);<br>
+    }<br><br>
+      <p>OUTPUT:<br>
+        Enter the number=5<br>
+        Factorial of a number=120</p>
+</body>
+
+</html>

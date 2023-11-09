@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+       #include &lt;stdio.h&gt;<br>
+         #include &lt;conio.h&gt;<br>
+           #include &lt;stdlib.h&gt;<br>
+             struct node<br>
+             {<br>
+             int data;<br>
+             int p;<br>
+             struct node *link;<br>
+             };<br>
+             struct node *pointer;<br>
+             struct node *start;<br>
+             struct node *new,*temp;<br>
+             void main()<br>
+             {<br>
+             int n=1,a;<br>
+             while(n!=0)<br>
+             {<br>
+             printf("\npress the button=");<br>
+             scanf("%d",&a);<br>
+             if(a<=3)
+             {
+             switch(a)<br>
+             {<br>
+             case 1:push();<br>
+             break;<br>
+             case 2:pop();<br>
+             break;
+             case 3:return 0;
+             break;
+             }<br>
+             }<br>
+             else 
+             {
+             printf("press valid button\n");
+             }
+             }
+             return 0;<br>
+             }<br>
+             int push()<br>
+             {<br>
+             if(start==NULL)<br>
+             {<br>
+             start=malloc(sizeof(struct node));<br>
+             printf("\nenter the value=");<br>
+             scanf("%d",&start->data);<br>
+             printf("\nenter the priority=");<br>
+             scanf("%d",&start->p);<br>
+             start->link=NULL;<br>
+             pointer=start;<br>
+             temp=start;<br>
+             }<br>
+             else<br>
+             {<br>
+             new=malloc(sizeof(struct node));<br>
+             printf("\nenter the value=");<br>
+             scanf("%d",&new->data);<br>
+             printf("\nenter the<br> priority=");<br>
+             scanf("%d",&new->p);<br>
+             new->link=NULL;<br>
+             if(pointer->p>new->p)<br>
+             {<br>
+             temp->link=new;<br>
+             }<br>
+             else<br>
+             {<br>
+             new->link=pointer;<br>
+             pointer=new;<br>
+             }<br>
+             }<br>
+             }<br>
+             int pop()<br>
+             {<br>
+             printf("value according to priority\n");<br>
+             while(pointer!=NULL)<br>
+             {<br>
+             printf("%d ",pointer->data);<br>
+             pointer=pointer->link;<br>
+             }<br>
+             }<br>
+              <p>OUTPUT:<br>
+                Press1 for push<br>
+                Press2 for pop<br>
+                Press the button=1<br>
+                Enter the value=20<br>
+                Enter the priority=1<br>
+                Press the button=2<br>
+                values in queue=20</p>             
+</body>
+
+</html>

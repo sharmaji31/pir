@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+char data[100];<br>
+struct node *left;<br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&new->data);<br>
+pointer->link=new;<br>
+new->left=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string in position=");<br>
+scanf("%s",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+printf("strings are=");<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%s ",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br><br>
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert\n");<br>
+    printf("press2 for delete\n");<br>
+    printf("press3 for insert at bigining\n");<br>
+    printf("press4 for delete at bigining\n");<br>
+    printf("press5 for delete at position\n");<br>
+    printf("press6 for delete at end\n");<br>
+    printf("press7 for exit\n");<br>
+    press the button=1<br>
+    Enter the value=pop<br>
+    press the button=3<br>
+    Enter the value=top<br>
+    press the button=2<br>
+    value=top,pop</p>
+</body>
+
+</html>

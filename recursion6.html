@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  void main()<br>
+  {<br>
+  int n,i=1,a=0,b=1,c;<br>
+  printf("enter the number=");<br>
+  scanf("%d",&n);<br>
+  fab(n,i,a,b,c);<br>
+  getch();<br>
+  }<br>
+  int fab(int n,int i,int a,int b,int c)<br>
+  {<br>
+  if(i<=n)<br>
+    {<br>
+    printf("fabonaac series=%d",a);<br>
+    c=a+b;<br>
+    b=a;<br>
+    a=c;<br>
+    return fab(n,i+1,a,b,c);<br>
+    }<br>
+    }<br><br>
+    <p>OUTPUT:<br>
+      Enter the number=5<br>
+      Fabonaac series=01123</p>
+</body>
+
+</html>

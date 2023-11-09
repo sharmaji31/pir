@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+int push();<br>
+int pop();<br>
+struct node<br>
+{<br>
+char data[100];<br>
+struct node *link;<br>
+};<br>
+struct node *start;<br>
+struct node *new;<br>
+struct node *rear;<br>
+struct node *front,*temp,*cc,*tt;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("press the a=");<br>
+scanf("%d",&a);<br>
+if(a<=6)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:front=pop();<br>
+printf("\ndequeue is empty now\n");<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:delete();<br>
+break;<br>
+case 5:delete1();<br>
+break;<br>
+case 6:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&start->data);<br>
+start->link=NULL;<br>
+rear=start;<br>
+front=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&new->data);<br>
+rear->link=new;<br>
+rear=rear->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+temp=malloc(sizeof(struct node));<br>
+printf("emter the value=");<br>
+scanf("%s",&temp->data);<br>
+temp->link=start;<br>
+front=temp;<br>
+}<br>
+int delete()<br>
+{<br>
+cc=start;<br>
+front=front->link;<br>
+free(cc);<br>
+cc=NULL;<br>
+}<br>
+int delete1()<br>
+{<br>
+rear=start;<br>
+tt=start;<br>
+while(tt!=NULL)<br>
+{<br>
+tt=rear;<br>
+rear=rear->link;<br>
+}<br>
+free(rear);<br>
+rear=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+while(front!=NULL)<br>
+{<br>
+printf("%s ",front->data);<br>
+front=front->link;<br>
+}<br>
+}<br><br>
+   <p>OUTPUT:<br>
+     press1 for insert at end<br>
+     press2 for display<br>
+     press3 for insert at bigining<br>
+     press4 for delete at end<br>
+     press5 for delete at bigining<br>
+     press6 for exit<br>
+     press the button=1<br>
+     Enter the value=pop<br>
+     press the button=3<br>
+     Enter the value=top<br>
+     press the button=2<br>
+     value=top,pop<br>
+   </p>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push(char [][100],int);<br>
+int pop(char [][100],int<br>
+int peak(char [][100],int);<br>
+void main() <br>
+{ <br>
+char arr[5][100]; <br>
+int a,i=-1;<br>
+printf("press1 for push operation\n");<br>
+printf("press2 for pop operation\n");<br>
+printf("press3 for peek operation\n\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=3)<br>
+  {<br>
+  switch(a) <br>
+  { <br>
+  case 1:i=push(arr,i);<br>
+  if(i==5-1)<br>
+  { <br>
+  printf("stack is full\n");<br>
+  }<br>
+  break;<br>
+  case 2:i=pop(arr,i);<br>
+  if(i==-1)<br>
+  {<br>
+  printf("stack is empty now\n");<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("string is deleted\n");<br>
+  }<br>
+  break;<br>
+  case 3:i=peak(arr,i);<br>
+
+  printf("%d\n",arr[i]);<br>
+
+  break;<br>
+  }<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("press valid number\n"); <br>
+  }<br>
+  }<br>
+  getch();<br>
+  }<br>
+  int push(char arr[][100],int i)<br>
+  {<br>
+  if(i==5-1)<br>
+  {<br>
+  return i;<br>
+  }<br>
+  else<br>
+  {<br>
+  i++;<br>
+  printf("enter the value=");<br>
+  scanf("%s",&arr[i]);<br>
+  return i;<br>
+  }<br>
+  }<br>
+  int pop(char arr[][100],int i)<br>
+  {<br>
+  if(i==-1)<br>
+  {<br>
+  return i;<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("%s ",arr[i]);<br>
+  i--;<br>
+  return i;<br>
+  }<br>
+  }<br>
+  int peak(char arr[][100],int i)<br>
+  {<br>
+  if(i==-1)<br>
+  {<br>
+  printf("emter some value first");<br>
+  }<br>
+  else<br>
+  {<br>
+  return i;<br>
+  }<br>
+  }<br><br>
+   <p>OUTPUT:<br>
+     Press1 for push<br>
+     Press2 for pop<br>
+     Press3 for peak<br>
+     Press the button=1<br>
+     Enter the string=pop<br>
+     Press the button=2<br>
+     values in queue=pop</p>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,min;<br>
+for(i=0;i<5;i++)<br>
+  {<br>
+  printf("enter the value=");<br>
+  scanf("%d",&arr[i]);<br>
+  }<br>
+  max=arr[0];<br>
+  i=0;<br>
+  max=bit(arr,i,min);<br>
+  printf("smallest element of array is=%d",min);<br>
+  getch();<br>
+  }<br>
+  int bit(int arr[],int i,int min)<br>
+  {<br>
+  if(i<5)<br>
+    {<br>
+    if(arr[i]<min)<br>
+      {<br>
+      min=arr[i];<br>
+      }<br>
+      return bit(arr,i+1,min);<br>
+      }<br>
+      return min;<br>
+      }<br><br>
+  <p>OUTPUT:<br>
+    Enter the value in 1index=4<br>
+    Enter the value in 2index=2<br>
+    Enter the value in 3index=3<br>
+    Enter the value in 4index=1<br>
+    Enter the value in 5index=5<br>
+    smallest element of array=1</p>      
+</body>
+
+</html>

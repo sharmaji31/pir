@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int binary(int,int,int,int);<br>
+void main()<br>
+{<br>
+int n,rem,sum=0,base=1;<br>
+printf("enter the decimal number=");<br>
+scanf("%d",&n);<br>
+sum=binary(n,rem,sum,base);<br>
+printf("After converting decimal to binary=%d",sum);<br>
+getch();<br>
+}<br>
+int binary(int n,int rem,int sum,int base)<br>
+{<br>
+if(n>0)<br>
+{<br>
+rem=n%2;<br>
+sum=sum+rem*base;<br>
+n=n/2;<br>
+base=base*10;<br>
+return binary(n,rem,sum,base);<br>
+}<br>
+return sum;<br>
+}<br><br>
+  <p>OUTPUT:<br>
+    Enter the decimal number=9<br>
+    After converting number from decimal to binary=1001</p>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+char str[100];<br>
+int arr[10];<br>
+int top=0,i=0,count=0;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+
+for(i=0;str[i];i++)<br>
+{<br>
+count++;<br>
+if(str[i]!=' ')<br>
+{<br>
+arr[top]=str[i];<br>
+top++;<br>
+}<br>
+}<br>
+printf("After reversing string=\n");<br>
+for(top=count;top>=0;top--)<br>
+{<br>
+printf("%c",arr[top]);<br>
+}<br>
+getch();<br>
+}<br><br>
+     <p>OUTPUT:<br>
+       Enter the string=pankaj<br>
+       After reversing string=<br>
+       aajknp</p>
+</body>
+
+</html>

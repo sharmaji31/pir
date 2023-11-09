@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    void main()<br>
+    {<br>
+    char str[100];<br>
+    int arr[10];<br>
+    int top=0,i=0,count=0;<br>
+    printf("enter the string=");<br>
+    gets(str);<br>
+
+    for(i=0;str[i];i++)<br>
+    {<br>
+    count++;<br>
+    if(str[i]!=' ')<br>
+    {<br>
+    arr[top]=str[i];<br>
+    top++;<br>
+    }<br>
+    }<br>
+    printf("After reversing string=\n");<br>
+    for(top=count;top>=0;top--)<br>
+    {<br>
+    printf("%c",arr[top]);<br>
+    }<br>
+    getch();<br>
+    }<br><br>
+    </div>
+    <div class="out">
+     <p>OUTPUT:<br>
+     Enter the string=pankaj<br>
+     After reversing string=<br>
+     aajknp</p>
+     </div>
+<b class='e' style="font-size:24px">8.Evaluate postfix expression.</b><br>
+<div class="col">
+#include stdio.h<br><br>
+#include conio.h <br>
+int add();<br>
+int sub();<br>
+int div();<br>
+int mul();<br>
+int exp();<br>
+int arr[50],i,top=0;<br>
+void main()<br>
+{<br>
+char str[100]; <br>
+printf("enter the expression=");<br>
+gets(str);<br>
+for(i=0;str[i];i++)<br>
+{<br>
+if(str[i]!=' ')<br>
+{<br>
+switch(str[i])<br>
+{<br>
+case '+':add();<br>
+break;<br>
+case '-':sub();<br>
+break;<br>
+case '/':div();<br>
+break;<br>
+case '*':mul();<br>
+break;<br>
+default:top++;<br>
+arr[top]=str[i]-48;<br>
+} <br>
+}<br>
+}<br>
+printf("result:\n");<br>
+printf("%d",arr[top]);<br>
+getch();<br>
+}<br>
+int add()<br>
+{<br>
+int first,second,sum; <br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first+second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br>
+int sub()<br>
+{<br>
+int first,second,sum;<br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first-second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br>
+int div()<br>
+{<br>
+int first,second,sum;<br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first/second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br>
+int mul() <br>
+{<br>
+int first,second,sum;<br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first*second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br><br>
+ <p>OUTPUT:<br>
+   Enter the expression=*+3+*<br>
+   Result:=23<br></p>
+</body>
+
+</html>

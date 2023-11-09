@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include stdlib.h<br>
+int push();<br>
+int pop();<br>
+struct node<br>
+{<br>
+int data;<br>
+struct node *link;<br>
+};<br>
+struct node *start<br>
+struct node *new;<br>
+struct node *rear;<br>
+struct node *front;<br>
+void main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("press1 for push operation\n");<br>
+printf("press2 for pop operation\n");<br>
+printf("press the a=");<br>
+scanf("%d",&a);<br>
+if(a<=2)<br>
+  {<br>
+  switch(a)<br>
+  {<br>
+  case 1:push();<br>
+  break;<br>
+  case 2:front=pop();<br>
+  printf(" queue is empty now\n");<br>
+  break;<br>
+  }<br>
+  }<br>
+  }<br>
+  getch();<br>
+  }<br>
+  int push()<br>
+  {<br>
+  if(start==NULL)<br>
+  {<br>
+  start=malloc(sizeof(struct node));<br>
+  printf("enter the value in start=");<br>
+  scanf("%d",&start->data);<br>
+  start->link=NULL;<br>
+  rear=start;<br>
+  front=start;<br>
+  }<br>
+  else<br>
+  {<br>
+  new=malloc(sizeof(struct node));<br>
+  printf("enter the value in new=");<br>
+  scanf("%d",&new->data);<br>
+  rear->link=new;<br>
+  rear=rear->link;<br>
+  }<br>
+  }<br>
+  int pop()<br>
+  {<br>
+  while(front!=NULL)<br>
+  {<br>
+  printf("%d ",front->data);<br>
+  front=front->link;<br>
+  }<br>
+  if(front==NULL)<br>
+  {<br>
+  return front;<br>
+  }<br>
+  }<br><br>
+  <p>OUTPUT:<br>
+    Press1 for push<br>
+    Press2 for pop<br>
+    Press3 for peak<br>
+    Press the button=1<br>
+    Enter the value=10<br>
+    Press the button=2<br>
+    values in queue=20</p>
+</body>
+
+</html>

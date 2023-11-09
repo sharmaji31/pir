@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include&lt;stdio.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+void main()<br>
+{<br>
+char arr[100],str[100],temp;<br>
+int top=-1,i,n;<br>
+printf("Enter the expression=");<br>
+scanf("%s",arr);<br>
+for(n=0;arr[n];n++);<br>
+for(i=0;i<n;i++)<br>
+{<br>
+if(arr[i]=='[' || arr[i]=='{'||arr[i]=='(')	
+{<br>
+top++;<br>
+str[top]=arr[i];<br>
+}<br>
+else<br>
+{<br>
+temp=str[top];<br>
+top--;<br>
+if((temp=='(' && arr[i]==')') ||(temp=='{' && arr[i]=='}') || (temp=='['&& arr[i]==']'))<br>
+{<br>
+continue;<br>
+}<br>
+else<br>
+{<br>
+break;<br>
+}<br>
+}<br>
+}<br>
+if(i==n && top==-1)<br>
+{<br>
+printf("balanced");<br>
+}<br>
+else<br>
+{<br>
+printf("not balaced");<br>
+}<br>
+getch();<br>
+}<br>
+<p>OUTPUT:<br>
+Enter the expression=()<br>
+Balanced<br></p>
+</body>
+
+</html>

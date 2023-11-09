@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+    #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct node <br>
+{<br>
+int data;<br>
+int expo;<br>
+struct node *link;<br>
+};<br>
+struct node *start,*new,*pointer;<br>
+struct node *start1,*new1,*point;<br>
+void main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert first equation\n");<br>
+printf("press2 for insert second equation\n");<br>
+printf("press3 for manipulation of equation\n");<br>
+printf("press4 for display mainpulation of equation\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:push1();<br>
+break;<br>
+case 3:pop();<br>
+break;<br>
+case 4:dis();<br>
+break;<br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&start->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start->expo);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&new->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new->expo);<br>
+new->link=NULL;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int push1()<br>
+{<br>
+if(start1==NULL)<br>
+{<br>
+start1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&start1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start1->expo);<br>
+start1->link=NULL;<br>
+point=start1;<br>
+}<br>
+else<br>
+{<br>
+new1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&new1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new1->expo);<br>
+new1->link=NULL;<br>
+point->link=new1;<br>
+point=point->link;<br>
+}<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start;<br>
+point=start1;<br>
+while(pointer!=NULL)<br>
+{<br>
+if(pointer->expo==point->expo)<br>
+{<br>
+pointer->data=pointer->data*point->data;<br>
+pointer=pointer->link;<br>
+point=point->link;<br>
+}<br>
+else if(pointer->expo>point->expo)<br>
+{<br>
+pointer=pointer->link;<br>
+}<br>
+else<br>
+{<br>
+point=point->link;<br>
+}<br>
+}<br>
+}<br>
+int dis()<br>
+{<br>
+pointer=start;<br>
+printf("Result of manipulation=\n");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d^%d ",pointer->data,pointer->expo);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br><br>
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert first equation\n");<br>
+    printf("press2 for insert second equation\n");<br>
+    printf("press3 for manipulation of equation\n");<br>
+    printf("press4 for display mainpulation of equation\n");<br>
+    Press the button=1<br>
+    Enter the first equation coff=3<br>
+    Enter the power of coff=3<br>
+    Press the button=1<br>
+    Enter the first equation coff=2<br>
+    Enter the power of coff=2<br>
+    Press the button=1<br>
+    Enter the first equation coff=4<br>
+    Enter the power of coff=6<br>
+    Press the button=2<br>
+    Enter the second equation coff=3<br>
+    Enter the power of coff=3<br>
+    Press the button=2<br>
+    Enter the second equation coff=2<br>
+    Enter the power of coff=2<br>
+    Press the button=2<br>
+    Enter the second equation coff=4<br>
+    Enter the power of coff=6<br>
+    press the button=3<br>
+    press the button=4<br>
+    result of manipulation=<br>
+    9^3*4^2*16^6</p>
+</body>
+
+</html>

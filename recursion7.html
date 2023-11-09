@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,sum=0;<br>
+for(i=0;i<5;i++)<br>
+  {<br>
+  printf("emter the value=");<br>
+  scanf("%d",&arr[i]);<br>
+  }<br>
+  i=0;<br>
+  add(arr,i,sum);<br>
+  getch();<br>
+  }<br>
+  int add(int arr[],int i,int sum)<br>
+  {<br>
+  if(i<5)<br>
+    {<br>
+    sum=sum+arr[i];<br>
+    return add(arr,i+1,sum);<br>
+    }<br>
+    printf("sum of all digit=%d",sum);<br>
+    }<br><br>
+      <p>OUTPUT:<br>
+        Enter the value=1<br>
+        Enter the value=2<br>
+        Enter the value=3<br>
+        Enter the value=4<br>
+        Enter the value=5<br>
+        sum of all digit=15<br>
+      </p>
+</body>
+
+</html>

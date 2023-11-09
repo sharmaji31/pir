@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int enqueue(int [],int);<br>
+int dequeue(int [],int,int);<br>
+void main()<br>
+{<br>
+int a,arr[5],rear=-1,front=-1;<br>
+printf("press1 for enqueue operation\n");<br>
+printf("press2 for dequeue operation\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=2)<br>
+  {<br>
+  switch(a)<br>
+  {<br>
+  case 1:rear=push(arr,rear);<br>
+  if(rear==5-1)<br>
+  {<br>
+  printf("queue is full\n");<br>
+  }<br>
+  break;<br>
+  case 2:front=dequeue(arr,rear,front);<br>
+  if(front>rear-1)<br>
+  {<br>
+  printf("queue is empty now\n");<br>
+  }<br>
+  break;<br>
+  }<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("press valid number\n");<br>
+  }<br>
+  }<br>
+  getch();<br>
+  }<br>
+  int enqueue(int arr[],int rear)<br>
+  {<br>
+  if(rear==5-1)<br>
+  {<br>
+  return rear;<br>
+  }<br>
+  else<br>
+  {<br>
+  rear++;<br>
+  printf("enter the value=");<br>
+  scanf("%d",&arr[rear]);<br>
+  return rear;<br>
+  }<br>
+  }<br>
+  int dequeue(int arr[],int rear,int front)<br>
+  {<br>
+  if(front>rear-1)<br>
+  {<br>
+  return front;<br>
+  }<br>
+  else<br>
+  {<br>
+  front++;<br>
+  printf("%d\n",arr[front]);<br>
+  return front;<br>
+  }<br>
+  }<br><br>
+   <p>OUTPUT:<br>
+     Press1 for enqueue<br>
+     Press2 for dequeue<br>
+     Press the button=1<br>
+     Enter the value=10<br>
+     Press the button=2<br>
+     values in queue=10</p>
+</body>
+
+</html>

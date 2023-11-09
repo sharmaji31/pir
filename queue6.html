@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push(char [][100],int);<br>
+int pop(char [][100],int,int);<br>
+int peak(char [][100],int);<br>
+int main ()<br>
+{<br>
+char arr[5][100];<br>
+int a,i=-1,j=-1;<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+switch(a)<br>
+{<br>
+case 1:i=push(arr,i);<br>
+if(i==5-1)<br>
+{<br>
+printf("queue is full\n"); <br>
+}<br>
+break;<br>
+case 2:j=pop(arr,i,j);<br>
+if(j>i-1)<br>
+{<br>
+printf("queue is empty now\n");<br>
+}<br>
+if(j==i)<br>
+{<br>
+i=-1;<br>
+j=-1;<br>
+}<br>
+break;<br>
+case 3:i=peak(arr,i);<br>
+printf("%s\n",arr[i]);<br>
+break;<br>
+case 4:return 0;<br>
+break;<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push(char arr[][100],int i)<br>
+{<br>
+if(i==5-1)<br>
+{<br>
+return i;<br>
+}<br>
+else<br>
+{<br>
+i++;<br>
+printf("enter the value=");<br>
+scanf("%s",&arr[i]);<br>
+return i;<br>
+}<br>
+}<br>
+int pop(char arr[][100],int i,int j)<br>
+{<br>
+if(j>i-1)<br>
+{<br>
+return j;<br>
+}<br>
+else<br>
+{<br>
+j++;<br>
+printf("%s\n",arr[j]);<br>
+return j;<br>
+}<br>
+}<br>
+int peak(char arr[][100],int i)<br>
+{<br>
+return i;<br>
+}<br><br>
+ <p>OUTPUT:<br>
+   Press1 for push<br>
+   Press2 for pop<br>
+   Press the button=1<br>
+   Enter the string=pop<br>
+   Press the button=2<br>
+   Data in circular queue=pop</p>
+</body>
+
+</html>

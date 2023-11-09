@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+char str[5];<br>
+int arr[10];<br>
+int top=0,i=0,count=0,temp,j;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the string=");<br>
+scanf("%d",&str[i]);<br>
+}<br>
+for(i=0;i<=5;i++)<br>
+{<br>
+arr[top]=str[i];<br>
+top++;<br>
+}<br>
+printf("descending order of string=\n");<br>
+for(top=0;top<5;top++)<br>
+{<br>
+for(j=top+1;j<5;j++)<br>
+{<br>
+if(arr[top]<arr[j])<br>
+{<br>
+temp=arr[top];<br>
+arr[top]=arr[j];<br>
+arr[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+for(top=0;top<5;top++)<br>
+{<br>
+printf("%d",arr[top]);<br>
+}<br>
+getch();<br>
+} <br>
+     <p>OUTPUT:<br>
+       Enter the string=pankaj<br>
+       Descending order of string=<br>
+      pnkjaa</p>
+</body>
+
+</html>
