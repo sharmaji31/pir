@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+ #include&lt;stdio.h&gt;<br>
+ #include&lt;conio.h&gt;<br>
+ #include&lt;time.h&gt;<br>
+ void main()<br>
+ { <br>
+ time_t start=time(NULL);<br>
+ int arr[5]={5,4,3,2,1},i,j,temp;<br>
+ for(i=0;i<5;i++)<br>
+   { <br>
+   for(j=0;j<5;j++)<br>
+     { <br>
+     if(arr[j]>arr[j+1])<br>
+     { <br>
+     temp=arr[j];<br>
+     arr[j]=arr[j+1];<br>
+     arr[j+1]=temp;<br>
+     } <br>
+     } <br>
+     } <br>
+     printf("your sorted array is:=\n");<br>
+     for(i=0;i<5;i++)<br>
+       { <br>
+       printf("%d",arr[i]);<br>
+       } <br>
+       time_t end=time(NULL);<br>
+       printf("\nExecution time is %d seconds",(end-start));<br>
+       getch();<br>
+       } <br><br>
+       <p>OUTPUT:<br>
+       your sorted array is:=<br>
+       12345<br>
+       Execution time is 0 seconds<br>
+       </p>
+</body>
+
+</html>

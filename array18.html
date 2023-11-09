@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+ #include &lt;stdio.h&gt;<br>
+ #include &lt;conio.h&gt;<br>
+ void main()<br>
+ {<br>
+ int arr[5],arr1[5],merge[10],i,j,temp,p=0,l;<br>
+ for(i=0;i<5;i++)<br>
+   {<br>
+   printf("\nenter the values at %dindex=",i+1);<br>
+   scanf("%d",&arr[i]);<br>
+   }<br>
+   for(i=0;i<5;i++)<br>
+     {<br>
+     printf("\nenter the values at %dindex=",i+1);<br>
+     scanf("%d",&arr1[i]);<br>
+     }<br>
+     for(i=0;i<5;i++)<br>
+       {<br>
+       for(j=i+1;j<5;j++)<br>
+         {<br>
+         if(arr[i]>arr[j])<br>
+         {<br>
+         temp=arr[i];<br>
+         arr[i]=arr[j];<br>
+         arr[j]=temp;<br>
+         }<br>
+         }<br>
+         }<br>
+         for(i=0;i<5;i++)<br>
+           {<br>
+           merge[p]=arr[i];<br>
+           p++;<br>
+           }<br>
+           for(i=0;i<5;i++)<br>
+             {<br><br>
+             for(j=i+1;j<5;j++)<br>
+               {<br>
+               if(arr1[i]>arr1[j])<br>
+               {<br>
+               temp=arr1[i];<br>
+               arr1[i]=arr1[j];<br>
+               arr1[j]=temp;<br>
+               }<br>
+               }<br>
+               }<br>
+               for(i=0;i<5;i++)<br>
+                 {<br>
+                 merge[p]=arr1[i];<br>
+                 p++;<br>
+                 }<br>
+                 for(p=0;p<10;p++)<br>
+                   {<br>
+                   for(l=p+1;l<10;l++)<br>
+                     {<br>
+                     if(merge[p]>merge[l])<br>
+                     {<br>
+                     temp=merge[p];<br>
+                     merge[p]=merge[l];<br>
+                     merge[l]=temp;<br>
+                     }<br>
+                     }<br>
+                     }<br>
+                     printf("After sorting values\n");<br>
+                     for(p=0;p<10;p++)<br>
+                       {<br>
+                       printf("%d",merge[p]);<br>
+                       }<br>
+                       getch();<br>
+                       }<br><br>
+<p>OUTPUT:<br>
+  Enter value in 1index=80<br>
+  Enter value in 2index=10<br>
+  Enter value in 3index=67<br>
+  Enter value in 4index=60<br>
+  Enter value in 5index=70<br>
+  Enter value in 1index=30<br>
+  Enter value in 1index=20<br>
+  Enter value in 1index=40<br>
+  Enter value in 1index=100<br>
+  Enter value in 1index=60<br>
+  After sorting values<br>
+  10,20,30,40,60,60,67,70,80,100</p>                       
+</body>
+
+</html>

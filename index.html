@@ -1,0 +1,6626 @@
+<html> 
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="c.css">
+  </head>
+  
+  <body bgcolor="#fff">
+    <div class='lo'>
+    <div class="a">
+  </div>
+ <div  class="c">
+   </div>
+    <div class="c">
+    </div>
+    <div class="d">line</div>
+    </div>
+  <center><p><b>DATA STRUCTURE</b></p></center>
+  <b><p class='e'>Data Structure ?</p></b>
+  <b><p>A data structure is a specialized format for organizing, processing, retrieving and storing data. There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose. Data structures make it easy for users to access and work with the data they need in appropriate ways.</p></b>
+  <b><p class='e'>Considered Searching technique</p></b>
+  <b><p>Searching is one of the most common operation perform on most of data structure like array. Searching is a process of finding elements. Searching is considered successful if element is found otherwise unsuccessful.</p></b>
+  <b><p>There are  many searching technique exist,but the most common searching technique is linear search and binary search. The choosing of above searching technique is depend upon the large extend on the way the information is orgainsed.Linear search is used in small and unsorted array and binary search is used in large and sorted array.  </p></b>
+  <div class="l">
+  <div class="m">
+   <p style="font-size:50px">LEARN</p>
+  </div>
+  <div class="m">
+  <p style="font-size:50px">ABOUT</p>
+  </div>
+  <div class="m">
+    <p style="font-size:50px">DATA</p>
+  </div>
+  </div>
+  <br>
+  <b class="e">Programs of linear search:</b><br><br>
+<div class="col">
+   #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  void main() <br>
+  {<br>
+  int arr[5]={1,2,3,4,5},track=0,searchitem;<br>
+  printf("Enter the search item=");<br>
+  scanf("%d",&searchitem);<br>
+  while(track<5)<br>
+  {<br>
+  if(arr[track]==searchitem)<br>
+  {<br>
+  printf("item is found");<br>
+  break;<br>
+  }<br>
+  track++;<br>
+  }<br>
+  if(track>=5)<br>
+  {<br>
+  printf("item is not found");<br>
+  }<br>
+  getch();<br>
+  }<br>
+  </div>
+  <div class="out">
+  <p>OUTPUT:<br>
+Enter the searchitem=3<br>
+  item is found</p>
+  </div>
+    <h1><b><p class='e'>2.Program of binary search.</p></b></h1>
+    <div class="col">
+   #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt; <br>
+  void main() <br>
+  {<br>
+  int arr[5]={1,2,3,4,5},indi=0,searchitem,lower=0,upper=4,middle;<br>
+  printf("Enter the search item=");<br>
+  scanf("%d",&searchitem);<br>
+  while(lower<=upper)<br>
+  {<br>
+  middle=(lower+upper)/2;<br>
+  if(arr[middle]==searchitem)<br>
+  {<br>
+  indi=1;<br>
+  break;<br>
+  }<br>
+  if(arr[middle]<searchitem)<br>
+  {<br>
+  lower=middle+1;<br>
+  }<br>
+  else<br>
+  {<br>
+  upper=middle-1;<br>
+  }<br>
+  }<br>
+  if(indi==1)<br>
+  { <br>
+  printf("item is found");<br>
+  }<br>
+  else<br>
+  { <br>
+  printf("item is not found");<br>
+  }<br>
+  getch();<br>
+  }<br>
+  </div>
+    <div class="out">
+      <p>OUTPUT:<br>
+      Enter the searchitem=3<br>
+      item is found</p>
+    </div>
+</div>
+  <details>
+  <summary> 
+  <b class='e'style=font-size:24px>Tab to see more programs</b><br></summary>
+  <br><b>1.linear search with recursion.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+    #include &lt;conio.h&gt;  <br>
+      int linear(int [],int,int); <br>
+      void main() <br>
+      { <br>
+      int a[5]={1,2,3,4,5},i=0,search; <br>
+      printf("enter the ="); <br>
+      scanf("%d",&search); <br>
+  
+      i=linear(a,i,search); <br>
+      if(a[i]==search) <br>
+      { <br>
+      printf("item is found"); <br>
+      } <br>
+      else <br>
+      { <br>
+      printf("item is not found"); <br>
+      } <br>
+      getch(); <br>
+      } <br>
+      int linear(int a[],int i,int search) <br>
+      { <br>
+      if(i>=5) <br>
+      { <br>
+      return i; <br>
+      } <br>
+      if(a[i]==search) <br>
+      { <br>
+      return i; <br>
+      } <br>
+      else <br>
+      { <br>
+      return linear(a,i+1,search); <br>
+      } <br>
+      } <br>
+      </div>
+        <div class="out">
+          <p>OUTPUT:<br>
+          Enter the searchitem=3<br>
+          item is found</p>
+        </div>
+      <b class='e'style=font-size:23px>2.Perform linear search in string array.</b><br><br>
+      <div class="col">
+        #include &lt;stdio.h&gt;<br>
+          #include &lt;conio.h&gt;<br>
+            void main()<br>
+            {<br>
+            char arr[100],searchitem;<br>
+            int i;<br>
+            printf("enter the string =");<br>
+            gets(arr);<br>
+            printf("Enter the search item=");<br>
+            scanf("%c",&searchitem);<br>
+            for(i=0;arr[i];i++)<br>
+            {<br>
+            if(arr[i]==searchitem)<br>
+            {<br>
+            printf("item is found");<br>
+            break;<br>
+            }<br>
+            }<br>
+            if(arr[i]==NULL)<br>
+            printf("item is not found");<br>
+            getch();<br>
+            }<br>
+            </div>
+              <div class="out">
+                <p>OUTPUT:<br>
+                Enter the string=pankaj<br>
+                Enter the searchitem=p<br>
+                item is found</p>
+              </div>
+      <b class='e'style="font-size:24px">3.Program of binary search with recursion</b><br><br>
+      <div class="col">
+       #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt; <br>
+  int find(int,int,int,int);<br>
+  void main() <br>
+  {<br>
+  int indi=0,searchitem,lower=0,upper=4; <br>
+  printf("Enter the search item=");<br>
+  scanf("%d",&searchitem);<br>
+ indi=find(indi,searchitem,lower,upper);<br>
+  if(indi==1)<br>
+  {<br>
+  printf("found");<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("not found");<br>
+  }<br>
+  getch();<br>
+  }<br>
+  int find(int indi,int searchitem,int lower,int upper)<br>
+  {<br>
+  int arr[5]={1,2,3,4,5},middle; <br>
+  {<br>
+  if(lower<upper)<br>
+  {<br>
+  middle=(lower+upper)/2;<br>
+  if(arr[middle]==searchitem)<br>
+  {<br>
+  indi=1;<br>
+  return indi;<br>
+  }<br>
+  if(arr[middle]<searchitem)<br>
+  {<br>
+  lower=middle+1;<br>
+  }<br>
+  else<br>
+  {<br>
+  upper=middle-1; <br>
+  }<br>
+  }<br>
+  else <br>
+  {<br>
+  return indi;<br>
+  }<br>
+  return find(indi,searchitem,lower++,upper);<br>
+  }<br>
+  }<br>
+  </div>
+    <div class="out">
+      <p>OUTPUT:<br>
+      Enter the searchitem=3<br>
+      item is found</p>
+    </div>
+  </details>
+  <b><p class="e">Considered Sorting</p></b>
+<p>Sorting refers to the process of arranging data in a particular order such as ascending order or descending. An ascending sort of five integers {20,10,40,25,35} produces {10,20,25,35,40}. The main objective of sorting is to organize data so that it is more meaningful. Had the data not been sorted,we would spend hours to find a single piece of information.</p>
+  <div class="l">
+    <div class="m">
+      <p style="font-size:50px">SELECTION ?</p>
+    </div>
+    <div class="m">
+      <p style="font-size:50px">BUBBLE ?</p>
+    </div>
+    <div class="m">
+      <p style="font-size:50px">INSERTION ?</p>
+    </div>
+  </div>
+<b><p>The method of sorting can be classified as</p></b>
+.Internal sorting<br>
+.External sorting<br>
+<p>In internal sorting,all of the data which is to stored can be held in primary memory during sorting algorithm.</p>
+<p>In external sorting,all of the data which is to be stored cannot be held in the primary memory at one time</p>
+  
+  <p><b class="e"style="font-size:24px">There are four different types of sorting</b></p>
+ <h1><b>1.Selection Sort</b></h1>
+  <p>Simple sort is among the most instuitive of all the sort and works very fast for small amount of data. The basic idea of selection sort is that we repeatedly find the next smallest element in the list of elements and move it to its final position that it will occupy in the sorted list.<br> We can do this by swapping the elements at the first position with the smallest element. Now the smallest element is sorted and is placed at its proper position and need not be condidered again. Then find the next smallest element from the list and move to the correct position. This process continues until all the elements are moved to their correct position.</p>
+    <b class='e' style="font-size:24px"><p>Programs of selection sort</p></b>
+    <div class="col">
+   #include &lt;stdio.h&gt;<br>
+   #include &lt;conio.h&gt; <br>
+   void main()<br>
+   { <br>
+   int arr[5]={5,4,3,2,1},i,j,temp;<br>
+   for(i=0;i<5-1;i++)<br>
+     { <br>
+     for(j=i+1;j<5;j++)<br>
+       { <br>
+       if(arr[i]>arr[j])<br>
+       { <br>
+       temp=arr[i];<br>
+       arr[i]=arr[j];<br>
+       arr[j]=temp;<br>
+       } <br>
+       } <br>
+       } <br>
+       printf("your sorted array is:=\n");<br>
+       for(i=0;i<5;i++)<br>
+         { <br>
+         printf("%d",arr[i]);<br>
+         } <br>
+         getch();<br>
+         } <br><br>
+         </div>
+           <div class="out">
+             <p>OUTPUT:<br>
+             your sorted array is:=<br>
+             1,2,3,4,5</p>
+           </div>
+         <b class='e' style="font-size:24px">2.Program of selection sort with string.</b><br><br>
+         <div class="col">
+          #include &lt;stdio.h&gt;<br>
+   #include &lt;conio.h&gt; <br>
+   void main()<br>
+   { <br>
+   char arr[6]="pankaj";<br>
+   int i,j,temp;<br>
+   for(i=0;i<6-1;i++) <br>
+     { <br>
+     for(j=i+1;j<6;j++)<br>
+       { <br>
+       if(arr[i]>arr[j])<br>
+       { <br>
+       temp=arr[i];<br>
+       arr[i]=arr[j];<br>
+       arr[j]=temp;<br>
+       } <br>
+       } <br>
+       } <br>
+       printf("your sorted string is:=\n");<br>
+       for(i=0;i<6;i++)<br>
+         {<br>
+         printf("%c",arr[i]);<br>
+         } <br>
+         getch();<br>
+         } <br>
+        </div>
+          <div class="out">
+            <p>OUTPUT:<br>
+            your sorted string is:=<br>
+            aajknp</p>
+          </div>
+        </p>
+   <h1> <b>2.Bubble Sort</b></h1>
+    <p>Bubble sort is one of the easiest techniques for sorting small arrays. It works by representing moving the largest elements to the highest index position in the array. For this,it uses several passes through the array and in each pass, the largest elements searches its proper position in the sorted array.<br> In Bubble sort, the first pass starts by comparing first element with second element and swapp if fist element is greater than second element. We then move to the next higher position element and repeat this process. This process of comparing and inter-changing is repeat until the largest element is bubbled from its original position to the correct position in the final sorted array</p>
+        <b class='e' style="font-size:24px"><p>Programs of bubble sort</p></b>
+        <div class="col">
+           #include &lt;stdio.h&gt;<br>
+           #include &lt;conio.h&gt;<br>
+           void main()<br>
+           { <br>
+           int arr[5]={5,4,3,2,1},i,j,temp;<br>
+           for(i=0;i<5;i++)<br>
+             { <br>
+             for(j=0;j<5;j++)<br>
+               { <br>
+               if(arr[j]>arr[j+1])<br>
+               { <br>
+               temp=arr[j];<br>
+               arr[j]=arr[j+1];<br>
+               arr[j+1]=temp;<br>
+               } <br>
+               } <br>
+               } <br>
+               printf("your sorted array is:=\n");<br>
+               for(i=0;i<5;i++)<br>
+                 { <br>
+                 printf("%d",arr[i]);<br>
+                 } <br>
+                 getch();<br>
+                 } <br>
+                 </div>
+                   <div class="out">
+                     <p>OUTPUT:<br>
+                     your sorted array is=<br>
+                     1,2,3,4,5</p>
+                   </div>
+    <h1><b>3.Insertion sort</b></h1>
+      <p>Insertion sort is one of the simplest sorting algorithm. It works like the approach that a teacher might follow while answer sheet collected randomly from the students according to their roll number. The teacher begin sorting by assumping that the first answer sheet is correctly positioned. Then the second answer sheet is considered. If that answer sheet is out of order, it is placed before the first answer sheet. Then the teacher considered second and third answer sheet and place it at its proper position.<br> Formally,insertion sort takes one element at a time from the unsorted list and inserts it into a sorted list by scanning the list of sorted elements to determine where the new element will be placed. </p>
+       <b class='e' style="font-size:24px"><p>Programs of insertion sort</p></b>
+       <div class="col">
+   #include &lt;stdio.h&gt;<br>
+   #include &lt;conio.h&gt;<br>
+   void main()<br>
+   { <br>
+   int arr[5]={5,4,3,2,1},i,j,temp;<br>
+   for(i=0;i<5-1;i++)<br>
+     { <br>
+     for(j=i+1;j<5;j++)<br>
+       { <br>
+       if(arr[i]>arr[j])<br>
+       { <br>
+       temp=arr[i];<br>
+       arr[i]=arr[j];<br>
+       arr[j]=temp;<br>
+       } <br>
+       } <br>
+       } <br>
+       printf("your sorted array is:=\n");<br>
+       for(i=0;i<5;i++)<br>
+         { <br>
+         printf("%d",arr[i]);<br>
+         } <br>
+         getch();<br>
+         } <br><br>
+         </div>
+         <div class="out">
+           <p>OUTPUT:<br>
+             your sorted array is:=<br>
+             1,2,3,4,5</p>
+         </div>
+      <h1><b>4.Merge sort</b></h1>
+      <p>Merge sort is well known sorting algorithm introduced by john von neuman in 1945. It is based on divide and conquer strategy in which we divide the data into smaller piece,recursively conquer each piece and merge the result into final result until the original list is rebuild to sorted one.</p>
+    
+        <b><p class="e">What is stack ?</p></b>
+        <p>Stack is a linear data structure in which all insertion and deletion operation are restricted to only one end called top of the stack. In other words all elements are inserted and deleted only from top of the stack. For this reason, stack is said to have a Last In First Out (LIFO). Stack is logically a last in first out structure but physically it is implementation of array and linked list. Stack is not a real structure, but it just define how data is accessed rather than how it is store. </p>
+          <div class="l">
+            <div class="m">
+              <p style="font-size:50px">PUSH</p>
+            </div>
+            <div class="m">
+              <p style="font-size:50px">POP</p>
+            </div>
+            <div class="m">
+              <p style="font-size:50px">PEAK</p>
+            </div>
+          </div>
+                <b class='e' style="font-size:24px"><p>Operations of stack</p></b>
+                <b>1.Push operation</b>
+                <p>Push operation is used to insert element on the top of the stack. After each push operation, the new inserted element become the top. Each push operation increase the number of element one by one.</p>
+    <b>2.Pop operation</b>
+    <p>Pop operation is used to delete elements from the top of the stack. After each pop operation, the top is decreased by one. If we perform pop operation on empty stack, stack is come in underflow state.</p>
+    <b>3.peek operation</b>
+    <p>Peek opration is used to display the elements which is placed on the top of the stack. Peek operation display the element without removing the element. After peek operation, the stack remain the same.</p>
+     <b class='e' style="font-size:24px"><p>Programs of operation perform on stack</p></b>
+     <b>1.Perform push,pop,peek operation on stack.</b><br><br>
+     <div class="col">
+     #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push(int [],int);<br>
+int pop(int [],int);<br>
+int peak(int [],int);<br>
+int main()<br>
+{
+int a,arr[5],i=-1;<br>
+printf("press1 for push operation\n");<br>
+printf("press2 for pop operation\n");<br>
+printf("press3 for peek operation\n\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=3)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:i=push(arr,i);<br>
+if(i==5-1)<br>
+{<br>
+printf("stack is full\n");<br>
+}<br>
+break;<br>
+case 2:i=pop(arr,i);<br>
+if(i==-1)<br>
+{<br>
+printf("stack is empty now\n");<br>
+}<br>
+else<br>
+{<br>
+printf("value is deleted\n");<br>
+}<br>
+break;<br>
+case 3:i=peak(arr,i);<br>
+
+printf("%d\n",arr[i]);<br>
+
+break;<br>
+case 4:return 0;
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid number\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push(int arr[],int i)<br>
+{<br>
+if(i==5-1)<br>
+{<br>
+return i;<br>
+}<br>
+else<br>
+{<br>
+i++;<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[i]);<br>
+return i;<br>
+}<br>
+}<br>
+int pop(int arr[],int i)<br>
+{<br>
+if(i==-1)<br>
+{<br>
+return i;<br>
+}<br>
+else<br>
+{<br>
+printf("%d",arr[i]);<br>
+i--;<br>
+return i;<br>
+}<br>
+}<br>
+int peak(int arr[],int i)<br>
+{<br>
+if(i==-1)<br>
+{<br>
+printf("emter some value first");<br>
+}<br>
+else<br>
+{<br>
+return i;<br>
+}<br>
+}<br><br>
+</div>
+  <div class="out">
+    <p>OUTPUT:<br>
+    Press1 for push<br>
+    Press2 for pop<br>
+    Press3 for peak<br>
+    Press the button=1<br>
+    Enter the value=10<br>
+    Press the button=2<br>
+    values in stack=20</p>
+  </div>
+<details>
+  <summary class='e' style=font-size:24px>Tab to see more programs.</summary><br>
+  
+<b class='e' style="font-size:24px">2.Implement operation of stack in string array (push,pop,peek).</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push(char [][100],int);<br>
+int pop(char [][100],int);<br>
+int peak(char [][100],int);<br>
+int main()<br>
+{<br>
+char arr[5][100];<br>
+int a,i=-1;<br>
+printf("press1 for push operation\n");<br>
+printf("press2 for pop operation\n");<br>
+printf("press3 for peek operation\n\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=3)<br>
+  {<br>
+  switch(a)<br>
+  {<br>
+  case 1:i=push(arr,i);<br>
+  if(i==5-1)<br>
+  {<br>
+  printf("stack is full\n"><br>
+  }<br>
+  break;<br>
+  case 2:i=pop(arr,i);<br>
+  if(i==-1)<br>
+  {<br>
+  printf("stack is empty now\n");<br>
+  }<br>
+  else<br>
+  {<br>
+  printf(" value is deleted\n");<br>
+  }<br>
+  break<br>
+  case 3:i=peak(arr,i);<br>
+
+  printf("%s\n",arr[i]);<br>
+
+  break;<br>
+  case 4:return 0;<br>
+  break;<br>
+  }<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("press valid number\n");<br>
+  }<br>
+  }<br>
+  return 0;<br>
+  }<br>
+  int push(char arr[][100],int i)<br>
+  {<br>
+  if(i==5-1)<br>
+  {<br>
+  return i;<br>
+  }<br>
+  else<br>
+  {<br>
+  i++;<br>
+  printf("enter the string=");<br>
+  scanf("%s",&arr[i]);<br>
+  return i;<br>
+  }<br>
+  }<br>
+  int pop(char arr[][100],int i)<br>
+  {<br>
+  if(i==-1)<br>
+  {<br>
+  return i;<br>
+  }<br>
+  else<br>
+  {<br>
+  printf("%s",arr[i]);<br>
+  i--;<br>
+  return i;<br>
+  } <br>
+  }<br>
+  int peak(char arr[][100],int i)<br>
+  {<br>
+  if(i==-1)<br>
+  {<br>
+  printf("emter some string first");<br>
+  }<br>
+  else<br>
+  {<br>
+  return i;<br>
+  }<br>
+  }<br><br>
+  </div>
+    <div class="out">
+   <p>OUTPUT:<br>
+   Press1 for push<br>
+   Press2 for pop<br>
+   Press3 for peak<br>
+   Press the button=1<br>
+   Enter the string=pankaj<br>
+   Press the button=2<br>
+   values in stack=pankaj</p>
+   </div>
+<b class='e' style="font-size:24px">3.Program of dynamically allocating memory to integer stack.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include stdlib.h<br>
+      int push();<br>
+      int pop();<br>
+      struct node <br>
+      {<br>
+      int data;<br>
+      struct node *link;<br>
+      };<br>
+      struct node *start;<br>
+      struct node *new<br>
+      struct node *track<br>
+      int main()<br>
+      {<br>
+      int n=1,a;<br>
+      while(n!=0) <br>
+      {<br>
+      printf("press1 for push");<br>
+      printf("press2 for pop");<br>
+     printf("press3 for exit");<br>
+      printf("press the a=");<br>
+      scanf("%d",&a);<br>
+      switch(a)<br>
+      {<br>
+      case 1:push();<br>
+      break;<br>
+      case 2:track=pop();<br>
+      printf("stack is empty now\n");<br>
+      break;<br>
+      case 3:return 0;<br>
+      break;<br>
+      } <br>
+      }<br>
+      return 0;<br>
+      }<br>
+      int push()<br>
+      {<br>
+      if(start==NULL)<br>
+      {<br>
+      start=malloc(sizeof(struct node));<br>
+      printf("enter the value in start=");<br>
+      scanf("%d",&start->data);<br>
+      start->link=NULL;<br>
+      track=start;<br>
+      }<br>
+      else<br>
+      {<br>
+      new=malloc(sizeof(struct node));<br>
+      printf("enter the value in new=");<br>
+      scanf("%d",&new->data);<br>
+      new->link=track;<br>
+      track=new;<br>
+      }<br>
+      }<br>
+      int pop()<br>
+      {<br>
+      while(track!=NULL)<br>
+      { <br>
+      printf("%d ",track->data);<br>
+      track=track->link;<br>
+      } <br>
+      if(track==NULL)<br>
+      {<br>
+      return track;<br>
+      }<br>
+      }<br><br>
+      </div>
+        <div class="out">
+       <p>OUTPUT:<br>
+       Press1 for push<br>
+       Press2 for pop<br>
+      Press3 for peak<br>
+       Press the button=1<br>
+      Enter the value=10<br>
+       Press the button=2<br>
+       values in stack=10</p>
+       </div>
+      <b class='e' style="font-size:24px">4.Program of dynamically allocating memory to string stack.</b><br><br>
+      <div class="col">
+      #include &lt;stdio.h&gt;<br>
+        #include &lt;conio.h&gt;<br>
+          #include stdlib.h<br>
+            int push();<br>
+            int pop();<br>
+            struct node<br>
+            {<br>
+            int data[100];<br>
+            struct node *link;<br>
+            };<br>
+            struct node *start;<br>
+            struct node *new;<br>
+            struct node *track;<br>
+            int main()<br>
+            {<br>
+            int n=1,a;<br>
+            while(n!=0) <br>
+            {<br>
+            printf("press1 for push");<br>
+            printf("press2 for pop");<br>
+            printf("press3 for exit");<br>
+            printf("press the a=");<br>
+            scanf("%d",&a);<br>
+            if(a<=3)
+            {
+            switch(a) <br>
+            {<br>
+            case 1:push();<br>
+            break;<br>
+            case 2:track=pop();<br>
+            printf("stack is empty<br> now\n");<br>
+            break;<br>
+            case 3:return 0;<br>
+            }<br>
+            }<br>
+            else <br>
+            {<br>
+            printf("press valid button"\n);<br>
+            }<br>
+            }<br>
+            return 0;<br>
+            }<br>
+            int push() <br>
+            {<br>
+            if(start==NULL)<br>
+            {<br>
+            start=malloc(sizeof(struct node));<br>
+            printf("enter the value in start=");<br>
+            scanf("%s",&start->data);<br>
+            start->link=NULL;<br>
+            track=start;<br>
+            }<br>
+            else<br>
+            {<br>
+            new=malloc(sizeof(struct node));<br>
+            printf("enter the value in new=");<br>
+            scanf("%s",&new->data);<br>
+            new->link=track;<br>
+            track=new;<br>
+            }<br>
+            }<br>
+            int pop()<br>
+            {<br>
+            while(track!=NULL)<br>
+            {<br>
+            printf("%s ",track->data);<br>
+            track=track->link;<br>
+            }<br>
+            if(track==NULL)<br>
+            {<br>
+            return track;<br>
+            }<br>
+            }<br><br>
+            </div>
+              <div class="out">
+             <p>OUTPUT:<br>
+             Press1 for push<br>
+             Press2 for pop<br>
+             Press3 for peak<br>
+             Press the button=1<br>
+             Enter the string=pop<br>
+             Press the button=2<br>
+             values in stack=pop</p>
+             </div>
+<b class='e' style="font-size:24px">5.Implement the operation of stack in dynamically allocate string stack.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt; <br>
+  #include &lt;conio.h&gt;<br>
+    #include stdlib.h<br>
+      int push();<br>
+      int pop();<br>
+      struct node<br>
+      {<br>
+      char data[100];<br>
+      struct node *link;<br>
+      };<br>
+      struct node *start;<br>
+      struct node *new;<br>
+      struct node *track;<br>
+      int main()<br>
+      {<br>
+      int n=1,a;<br>
+      printf("press1 for push\n");<br>
+      printf("press2 for pop\n");<br>
+      printf("press3 for peek\n");<br>
+      printf("press any number greater<br> than 3 for exit");<br>
+      while(n!=0)<br>
+      {<br>
+      printf("press the a=");<br>
+      scanf("%d",&a);<br>
+      if(a<=3)
+      {
+      switch(a)<br>
+      {<br>
+      case 1:push();<br>
+      break;<br>
+      case 2:track=pop();<br>
+      printf("\nstack is empty now\n");<br>
+      break;<br>
+      case 3:return 0;<br>
+      break;<br>
+      }<br>
+      }
+      }<br>
+      return 0;<br>
+      }<br>
+      int push()<br>
+      {<br>
+      if(start==NULL)<br>
+      {<br>
+      start=malloc(sizeof(struct node));<br>
+      printf("enter the value in start=");<br>
+      scanf("%s",&start->data);<br>
+      start->link=NULL;<br>
+      track=start;<br>
+      }<br>
+      else<br>
+      {<br>
+      new=malloc(sizeof(struct node));<br>
+      printf("enter the value in new=");<br>
+      scanf("%s",&new->data);<br>
+      new->link=track;<br>
+      track=new;<br>
+      }<br>
+      }<br>
+      int pop()<br>
+      {<br>
+      while(track!=NULL)<br>
+      {<br>
+      printf("%s ",track->data);<br>
+      track=track->link;<br>
+      }<br>
+      if(track==NULL)<br>
+      {<br>
+      return track;<br>
+      }<br>
+      }<br><br>
+      </div>
+        <div class="out">
+       <p>OUTPUT:<br>
+       Press1 for push<br>
+       Press2 for pop<br>
+       Press3 for peak<br>
+      Press the button=1<br>
+       Enter the string=top<br>
+       Press the button=2<br>
+       values in stack=top</p>
+       </div>
+<b class='e' style="font-size:24px">6.Reversal of string using stack.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    void main()<br>
+    {<br>
+    char str[100];<br>
+    int arr[10];<br>
+    int top=0,i=0,count=0;<br>
+    printf("enter the string=");<br>
+    gets(str);<br>
+
+    for(i=0;str[i];i++)<br>
+    {<br>
+    count++;<br>
+    if(str[i]!=' ')<br>
+    {<br>
+    arr[top]=str[i];<br>
+    top++;<br>
+    }<br>
+    }<br>
+    printf("After reversing string=\n");<br>
+    for(top=count;top>=0;top--)<br>
+    {<br>
+    printf("%c",arr[top]);<br>
+    }<br>
+    getch();<br>
+    }<br><br>
+    </div>
+    <div class="out">
+     <p>OUTPUT:<br>
+     Enter the string=pankaj<br>
+     After reversing string=<br>
+     aajknp</p>
+     </div>
+<b class='e' style="font-size:24px">8.Evaluate postfix expression.</b><br>
+<div class="col">
+#include stdio.h<br><br>
+#include conio.h <br>
+int add();<br>
+int sub();<br>
+int div();<br>
+int mul();<br>
+int exp();<br>
+int arr[50],i,top=0;<br>
+void main()<br>
+{<br>
+char str[100]; <br>
+printf("enter the expression=");<br>
+gets(str);<br>
+for(i=0;str[i];i++)<br>
+{<br>
+if(str[i]!=' ')<br>
+{<br>
+switch(str[i])<br>
+{<br>
+case '+':add();<br>
+break;<br>
+case '-':sub();<br>
+break;<br>
+case '/':div();<br>
+break;<br>
+case '*':mul();<br>
+break;<br>
+default:top++;<br>
+arr[top]=str[i]-48;<br>
+} <br>
+}<br>
+}<br>
+printf("result:\n");<br>
+printf("%d",arr[top]);<br>
+getch();<br>
+}<br>
+int add()<br>
+{<br>
+int first,second,sum; <br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first+second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br>
+int sub()<br>
+{<br>
+int first,second,sum;<br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first-second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br>
+int div()<br>
+{<br>
+int first,second,sum;<br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first/second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}<br>
+int mul() <br>
+{<br>
+int first,second,sum;<br>
+first=arr[top];<br>
+top--;<br>
+second=arr[top];<br>
+top--;<br>
+sum=first*second;<br>
+top++;<br>
+arr[top]=sum;<br>
+}
+</div>
+  <div class="out">
+ <p>OUTPUT:<br>
+ Enter the expression=</p>
+ </div>
+</details>
+    <b><p class="e"style="font-size:34px">queue</p></b>
+      <p>Queue is a linear data structure in which elements are inserted from one end known as rear end and remove from other end known as front end. In other words anything that insert first will be the first to leave out. For this reason, queue is said to have a First In First Out (FIFO). queue is logically a first in first out structure but physically it is implementation of array and linked list. queue is not a real structure, but it just define how data is accessed rather than how it is store. </p>
+    <div class="l">
+      <div class="m">
+        <p style="font-size:50px">CIRCULAR</p>
+      </div>
+      <div class="m">
+        <p style="font-size:50px">SIMPLE</p>
+      </div>
+      <div class="m">
+        <p style="font-size:50px">PRIORITY</p>
+      </div>
+    </div>
+         <b class='e' style="font-size:24px"><p>Programs of queue</p></b>
+ <b>1.Program of simple queue.</b> <br>
+<br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int enqueue(int [],int);<br>
+int dequeue(int [],int,int);<br>
+void main()<br>
+{<br>
+int a,arr[5],rear=-1,front=-1;<br>
+printf("press1 for enqueue operation\n");<br>
+printf("press2 for dequeue operation\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=2)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:rear=push(arr,rear);<br>
+if(rear==5-1)<br>
+{<br>
+printf("queue is full\n");<br>
+}<br>
+break;<br>
+case 2:front=dequeue(arr,rear,front);<br>
+if(front>rear-1)<br>
+{<br>
+printf("queue is empty now\n");<br>
+}<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid number\n");<br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int enqueue(int arr[],int rear)<br>
+{<br>
+if(rear==5-1)<br>
+{<br>
+return rear;<br>
+}<br>
+else<br>
+{<br>
+rear++;<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[rear]);<br>
+return rear;<br>
+}<br>
+}<br>
+int dequeue(int arr[],int rear,int front)<br>
+{<br>
+if(front>rear-1)<br>
+{<br>
+return front;<br>
+}<br>
+else<br>
+{<br>
+front++;<br>
+printf("%d\n",arr[front]);<br>
+return front;<br>
+}<br>
+}<br><br>
+</div>
+  <div class="out">
+ <p>OUTPUT:<br>
+ Press1 for enqueue<br>
+ Press2 for dequeue<br>
+ Press the button=1<br>
+ Enter the value=10<br>
+ Press the button=2<br>
+ values in queue=10</p>
+ </div>
+<details>
+  <summary class='e' style=font-size:24px>Tab to view more program.<br></summary><br>
+<b>2.Implement the operation of simple queue in string array.(push,pop,peek).</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push(char [][100],int);<br>
+int pop(char [][100],int<br>
+int peak(char [][100],int);<br>
+void main() <br>
+{ <br>
+char arr[5][100]; <br>
+int a,i=-1;<br>
+printf("press1 for push operation\n");<br>
+printf("press2 for pop operation\n");<br>
+printf("press3 for peek operation\n\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=3)<br>
+{<br>
+switch(a) <br>
+{ <br>
+case 1:i=push(arr,i);<br>
+if(i==5-1)<br>
+{ <br>
+printf("stack is full\n");<br>
+}<br>
+break;<br>
+case 2:i=pop(arr,i);<br>
+if(i==-1)<br>
+{<br>
+printf("stack is empty now\n");<br>
+}<br>
+else<br>
+{<br>
+printf("string is deleted\n");<br>
+}<br>
+break;<br>
+case 3:i=peak(arr,i);<br>
+
+printf("%d\n",arr[i]);<br>
+
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid number\n"); <br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int push(char arr[][100],int i)<br>
+{<br>
+if(i==5-1)<br>
+{<br>
+return i;<br>
+}<br>
+else<br>
+{<br>
+i++;<br>
+printf("enter the value=");<br>
+scanf("%s",&arr[i]);<br>
+return i;<br>
+}<br>
+}<br>
+int pop(char arr[][100],int i)<br>
+{<br>
+if(i==-1)<br>
+{<br>
+return i;<br>
+}<br>
+else<br>
+{<br>
+printf("%s ",arr[i]);<br>
+i--;<br>
+return i;<br>
+}<br>
+}<br>
+int peak(char arr[][100],int i)<br>
+{<br>
+if(i==-1)<br>
+{<br>
+printf("emter some value first");<br>
+}<br>
+else<br>
+{<br>
+return i;<br>
+}<br>
+}<br><br>
+</div>
+  <div class="out">
+ <p>OUTPUT:<br>
+ Press1 for push<br>
+ Press2 for pop<br>
+Press3 for peak<br>
+ Press the button=1<br>
+ Enter the string=pop<br>
+ Press the button=2<br>
+ values in queue=pop</p>
+ </div>
+<b>3.WAP of simple queue but allocate memory dynamically.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include stdlib.h<br>
+      int push();<br>
+      int pop();<br>
+      struct node<br>
+      {<br>
+      int data;<br>
+      struct node *link;<br>
+      };<br>
+      struct node *start<br>
+      struct node *new;<br>
+      struct node *rear;<br>
+      struct node *front;<br>
+      void main()<br>
+      {<br>
+      int n=1,a;<br>
+      while(n!=0)<br>
+      {<br>
+      printf("press1 for push operation\n");<br>
+      printf("press2 for pop operation\n");<br>
+      printf("press the a=");<br>
+      scanf("%d",&a);<br>
+      if(a<=2)<br>
+      {<br>
+      switch(a)<br>
+      {<br>
+      case 1:push();<br>
+      break;<br>
+      case 2:front=pop();<br>
+      printf(" queue is empty now\n");<br>
+      break;<br>
+      }<br>
+      }<br>
+      }<br>
+      getch();<br>
+      }<br>
+      int push()<br>
+      {<br>
+      if(start==NULL)<br>
+      {<br>
+      start=malloc(sizeof(struct node));<br>
+      printf("enter the value in start=");<br>
+      scanf("%d",&start->data);<br>
+      start->link=NULL;<br>
+      rear=start;<br>
+      front=start;<br>
+      }<br>
+      else<br>
+      {<br>
+      new=malloc(sizeof(struct node));<br>
+      printf("enter the value in new=");<br>
+      scanf("%d",&new->data);<br>
+      rear->link=new;<br>
+      rear=rear->link;<br>
+      }<br>
+      }<br>
+      int pop()<br>
+      {<br>
+      while(front!=NULL)<br>
+      {<br>
+      printf("%d ",front->data);<br>
+      front=front->link;<br>
+      }<br>
+      if(front==NULL)<br>
+      {<br>
+      return front;<br>
+      }<br>
+      }<br><br>
+      </div>
+        <div class="out">
+       <p>OUTPUT:<br>
+       Press1 for push<br>
+       Press2 for pop<br>
+       Press3 for peak<br>
+       Press the button=1<br>
+       Enter the value=10<br>
+       Press the button=2<br>
+       values in queue=20</p>
+       </div>
+      <b>4.Enter a string queue from user dynamically and perfrom operations.</b><br><br>
+      <div class="col">
+      #include &lt;stdio.h&gt;<br>
+        #include &lt;conio.h&gt;<br>
+          #include stdlib.h<br>
+            int push();<br>
+            int pop();<br>
+            struct node<br>
+            {<br>
+            char data[100];<br>
+            struct node *link;<br>
+            };<br>
+            struct node *start;<br>
+            struct node *new;<br>
+            struct node *rear;<br>
+            struct node *front;<br>
+            int main()<br>
+            {<br>
+            int n=1,a;<br>
+            while(n!=0)<br>
+            {<br>
+            printf("press the a=");<br>
+            scanf("%d",&a);<br>
+            switch(a)<br>
+            {<br>
+            case 1:push();<br>
+            break;<br>
+            case 2:front=pop();<br>
+            printf(" queue is empty now\n");<br>
+            break;<br>
+            case 3:return 0;<br>
+            }<br>
+            }<br>
+            return 0;<br>
+            }<br>
+            int push()<br>
+            {<br>
+            if(start==NULL)<br>
+            {<br>
+            start=malloc(sizeof(struct node));<br>
+            printf("enter the value in start=");<br>
+            scanf("%s",&start->data);<br>
+            start->link=NULL;<br>
+            rear=start;<br>
+            front=start;<br>
+            }<br>
+            else<br>
+            {<br>
+            new=malloc(sizeof(struct node));<br>
+            printf("enter the value in new=");<br>
+            scanf("%s",&new->data);<br>
+            rear->link=new;<br>
+            rear=rear->link;<br>
+            }<br>
+            }<br>
+            int pop() <br>
+            {<br>
+            while(front!=NULL)<br>
+            {<br>
+            printf("%s ",front->data);<br>
+            front=front->link;<br>
+            }<br>
+            if(front==NULL)<br>
+            {<br>
+            return front;<br>
+            }<br>
+            }<br>
+            </div>
+              <div class="out">
+             <p>OUTPUT:<br>
+            Press1 for push<br>
+            Press2 for pop<br>
+             Press3 for peak<br>
+            Press the button=1<br>
+            Enter the string=snow<br>
+             Press the button=2<br>
+            values in queue=snow</p>
+            </div>
+            </details>
+   <br><p><b class='e' style="font-size:24px">Circular queue</b></p>
+<p>We observe that when we perform enqueue operation and dequeue operation the value of rear and front value is increased by one. But the main problem occur when rear variable reach the end of the array. suppose if there two locations are empty at begining of the array we can't insert element at that locations because the rear variable cannot cross the maxsize of the array. so a most efficient alternative is to let a queue that wrap around the array, such queue is known as circular queue.</p>
+<p>In circular queue, last element is followed by fist element of the array. when the rear and front variable reach the maxsize of the array. Rear and front value is set to 1 and 0 respectively.</p>
+
+ <b class='e' style="font-size:24px"><p>Programs of circular queue</p></b>
+ <b>1.Perform operation of simple in circular queue.</b><br><br>
+ <div class="col">
+ #include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+int enqueue(int [],int);<br>
+int dequeue(int [],int,int);<br>
+void main()<br>
+{<br>
+int a,arr[5],rear=-1,front=-1;<br>
+printf("press1 for enqueue operation\n");<br>
+printf("press2 for dequeue operation\n");<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+if(a<=2)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:rear=enqueue(arr,rear);<br>
+if(rear==5-1)<br>
+{<br>
+printf("queue is full\n");<br>
+}<br>
+break;<br>
+case 2:front=dequeue(arr,rear,front);<br>
+if(front>rear-1)<br>
+{<br>
+printf("queue is empty now\n");<br>
+}<br>
+if(front==rear)<br>
+{<br>
+rear=-1;<br>
+front=-1;<br>
+}<br>
+break;<br>
+}<br>
+}<br>
+else <br>
+{<br>
+printf("press valid number\n");<br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int enqueue(int arr[],int rear)<br>
+{<br>
+if(rear==5-1)<br>
+{<br>
+return rear;<br>
+}<br>
+else<br>
+{<br>
+rear++;<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[rear]);<br>
+return rear;<br>
+}<br>
+}<br>
+int dequeue(int arr[],int rear,int front)<br>
+{<br>
+if(front>rear-1)<br>
+{<br>
+return front;<br>
+}<br>
+else<br>
+{<br>
+front++;<br>
+printf("%d\n",arr[front]);<br>
+return front;<br>
+}<br>
+}<br><br>
+</div>
+  <div class="out">
+ <p>OUTPUT:<br>
+ Press1 for push<br>
+ Press2 for pop<br>
+Press the button=1<br>
+ Enter the value=50<br>
+ Press the button=20<br>
+ Data in circular queue=50</p>
+ </div>
+<details>
+  <summary class='e'style=font-size:24px>Tab to view more programs.<br></summary><br>
+<b>2.Perform operation of circular queue in string array.(push,pop,peek).</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push(char [][100],int);<br>
+int pop(char [][100],int,int);<br>
+int peak(char [][100],int);<br>
+int main ()<br>
+{<br>
+char arr[5][100];<br>
+int a,i=-1,j=-1;<br>
+while(1)<br>
+{<br>
+printf("press the button=");<br>
+scanf("%d",&a);<br>
+switch(a)<br>
+{<br>
+case 1:i=push(arr,i);<br>
+if(i==5-1)<br>
+{<br>
+printf("queue is full\n"); <br>
+}<br>
+break;<br>
+case 2:j=pop(arr,i,j);<br>
+if(j>i-1)<br>
+{<br>
+printf("queue is empty now\n");<br>
+}<br>
+if(j==i)<br>
+{<br>
+i=-1;<br>
+j=-1;<br>
+}<br>
+break;<br>
+case 3:i=peak(arr,i);<br>
+printf("%s\n",arr[i]);<br>
+break;<br>
+case 4:return 0;<br>
+break;<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push(char arr[][100],int i)<br>
+{<br>
+if(i==5-1)<br>
+{<br>
+return i;<br>
+}<br>
+else<br>
+{<br>
+i++;<br>
+printf("enter the value=");<br>
+scanf("%s",&arr[i]);<br>
+return i;<br>
+}<br>
+}<br>
+int pop(char arr[][100],int i,int j)<br>
+{<br>
+if(j>i-1)<br>
+{<br>
+return j;<br>
+}<br>
+else<br>
+{<br>
+j++;<br>
+printf("%s\n",arr[j]);<br>
+return j;<br>
+}<br>
+}<br>
+int peak(char arr[][100],int i)<br>
+{<br>
+return i;<br>
+}<br><br>
+</div>
+  <div class="out">
+ <p>OUTPUT:<br>
+Press1 for push<br>
+Press2 for pop<br>
+Press the button=1<br>
+Enter the string=pop<br>
+Press the button=2<br>
+ Data in circular queue=pop</p>
+ </div>
+<b>3.WAP of circular queue but allocate
+memory dynamically.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include stdlib.h<br>
+      int push();<br>
+      int pop();<br>
+      struct node<br>
+      {<br>
+      int data;<br>
+      struct node *link;<br>
+      };<br>
+      struct node *start;<br>
+      struct node *new;<br>
+      struct node *rear;<br>
+      struct node *front;<br>
+      int main()<br>
+      {<br>
+      int n=1,a;<br>
+      while(n!=0)<br>
+      {<br>
+      printf("press the a=");<br>
+      scanf("%d",&a);<br>
+      switch(a)<br>
+      {<br>
+      case 1:push(); <br>
+      break;<br>
+      case 2:front=pop();<br>
+      printf("queue is empty now\n");<br>
+      break;<br>
+      case 3:return 0;<br>
+      break;<br>
+      }<br>
+      if(front==NULL)<br>
+      {<br>
+      front=rear;<br>
+      }<br>
+      }<br>
+      return 0;<br>
+      }<br>
+      int push()<br>
+      {<br>
+      if(start==NULL)<br>
+      {<br>
+      start=malloc(sizeof(struct node));<br>
+      printf("enter the value in start=");<br>
+      scanf("%d",&start->data);<br>
+      start->link=NULL;<br>
+      rear=start;<br>
+      front=start;<br>
+      }<br>
+      else<br>
+      {<br>
+      new=malloc(sizeof(struct node));<br>
+      printf("enter the value in new=");<br>
+      scanf("%d",&new->data);<br>
+      rear->link=new;<br>
+      rear=rear->link;<br>
+      }<br>
+      }<br>
+      int pop()<br>
+      {<br>
+      while(front!=NULL)<br>
+      {<br>
+      printf("%d ",front->data);<br>
+      front=front->link;<br>
+      }<br>
+      if(front==NULL)<br>
+      {<br>
+      return front; <br>
+      }<br>
+      }<br>
+      </div>
+        <div class="out">
+       <p>OUTPUT:<br>
+      Press1 for push<br>
+      Press2 for pop<br>
+       Press the button=1<br>
+      Enter the value=30<br>
+       Press the button=2<br>
+       values in circular queue=30</p>
+       </div>
+</details>
+<p><b class='e' style="font-size:24px">Double ended queue</b></p>
+ <p>A deque is a linear data structure, which stands for Double Ended Queue. Unlike queue, where the data can be only inserted from one end and deleted from another, in a deque, the data can be inserted and deleted from both front and rear ends.</p>
+ <p>In addition, we also need to maintain front and rear pointer.<br></p>
+  <b class='e' style="font-size:24px"><p>Programs of Dqueue</p></b>
+<b>1.Create double ended queue and perfrom operation insert rght,left, delete right,left.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include stdlib.h<br>
+      int push();<br>
+      int pop();<br>
+      struct node<br>
+      {<br>
+      int data;<br>
+      struct node *link;<br>
+      };<br>
+      struct node *start;<br>
+      struct node *new;<br>
+      struct node *rear;<br>
+      struct node *front,*temp,*cc,*tt;<br>
+      int main()<br>
+      {<br>
+      int n=1,a;<br>
+      while(n!=0)<br>
+      {<br>
+      printf("\npress1 for insert at end\n");<br>
+      printf("press2 for display\n");<br>
+      printf("press3 for insert at bigining\n");<br>
+      printf("press4 for delete at end\n");<br>
+      printf("press5 for delete at bigining\n");<br>
+      printf("press6 for exit\n");<br>
+      printf("press the button=");<br>
+      scanf("%d",&a);<br>
+      if(a<=6)
+      {
+      switch(a)<br>
+      {<br>
+      case 1:push();<br>
+      break;<br>
+      case 2:front=pop();<br>
+      printf("\ndequeue is empty now\n");<br>
+      break;<br>
+      case 3:insert();<br>
+      break;<br>
+      case 4:delete();<br>
+      break;<br>
+      case 5:delete1();<br>
+      break;<br>
+      case 6:return 0;
+      break;
+      }<br>
+      }<br>
+      else<br>
+      {<br>
+      printf("press valid button\n");<br>
+      }<br>
+      }<br>
+      return 0;<br>
+      }<br>
+      </div>
+      </div>
+      <br>
+      <details><summary class='e'style=font-size:24px>Tab to see more programs<br></summary>
+      <div class="col">
+      <br>int push()<br>
+      {<br>
+      if(start==NULL)<br>
+      {<br>
+      start=malloc(sizeof(struct node));<br>
+      printf("enter the value in start=");<br>
+      scanf("%d",&start->data);<br>
+      start->link=NULL;<br>
+      rear=start;<br>
+      front=start;<br>
+      }<br>
+      else<br>
+      {<br>
+      new=malloc(sizeof(struct node));
+      printf("enter the value in new=");<br>
+      scanf("%d",&new->data);<br>
+      rear->link=new;<br>
+      rear=rear->link;<br>
+      }<br>
+      }<br>
+      int insert()<br>
+      {<br>
+      temp=malloc(sizeof(struct node));<br>
+      printf("emter the value=");<br>
+      scanf("%d",&temp->data);<br>
+      temp->link=start;<br>
+      front=temp;<br>
+      }<br>
+      int delete()<br>
+      {<br>
+      cc=start;<br>
+      front=front->link;<br>
+      free(cc);<br>
+      cc=NULL;<br>
+      }<br>
+      int delete1()<br>
+      {<br>
+      rear=start;<br>
+      tt=start;<br>
+      while(tt!=NULL)<br>
+      {<br>
+      tt=rear;<br>
+      rear=rear->link;<br>
+      }<br>
+      free(rear);<br>
+      rear=NULL;<br>
+      }<br>
+      int pop()<br>
+      {<br>
+      while(front!=NULL)<br>
+      {<br>
+      printf("%d ",front->data);<br>
+      front=front->link;<br>
+      }<br>
+      }<br><br>
+      </div>
+       <div class="out">
+         <p>OUTPUT:<br>
+           press1 for insert at end<br>
+           press2 for display<br>
+           press3 for insert at bigining<br>
+           press4 for delete at end<br>
+           press5 for delete at bigining<br>
+           press6 for exit<br>
+           press the button=1<br>
+           Enter the value=10<br>
+           press the button=3<br>
+           Enter the value=40<br>
+           press the button=2<br>
+           value=40,10<br>
+         </p>
+         </div>
+      <b>2.Create string double ended queue and perform operations of insertion right,left and delete right,left.</b><br><br>
+      <div class="col">
+      #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+int push();<br>
+int pop();<br>
+struct node<br>
+{<br>
+char data[100];<br>
+struct node *link;<br>
+};<br>
+struct node *start;<br>
+struct node *new;<br>
+struct node *rear;<br>
+struct node *front,*temp,*cc,*tt;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("press the a=");<br>
+scanf("%d",&a);<br>
+if(a<=6)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:front=pop();<br>
+printf("\ndequeue is empty now\n");<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:delete();<br>
+break;<br>
+case 5:delete1();<br>
+break;<br>
+case 6:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&start->data);<br>
+start->link=NULL;<br>
+rear=start;<br>
+front=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&new->data);<br>
+rear->link=new;<br>
+rear=rear->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+temp=malloc(sizeof(struct node));<br>
+printf("emter the value=");<br>
+scanf("%s",&temp->data);<br>
+temp->link=start;<br>
+front=temp;<br>
+}<br>
+int delete()<br>
+{<br>
+cc=start;<br>
+front=front->link;<br>
+free(cc);<br>
+cc=NULL;<br>
+}<br>
+int delete1()<br>
+{<br>
+rear=start;<br>
+tt=start;<br>
+while(tt!=NULL)<br>
+{<br>
+tt=rear;<br>
+rear=rear->link;<br>
+}<br>
+free(rear);<br>
+rear=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+while(front!=NULL)<br>
+{<br>
+printf("%s ",front->data);<br>
+front=front->link;<br>
+}<br>
+}<br><br>
+</div>
+ <div class="out">
+   <p>OUTPUT:<br>
+     press1 for insert at end<br>
+     press2 for display<br>
+     press3 for insert at bigining<br>
+     press4 for delete at end<br>
+     press5 for delete at bigining<br>
+     press6 for exit<br>
+     press the button=1<br>
+     Enter the value=pop<br>
+     press the button=3<br>
+     Enter the value=top<br>
+     press the button=2<br>
+     value=top,pop<br>
+   </p>
+   </div>
+</details>
+<p><b class='e' style="font-size:24px">Priority queue</b></p>
+<p>Hence, a priority queue in the data structure arranges the elements in either ascending or descending order. You can think of a priority queue as several patients waiting in line at a hospital. Here, the situation of the patient defines the priority order.</p>
+       <b class='e' style="font-size:24px"><p>Programs of Priority queue</p></b>
+       <b>1.Create a queue and print values according to priority</b><br><br>
+       <div class="col">
+       #include &lt;stdio.h&gt;<br>
+         #include &lt;conio.h&gt;<br>
+           #include &lt;stdlib.h&gt;<br>
+             struct node<br>
+             {<br>
+             int data;<br>
+             int p;<br>
+             struct node *link;<br>
+             };<br>
+             struct node *pointer;<br>
+             struct node *start;<br>
+             struct node *new,*temp;<br>
+             void main()<br>
+             {<br>
+             int n=1,a;<br>
+             while(n!=0)<br>
+             {<br>
+             printf("\npress the button=");<br>
+             scanf("%d",&a);<br>
+             if(a<=3)
+             {
+             switch(a)<br>
+             {<br>
+             case 1:push();<br>
+             break;<br>
+             case 2:pop();<br>
+             break;
+             case 3:return 0;
+             break;
+             }<br>
+             }<br>
+             else 
+             {
+             printf("press valid button\n");
+             }
+             }
+             return 0;<br>
+             }<br>
+             </div>
+             <br>
+             <details><summary class='e'style=font-size:24px>Tab to see more programs<br></summary>
+             <div class="col">
+             int push()<br>
+             {<br>
+             if(start==NULL)<br>
+             {<br>
+             start=malloc(sizeof(struct node));<br>
+             printf("\nenter the value=");<br>
+             scanf("%d",&start->data);<br>
+             printf("\nenter the priority=");<br>
+             scanf("%d",&start->p);<br>
+             start->link=NULL;<br>
+             pointer=start;<br>
+             temp=start;<br>
+             }<br>
+             else<br>
+             {<br>
+             new=malloc(sizeof(struct node));<br>
+             printf("\nenter the value=");<br>
+             scanf("%d",&new->data);<br>
+             printf("\nenter the<br> priority=");<br>
+             scanf("%d",&new->p);<br>
+             new->link=NULL;<br>
+             if(pointer->p>new->p)<br>
+             {<br>
+             temp->link=new;<br>
+             }<br>
+             else<br>
+             {<br>
+             new->link=pointer;<br>
+             pointer=new;<br>
+             }<br>
+             }<br>
+             }<br>
+             int pop()<br>
+             {<br>
+             printf("value according to priority\n");<br>
+             while(pointer!=NULL)<br>
+             {<br>
+             printf("%d ",pointer->data);<br>
+             pointer=pointer->link;<br>
+             }<br>
+             }<br>
+             </div>
+               <div class="out">
+              <p>OUTPUT:<br>
+              Press1 for push<br>
+              Press2 for pop<br>
+            Press the button=1<br>
+            Enter the value=20<br>
+            Enter the priority=1<br>
+              Press the button=2<br>
+              values in queue=20</p>
+              </div>
+             <b>2.Create a string priority queue and print according to priority.</b><br><br>
+             <div class="col">
+             #include &lt;stdio.h&gt;<br>
+               #include &lt;conio.h&gt;<br>
+                 #include &lt;stdlib.h&gt;<br>
+                   struct node<br>
+                   {<br>
+                   char data[100];<br>
+                   int p;<br>
+                   struct node *link;<br>
+                   };<br>
+                   struct node *pointer;<br>
+                   struct node *start;<br>
+                   struct node *new,*temp;<br>
+                   void main()<br>
+                   {<br>
+                   int n=1,a;<br>
+                   while(n!=0)<br>
+                   {<br>
+                   printf("\npress the button=");<br>
+                   scanf("%d",&a);<br>
+                   switch(a)<br>
+                   {<br>
+                   case 1:push();<br>
+                   break;<br>
+                   case 2:pop();<br>
+                   break;<br>
+                   }<br>
+                   }<br>
+                   getch();<br>
+                   }<br>
+                   int push()<br>
+                   {<br>
+                   if(start==NULL)<br>
+                   {<br>
+                   start=malloc(sizeof(struct node));<br>
+                   printf("\nenter the string=");<br>
+                   scanf("%s",&start->data);<br>
+                   printf("\nenter the priority=");<br>
+                   scanf("%s",&start->p);<br>
+                   start->link=NULL;<br>
+                   pointer=start;<br>
+                   temp=start;<br>
+                   }<br>
+                   else<br>
+                   {<br>
+                   new=malloc(sizeof(struct node));<br>
+                   printf("\nenter the string=");<br>
+                   scanf("%s",&new->data);<br>
+                   printf("\nenter the priority=");<br>
+                   scanf("%s",&new->p);<br>
+                   new->link=NULL;<br>
+                   if(pointer->p>new->p)<br>
+                   {<br>
+                   temp->link=new;<br>
+                   }<br>
+                   else<br>
+                   {<br>
+                   new->link=pointer;<br>
+                   pointer=new;<br>
+                   }<br>
+                   }<br>
+                   }<br>
+                   int pop()<br>
+                   {<br>
+                   printf("value according to priority\n");<br>
+                   while(pointer!=NULL)<br>
+                   {<br>
+                   printf("%s ",pointer->data);<br>
+                   pointer=pointer->link;<br>
+                   }<br>
+                   }<br><br>
+                   </div>
+                     <div class="out">
+                    <p>OUTPUT:<br>
+                    Press1 for push<br>
+                  Press2 for pop<br>
+                    Press the button=1<br>
+                  Enter the string=pop<br>
+                  Enter the priority=1<br>
+                    Press the button=2<br>
+                    Data in queue=pop</p>
+                    </div>
+                   </details>
+                   <br>
+       <b class='e' style="font-size:34px">What is array. </b><br><br>
+       Array is defined as a finite order set of homogenous elements.By the term homogenous
+       we mean that there is a specific number of elements in an array which may be large and small but it may exist. By the term order we mean that all elements of the array are arranged in sequence. The homogenous property of array means that all the elements of the array are of same type.<br> So an array contain of all integers and all character but not the matrix of both.<br>
+         <div class="l">
+           <div class="m">
+             <p style="font-size:50px">2D ARRAY</p>
+           </div>
+           <div class="m">
+             <p style="font-size:50px">ARRAY</p>
+           </div>
+           <div class="m">
+             <p style="font-size:50px">3D ARRAY</p>
+           </div>
+         </div>
+       <b class='e' style="font-size:24px"><p>Operations that we can perform on array</p></b>
+       1.Insert operation<br><br>
+       Insert operation is refers to the process of inserting a new element in the array.<br> An element can be inserted either at any arbitraray position specified within the array if the array is sorted or at the end of the array if array is not sorted.<br>
+       After inserting an element, the size of the array increase by 1. So before performing insert operation, one should make sure that there must be adequate memory space so as to accommodate the new element.<br><br>
+       <b>2.Delete operation</b><br><br>
+       Delete refers to a process of removing an existing element from an array. In order to delete an element, you must frist search it using one of the technique i.e linear or binary searching. After searching the element it is removed and each subsequent is shifted one location upward so as to keep the order of array undisturbed.<br>
+        <b class='e' style="font-size:24px"><p>Programs of array</p></b>
+        <b>1.Program to enter value in array and display entered values.</b><br><br>
+        <div class="col">
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value in %dindex=",i);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("your entered values are=\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("%d",arr[i]);<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+Enter the value in 1index=2<br>
+Enter the value in 2index=3<br>
+Enter the value in 3index=4<br>
+Enter the value in 4index=5<br>
+your entered value are=<br>
+1,2,3,4,5</p>
+</div>
+<details>
+  <summary class='e'style=font-size:24px>Tab to view more programs.<br></summary><br>
+
+  <b>2.Enter the value from user and display values in reverse order.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value in %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("your entered values are=\n");<br>
+for(i=4;i>=0;i--)<br>
+{<br>
+printf("%d",arr[i]);<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+Enter the value in 1index=2<br>
+Enter the value in 2index=3<br>
+Enter the value in 3index=4<br>
+Enter the value in 4index=5<br>
+your entered value are=<br>
+5,4,3,2,1</p>
+</div>
+<b>3.Enter value in array and copy in second array and display.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],arr1[5],i=0,a=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter value at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+arr1[a]=arr[i];<br>
+a++;<br>
+}<br>
+printf("value copied in second array\n");<br>
+for(a=0;a<5;a++)<br>
+{<br>
+printf("%d",arr1[a]);<br>
+}<br>
+getch();<br>
+}<br><br>
+  </div>
+    <div class="out">
+  <p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+  Enter the value in 1index=2<br>
+  Enter the value in 2index=3<br>
+  Enter the value in 3index=4<br>
+  Enter the value in 4index=5<br>
+  After copying value in second array =<br>
+  1,2,3,4,5</p>
+  </div>
+<b>4.Enter value from user in array and copy into second array in reverse order and display.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],arr1[5],i=0,a=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter value at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+arr1[a]=arr[i];<br>
+a++;<br>
+}<br>
+printf("value copied in second array\n");<br>
+for(a=4;a>=0;a--)<br>
+{<br>
+printf("%d",arr1[a]);<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+Enter the value in 1index=2<br>
+Enter the value in 2index=3<br>
+Enter the value in 3index=4<br>
+Enter the value in 4index=5<br>
+values copied in second array=<br>
+5,4,3,2,1</p>
+</div>
+<b>5.Enter an array from user and display numbers which are even.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter value at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("Even values in array are=\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+if(arr[i]%2==0)<br>
+{<br>
+printf("%d ",arr[i]);<br>
+}<br>
+}<br>
+getch();<br>
+}<br><br>
+  </div>
+    <div class="out">
+  <p>OUTPUT:<br>
+  Enter the value in 0index=1<br>
+  Enter the value in 1index=2<br>
+  Enter the value in 2index=3<br>
+  Enter the value in 3index=4<br>
+Enter the value in 4index=5<br>
+  Even values in array are=<br>
+  2,4</p>
+  </div>
+  <b>6.Enter an array from user and display numbers which are positive.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i=0;<br>
+for(i=0;i<5;i++) <br>
+{<br>
+printf("enter value at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("Positives values in array are=\n"); <br>
+for(i=0;i<5;i++)<br>
+{<br>
+if(arr[i]>0)<br>
+{<br>
+printf("%d ",arr[i]);<br>
+} <br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+Enter the value in 1index=-2<br>
+Enter the value in 2index=3<br>
+Enter the value in 3index=-4<br>
+Enter the value in 4index=5<br>
+Positive values in array are=<br>
+1,3,5</p>
+</div>
+<b>7.Enter an array from the user and square all the values of array.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;math.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter value at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("square of all the values\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+arr[i]=pow(arr[i],2);<br>
+printf("%d ",arr[i]);<br>
+}<br>
+getch();<br>
+}<br><br>
+  </div>
+    <div class="out">
+  <p>OUTPUT:<br>
+  Enter the value in 0index=1<br>
+  Enter the value in 1index=2<br>
+  Enter the value in 2index=3<br>
+  Enter the value in 3index=4<br>
+  Enter the value in 4index=5<br>
+  square of all the values=<br>
+  1,2,9,16,25</p>
+  </div>
+  <b>8.Enter an array from user and find the kth smallest vlaue.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt; <br>
+void main()<br>
+{<br>
+int arr[5],i,j,temp,pos;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br><br>
+{<br>
+for(j=i+1;j<5;j++)<br>
+{<br>
+if(arr[i]>arr[j])<br>
+{<br>
+temp=arr[i];<br>
+arr[i]=arr[j];<br>
+arr[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+printf("your position value is=%d",arr[pos]);<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=5<br>
+Enter the value in 1index=3<br>
+Enter the value in 2index=4<br>
+Enter the value in 3index=1<br>
+Enter the value in 4index=2<br>
+Enter the position=3<br>
+your position value is=1</p>
+</div>
+<b>9.Enter an array from the user and add all the values.</b><br><br>
+<div class="col">
+ #include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,sum=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the values at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+sum=sum+arr[i];<br>
+}<br>
+printf("sum of all values of array=%d",sum);<br>
+getch();<br>
+}<br><br>
+  </div>
+    <div class="out">
+  <p>OUTPUT:<br>
+  Enter the value in 0index=1<br>
+Enter the value in 1index=2<br>
+  Enter the value in 2index=3<br>
+  Enter the value in 3index=4<br>
+  Enter the value in 4index=5<br>
+  sum of all values are=<br>
+15</p>
+  </div>
+  <b>10.Enter an array from user and find duplicate values in array.</b><br><br>
+  <div class="col">
+    #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[2],i,j;<br>
+for(i=0;i<2;i++)<br>
+{<br>
+printf("enter the values at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=i+1;j<2;j++)<br>
+{<br>
+if(arr[i]==arr[j])<br>
+{<br>
+printf("Duplicates values are=\n");<br>
+printf("%d",arr[i]);<br>
+break;<br>
+}<br>
+else<br>
+{<br>
+printf("there is no duplicate values in array");
+}<br>
+}<br>
+}<br>
+getch();<br>
+}<br><br>
+  </div>
+    <div class="out">
+  <p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+Enter the value in 1index=2<br>
+Enter the value in 2index=1<br>
+Enter the value in 3index=4<br>
+Enter the value in 4index=5<br>
+  Duplicate value are=1</p>
+  </div>
+  <b>11.Enter an array from the user and count duplicate values.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,j,count=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the values at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("Number of Duplicates values are=\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+for(j=i+1;j<5;j++)<br>
+{<br>
+if(arr[i]==arr[j])<br>
+{<br>
+count++;<br>
+break;<br>
+}<br>
+}<br>
+}<br>
+printf("%d",count);<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=1<br>
+Enter the value in 1index=2<br>
+Enter the value in 2index=1<br>
+Enter the value in 3index=2<br>
+Enter the value in 4index=5<br>
+No of duplicate values are=<br>
+1,2</p>
+</div>
+  <b>12.Enter an array from the user and print all the palindrones.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,sum=0,rem,temp;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the number=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+temp=arr[i];<br>
+sum=0;<br>
+while(temp>0)<br>
+{<br>
+rem=temp%10;<br>
+sum=sum*10+rem;<br>
+temp=temp/10;<br>
+}<br>
+if(sum==arr[i])<br>
+{<br>
+printf("palindrome number is=%d\n",arr[i]);<br>
+}<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in 0index=101<br>
+Enter the value in 1index=202<br>
+Enter the value in 2index=309<br>
+Enter the value in 3index=404<br>
+Enter the value in 4index=505<br>
+Palindrome value are=<br>
+101<br>
+202<br>
+404<br>
+505</p>
+</div>
+<b>13.Enter two arrays from the user and check both array are same or not.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[1],arr1[1],i,j;<br>
+for(i=0;i<1;i++)<br>
+{<br>
+printf("enter the value in 1array=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(j=0;j<1;j++)<br>
+{<br>
+printf("enter the value in 2array=");<br>
+scanf("%d",&arr1[j]);<br>
+}<br>
+for(i=0;i<1;i++)<br>
+{<br>
+for(j=0;j<1;j++)<br>
+{<br>
+if(arr[i]==arr1[j])<br>
+{<br>
+printf("Both array are same");<br>
+}<br>
+else<br>
+{<br>
+printf("Array are not same");<br>
+}<br>
+}<br>
+}<br>
+getch(); <br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the value in first array=123<br>
+Enter the value in second array=123<br>
+Both array are same</p><br>
+</div>
+  <b>14.Program of trapping rain water problem.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+    int arr[5],i,l=0,h=2,mid,a,b,k;<br>
+    for(i=0;i<3;i++)<br>
+    {<br>
+    printf("emter the height of building=");<br>
+    scanf("%d",&arr[i]);<br>
+    }<br>
+    mid=(l+h)/2;<br>
+    for(i=0;i<mid;i++)<br>
+    {<br>
+    if(arr[i]>arr[mid])<br>
+    {<br>
+    a=arr[i]; <br>
+    }<br>
+    }<br>
+    for(i=2;i<=2;i++)<br>
+    {<br>
+    if(arr[i]>arr[mid])<br>
+    {<br>
+    b=arr[i];<br>
+    }<br>
+    }<br>
+    if(b>a)<br>
+    {<br>
+    k=a-arr[mid];<br>
+    }<br>
+    else<br>
+    {<br>
+    k=b-arr[mid];<br>
+    }<br>
+    printf("water can store in %d block",k);<br>
+  getch();  <br>
+}<br><br>
+</div>
+  <div class="out">
+<p>OUTPUT:<br>
+Enter the hieght of building=4<br>
+Enter the hieght of building=2<br>
+Enter the hieght of building=3<br>
+water can store in 1 block</p>
+</div>
+ <b>15.Enter an array from user and find maximum and minimum value in array.</b><br><br>
+ <div class="col">
+ #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,max,min;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the values=");<br>
+scanf("%d",&arr[i]); <br>
+}<br>
+max=arr[0];<br>
+for(i=0;i<5;i++)<br>
+{<br>
+if(arr[i]>max)<br>
+{<br>
+max=arr[i];<br>
+}<br>
+}<br>
+min=arr[0];<br>
+for(i=0;i<5;i++)<br>
+{<br>
+if(arr[i]<min)<br>
+{<br>
+min=arr[i];<br>
+}<br>
+}<br>
+printf("Maximum value of array=%d\n",max);<br>
+printf("Minimum value of array=%d",min);<br>
+
+getch();<br>
+}<br><br>
+</div>
+</div>
+  <div class="out">
+    <p>Enter the value in 0index=1<br>
+      Enter the value in 1index=2<br>
+        Enter the value in 2index=3<br>
+    Enter the value in 3index=4<br>
+      Enter the value in 4index=5<br>
+  maximum value of array=5<br>
+  minimum value of array=1</p>
+  </div>
+  <b>16.Enter an array from user and display all possible combination.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[3],i,j,k;<br>
+for(i=0;i<3;i++)<br>
+{<br>
+printf("enter the values=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("possible combination of values\n");<br>
+for(i=0;i<3;i++)<br>
+{<br>
+for(j=i;j<3;j++)<br>
+{<br>
+for(k=i;k<3;k++)<br>
+{<br>
+printf("%d %d %d\n",arr[i],arr[j],arr[k]);<br>
+}<br>
+}<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+  <div class="out">
+    <p>OUTPUT:<br>
+    possible combination of values are=<br>
+    111<br>
+     112<br>
+    113<br>
+       221<br>
+        222<br>
+         223<br>
+          333<br>
+           331<br>
+            332</p>
+            </div>
+  <b>17.Enter an array from user and fill duplicate values with zero.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt; <br>
+void main()<br>
+{<br>
+int arr[5],i,j;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the values at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+for(j=i+1;j<5;j++)<br>
+{<br>
+if(arr[i]==arr[j])<br>
+{<br>
+arr[j]=0;<br>
+break;<br>
+}<br>
+}<br>
+}<br>
+printf("Duplicate values are filled with zero\n");<br>
+for(j=0;j<5;j++)<br>
+{<br>
+printf("%d",arr[j]);<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+ <div class="out">
+   <p>OUTPUT:<br>
+   Enter value in 1index=10<br>
+  Enter value in 2index=40<br>
+ Enter value in 3index=10<br>
+  Enter value in 4index=40<br>
+  Enter value in 5index=50<br>
+   Duplicate values are filled with zero<br>
+   10,40,0,0,50</p>
+   </div>
+ </div>
+ <b>18.Enter two array and merge in one array and sort.</b><br><br>
+ <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],arr1[5],merge[10],i,j,temp,p=0,l;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("\nenter the values at %dindex=",i+1);<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("\nenter the values at %dindex=",i+1);<br>
+scanf("%d",&arr1[i]);<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+for(j=i+1;j<5;j++)<br>
+{<br>
+if(arr[i]>arr[j])<br>
+{<br>
+temp=arr[i];<br>
+arr[i]=arr[j];<br>
+arr[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+merge[p]=arr[i];<br>
+p++;<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br><br>
+for(j=i+1;j<5;j++)<br>
+{<br>
+if(arr1[i]>arr1[j])<br>
+{<br>
+temp=arr1[i];<br>
+arr1[i]=arr1[j];<br>
+arr1[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+for(i=0;i<5;i++)<br>
+{<br>
+merge[p]=arr1[i];<br>
+p++;<br>
+}<br>
+for(p=0;p<10;p++)<br>
+{<br>
+for(l=p+1;l<10;l++)<br>
+{<br>
+if(merge[p]>merge[l])<br>
+{<br>
+temp=merge[p];<br>
+merge[p]=merge[l];<br>
+merge[l]=temp;<br>
+}<br>
+}<br>
+}<br>
+printf("After sorting values\n");<br>
+for(p=0;p<10;p++)<br>
+{<br>
+printf("%d",merge[p]);<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+<p>OUTPUT:<br>
+ Enter value in 1index=80<br>
+  Enter value in 2index=10<br>
+  Enter value in 3index=67<br>
+  Enter value in 4index=60<br>
+    Enter value in 5index=70<br>
+Enter value in 1index=30<br>
+  Enter value in 1index=20<br>
+   Enter value in 1index=40<br>
+    Enter value in 1index=100<br>
+    Enter value in 1index=60<br>
+After sorting values<br>
+10,20,30,40,60,60,67,70,80,100</p>
+</div>
+<b>19.WAP to find local maxima of the array.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int max(int [],int);<br>
+void main()<br>
+{<br>
+int arr[5],i;<br>
+max(arr,i);<br>
+getch();<br>
+}<br>
+int max(int arr[],int i)<br>
+{<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("The local maxima of array is=\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+if(arr[i]>arr[i+1])<br>
+{<br>
+if(arr[i]>arr[i-1])<br>
+{<br>
+printf("%d",arr[i]);<br>
+}<br>
+}<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+<p>OUTPUT:<br>
+Enter the values=10<br>
+Enter the values=30<br>
+Enter the values=20<br>
+Enter the values=40<br>
+Enter the values=50<br>
+the local maxima of array is=30</p>
+</div>
+<b>20.WAP to find local minima of the array.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int max(int [],int);<br>
+void main()<br>
+{<br>
+int arr[5],i;<br>
+max(arr,i);<br>
+getch();<br>
+}<br>
+int max(int arr[],int i)<br>
+{<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value=");
+scanf("%d",&arr[i]);<br>
+}<br>
+printf("The local minima of array is=\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+if(arr[i]<arr[i+1])<br>
+{<br>
+if(arr[i]<arr[i-1])<br>
+{<br>
+printf("%d",arr[i]);<br>
+}<br>
+}<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+Enter the values=30<br>
+Enter the values=10<br>
+  Enter the values=20<br>
+  Enter the values=40<br>
+  Enter the values=50<br>
+  the local maxima of array is=10</p>
+</div>
+  </details>
+<br><b class='e' style="font-size:34px">Two dimensional array</b><br><br>
+Two dimensional array is a collection of homogenous elements in which elements are refered with two indexes.2D array is used when data being represented can be naturally arrange in table form consist of row and coloumm.<br> To access the elements of 2D array two indexes are used. First index refer to element row number and second index refer to element columm number.<br><br>
+<b class='e' style="font-size:24px">Program of 2D array.</b><br><br>
+<b>1.print sum of matrix.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[2][3],arr1[2][3],arr2[2][3],i,j;<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr[i][j]); <br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d ",arr[i][j]);<br>
+}<br>
+printf("\n");<br>
+} <br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr1[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr1[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d ",arr1[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+arr2[i][j]=arr[i][j]+arr1[i][j];<br>
+}<br>
+}<br>
+printf("sum of both matrix are=\n");<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d ",arr2[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter values in arr[1][1]=1<br>
+  Enter values in arr[1][2]=2<br>
+Enter values in arr[1][3]=3<br>
+Enter values in arr[2][1]=4<br>
+Enter values in arr[2][2]=5<br>
+Enter values in arr[2][3]=6<br>
+1,2,3<br>4,5,6<br>
+Enter values in arr1[1][1]=1<br>
+Enter values in arr1[1][2]=2<br>
+Enter values in arr1[1][3]=3<br>
+Enter values in arr1[2][1]=4<br>
+Enter values in arr1[2][2]=5<br>
+Enter values in arr1[2][3]=6<br>
+1,2,3<br>4,5,6<br>
+sum of both matrix=<br>
+2,4,6<br>8,10,12</p>
+</div>
+<details>
+  <summary class='e'style=font-size:24px>Tab to see more programs<br></summary><br>
+  <b>2.Multiplication of two matrix.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[2][3],arr1[2][3],arr2[2][3],i,j;<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr1[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr1[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+arr2[i][j]=arr[i][j]*arr1[i][j];
+}<br>
+}<br>
+printf("Multiplicarion of both matrix are=\n");<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d ",arr2[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter values in arr[1][1]=1<br>
+  Enter values in arr[1][2]=2<br>
+  Enter values in arr[1][3]=3<br>
+  Enter values in arr[2][1]=4<br>
+  Enter values in arr[2][2]=5<br>
+Enter values in arr[2][3]=6<br>
+  1,2,3<br>4,5,6<br>
+  Enter values in arr1[1][1]=1<br>
+Enter values in arr1[1][2]=2<br>
+  Enter values in arr1[1][3]=3<br>
+  Enter values in arr1[2][1]=4<br>
+  Enter values in arr1[2][2]=5<br>
+Enter values in arr1[2][3]=6<br>
+1,2,3<br>4,5,6<br>
+  Multiplication of both matrix=<br>
+  1,4,9<br>16,25,36</p>
+</div>
+ <b> 3.Division of two matrix.</b><br><br>
+ <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[2][3],arr1[2][3],arr2[2][3],i,j; <br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr1[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr1[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+arr2[i][j]=arr[i][j]/arr1[i][j];<br>
+}<br>
+}<br>
+printf("Division of both matrix are=\n");<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d ",arr2[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter values in arr[1][1]=1<br>
+Enter values in arr[1][2]=2<br>
+Enter values in arr[1][3]=3<br>
+Enter values in arr[2][1]=4<br>
+Enter values in arr[2][2]=5<br>
+Enter values in arr[2][3]=6<br>
+1,2,3<br>4,5,6<br>
+  Enter values in arr1[1][1]=1<br>
+Enter values in arr1[1][2]=2<br>
+  Enter values in arr1[1][3]=3<br>
+  Enter values in arr1[2][1]=4<br>
+Enter values in arr1[2][2]=5<br>
+  Enter values in arr1[2][3]=6<br>
+1,2,3<br>4,5,6<br>
+  Division of both matrix=<br>
+  1,1,1<br>1,1,1</p>
+</div>
+  <b>4.Enter two matrix and substract.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[2][3],arr1[2][3],arr2[2][3],i,j;<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter value in arr1[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr1[i][j]);<br>
+}<br>
+}<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+arr2[i][j]=arr[i][j]-arr1[i][j];<br>
+}<br>
+}<br>
+printf("Substraction of both matrix are=\n");<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d ",arr2[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter values in arr[1][1]=1<br>
+  Enter values in arr[1][2]=2<br>
+  Enter values in arr[1][3]=3<br>
+Enter values in arr[2][1]=4<br>
+Enter values in arr[2][2]=5<br>
+  Enter values in arr[2][3]=6<br>
+  1,2,3<br>4,5,6<br>
+  Enter values in arr1[1][1]=1<br>
+Enter values in arr1[1][2]=2<br>
+Enter values in arr1[1][3]=3<br>
+  Enter values in arr1[2][1]=4<br>
+  Enter values in arr1[2][2]=5<br>
+  Enter values in arr1[2][3]=6<br>
+1,2,3<br>4,5,6<br>
+  substraction of both matrix=<br>
+  0,0,0<br>0,0,0</p>
+</div>
+5.Enter 4rows and 2columms matrix and display.<br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int matrix(int [4][2],int,int);<br>
+void main()<br>
+{<br>
+int arr[4][2],i,j;<br>
+matrix(arr,i,j);<br>
+getch();<br>
+}<br>
+int matrix(int arr[4][2],int i,int j)<br>
+{<br>
+for(i=0;i<4;i++)<br>
+{<br>
+for(j=0;j<2;j++)<br>
+{<br>
+printf("enter the value in arr[%d][%d]=",i+1,j+1);<br>
+scanf("%d",&arr[i][j]);<br>
+}<br>
+}<br>
+printf("\n");<br>
+printf("4rows and 2columm matrix\n\n");<br>
+for(i=0;i<4;i++)<br>
+{<br><br>
+for(j=0;j<2;j++)<br>
+{<br>
+printf("%d ",arr[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter values in arr[1][1]=1<br>
+  Enter values in arr[1][2]=2<br>
+Enter values in arr[2][1]=3<br>
+Enter values in arr[2][2]=4<br>
+Enter values in arr1[3][1]=5<br>
+Enter values in arr1[3][2]=6<br>
+Enter values in arr1[4][1]=7<br>
+Enter values in arr1[4][2]=8<br>
+  matrix=<br>
+  1,2<br>3,4<br>5,6<br>7,8</p>
+</div>
+<b>6.Create matrix and copy in another matrix of same size.</b><br><br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int matrix(int [2][3],int [2][3],int,int);<br>
+void main()<br>
+{<br>
+int arr[2][3],arr1[2][3],i,j;<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("enter the value in arr=");<br>
+scanf("%d",&arr[i][j]);<br>
+}<br>
+}<br>
+matrix(arr,arr1,i,j);<br>
+getch();<br>
+}<br>
+int matrix(int arr[2][3],int arr1[2][3],int i,int j)<br>
+{<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+arr1[i][j]=arr[i][j];<br>
+}<br>
+}<br>
+printf("After copying matrix value in another matrix\n");<br>
+for(i=0;i<2;i++)<br>
+{<br>
+for(j=0;j<3;j++)<br>
+{<br>
+printf("%d",arr1[i][j]);<br>
+}<br>
+printf("\n");<br>
+}<br>
+}<br><br>
+  </details>
+  <br><b class='e' style="font-size:34px">Considered string</b><br><br>A string is generally considered as a data type and is often implemented as an array data structure of bytes (or words) that stores a sequence of elements, typically characters, using some character encoding. String may also denote more general arrays or other sequence (or list) data types and structures.<br><br>
+  <b class='e' style="font-size:24px">Programs of string</b><br><br><br>
+  <b>1.Convery in uppercase.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int upper(char [],int);<br>
+void main()<br>
+{<br>
+char str[10];<br>
+int a=0;<br>
+printf("enter the word=");<br>
+scanf("%s",&str); <br>
+upper(str,a);<br>
+printf("uppercase=");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int upper(char str[],int a)<br>
+{<br>
+while(str[a]!='\0')<br>
+{<br>
+str[a]=str[a]-32;<br>
+a++;<br>
+}<br>
+return str;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=pankaj<br>
+  uppercase=PANKAJ</p>
+</div>
+<details>
+  <summary class='e' style=font-size:24px>Tab to see more programs.<br></summary><br>
+<b>2.Convery in lowercase.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int lower(char [],int);<br>
+void main()<br>
+{<br>
+char str[10];<br>
+int a=0;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+upper(str,a); <br>
+printf("lowercase=");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int lower(char str[],int a) <br>
+{<br>
+while(str[a]!='\0')<br>
+{<br>
+str[a]=str[a]+32;<br>
+a++;<br>
+}<br>
+return str;
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=PANKAJ<br>
+  lowercase=pankaj</p>
+</div>
+<b>3.Convert in sentence case.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt; <br>
+int sentence(char [],int);<br>
+void main()<br>
+{<br>
+int i;<br>
+char str[100];<br>
+printf("enter the string=");<br>
+gets(str);<br>
+sentence(str,i);<br>
+printf("string in sentence case\n");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int sentence(char str[],int i)<br>
+{<br>
+if(str[0]>='a' && str[0]<='z')<br>
+{<br>
+str[0]-=32;<br>
+}<br>
+for(i=1;str[i]!='\0';i++)<br>
+{<br>
+if(str[i]>='A' && str[i]<='Z')<br>
+str[i]+=32;<br>
+}<br>
+return str;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=you are the best<br>
+  string in sentence case=<br>
+  You are the best</p>
+</div>
+<b>4.Convert into toggle case.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt; <br>
+int toggle(char [],int);<br>
+void main() <br>
+{<br>
+char str[100];<br>
+int i;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+toggle(str,i);<br>
+printf("string in toggle case\n");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int toggle(char str[],int i)<br>
+{<br>
+for(i=0;str[i]!='\0';i++)<br>
+{<br>
+if(str[i]>='a'&&str[i]<='z')<br>
+{<br>
+str[i]=str[i]-32;<br>
+}<br>
+else if(str[i]>='A'&&str[i]<='Z')<br>
+{<br>
+str[i]=str[i]+32;<br>
+}<br>
+}  <br>
+return str;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+Enter the string=YoU aRe the BeSt<br>
+  string in toggle case=<br>
+  YOu ArE THE bEsT</p>
+</div>
+<b>5.Find length of string.</b><br><br>
+<div class="col">
+include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int length(char [],int);<br>
+void main()<br>
+{<br>
+char str[10],a=0;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+a=length(str,a);<br>
+printf("the length of word=%d",a);<br>
+getch();<br>
+}<br>
+int length(char str[],int a)<br>
+{<br>
+while(str[a]!='\0')<br>
+{<br>
+a++;<br>
+}<br>
+return a;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=pankaj<br>
+length of string=6</p>
+</div>
+<b>6.Convert in tittle case.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int tittle(char [],int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+int i;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+tittle(str,i);<br>
+printf("string in tittle case\n");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int tittle(char str[],int i)<br>
+{<br>
+for(i=0;str[i];i++)<br>
+{<br>
+if(str[i]>='A' && str[i]<='Z')<br>
+{<br>
+str[i]=str[i]+32;<br>
+}<br>
+}<br>
+str[0]=str[0]-32;<br>
+for(i=1;str[i];i++)<br>
+{<br>
+if(str[i]==' ')<br>
+str[i]=str[i]-32;<br>
+}<br>
+return str;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=you are the best<br>
+string in title case=<br>
+You Are The Best</p>
+</div>
+<b>7.Compare those string.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include &lt;string.h&gt;<br>
+      int string(char str[],char str1[],int i,j,o,p);<br>
+      void main()<br>
+      {<br>
+      char str[10],str1[10];<br>
+      int i=0,j=0,o=0,p=0;<br>
+      printf("enter the string=");<br>
+      scanf("%s",&str);<br>
+      printf("enter the second string=");<br>
+      scanf("%s",&str1);<br>
+      p=string(str,str1,i,j,o,p);<br>
+      if(p==0)<br>
+      {<br>
+      printf("string is same");<br>
+      }<br>
+      else <br>
+      {<br>
+      printf("string is not same");<br>
+      }<br>
+      getch();<br>
+      }<br>
+      int string(char str[],char str1[],int i,j,o,p)<br>
+      {<br>
+      for(i=0,j=0;str[i] &&str1[j];i++,j++)<br>
+      {<br>
+      if(str[i]==str1[j])<br>
+      {<br>
+      o++;<br>
+      }<br>
+      else<br>
+      {<br>
+      p++;<br>
+      }<br>
+      }<br>
+      return p;<br>
+      }<br><br>
+      </div>
+      <div class="out">
+        <p>OUTPUT:<br>
+        Enter the first string=you are the best<br>
+        string in second string=your are best<br>
+        string is not same</p>
+      </div>
+      <b>8.Copy one string into another.</b><br><br>
+      <div class="col">
+      #include &lt;stdio.h&gt;<br>
+        #include &lt;conio.h&gt;<br>
+          #include &lt;string.h&gt;<br>
+            int copy(char [],char [],int,int);<br>
+            void main()<br>
+            {<br>
+            char str[100],str1[100];<br>
+            int i=0,a=0;<br>
+            printf("enter the word=");<br>
+            scanf("%s",&str);<br>
+            copy(str,str1,i,a);<br>
+            printf("after copying string\n");<br>
+            printf("%s",str1);<br>
+            getch();<br>
+            }<br>
+            int copy(char str[],char str1[],int i,int a)<br>
+            {<br>
+            for(i=0;str[i];i++)<br>
+            {<br>
+            str1[a]=str[i];<br>
+            a++;<br>
+            }<br>
+            return str1;<br>
+            }<br><br>
+            </div>
+            <div class="out">
+              <p>OUTPUT:<br>
+              Enter the string=you are the best<br>
+              After copying string in second string=<br>
+              you are the best</p>
+            </div>
+           <b> 9.Count all vowels in string.</b><br><br>
+           <div class="col">
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int vowel(char [],int,int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+int i,count=0;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+count=vowel(str,i,count);<br>
+printf("total no of vowel=%d",count);<br>
+getch();<br>
+}<br>
+int vowel(char str[],int i,int count)<br>
+{<br>
+for(i=0;str[i];i++)<br>
+{<br>
+switch(str[i])<br>
+{<br>
+case 'a': <br>
+case 'i':<br>
+case 'o':<br>
+case 'u':<br>
+count++;<br>
+}<br>
+}<br>
+return count;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the word=you<br>
+  total no of vowels=2</p>
+</div>
+<b>10.Print each character in new line.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include &lt;string.h&gt;<br>
+      void main()<br>
+      {<br>
+      char str[100];<br>
+      int i=0;<br>
+      printf("enter the word=");<br>
+      scanf("%s",&str);<br>
+      line(str,i);<br>
+      getch();<br>
+      }<br>
+      int line(char str[],int i)<br>
+      {<br>
+      printf("Each character in new line\n");<br>
+      for(i=0;str[i]!='\0';i++)<br>
+      {<br>
+      printf("%c\n",str[i]);<br>
+      }<br>
+      }<br><br>
+      </div>
+      <div class="out">
+        <p>OUTPUT:<br>
+      Enter the word=you<br>
+        Each character in new line<br>
+        y<br>o<br>u</p>
+      </div>
+     <b> 11.Enter a character is exist or not.</b><br><br>
+     <div class="col">
+      #include &lt;stdio.h&gt;<br>
+        #include &lt;conio.h&gt;<br>
+          #include &lt;string.h&gt;<br>
+            int check(char [],char,int,int);<br>
+            void main()<br>
+            {<br>
+            char str[100],n;<br>
+            int i,f=0;<br>
+            clrscr();<br>
+            printf("enter the string=");<br>
+            gets(str);<br>
+            printf("enter the character=");<br>
+            scanf("%c",&n); <br>
+            check(str,n,i,f);<br>
+            getch();<br>
+            }<br>
+            int check(char str[],char n,int i,int f)<br>
+            {<br>
+            for(i=0;str[i]!='\0';i++)<br>
+            {<br>
+            if(str[i]==n)<br>
+            {<br>
+            printf("this character is exist");<br>
+            break;<br>
+            }<br>
+            }<br>
+            if(str[i]!=n)<br>
+            printf("this character is not exist");<br>
+            }<br><br>
+            </div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=you<br>
+  Enter the character=0<br>
+  this character is exist</p>
+</div>            
+            <b>12.Count no of consonent in string.</b><br><br>
+            <div class="col">
+            #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int conso(char [],int,int,int,int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+int i,count=0,a=0,b=0;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+b=conso(str,i,count,a,b);<br>
+printf("total no of consonent=%d",b);<br>
+getch();<br>
+}<br>
+int conso(char str[],int i,count,a,b)<br>
+{<br>
+for(i=0;str[i];i++)<br>
+{<br>
+a++;<br>
+switch(str[i])<br>
+{<br>
+case 'a':<br>
+case 'i':<br>
+case 'o':<br>
+case 'u':<br>
+count++;<br>
+}<br>
+}<br>
+b=a-count;<br>
+return b;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=you<br>
+  Total no of consonent=1</p>
+</div>
+<b>13.Enter string and bound number and print character on that bound.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include &lt;string.h&gt;<br>
+      int length(char [],int);<br>
+      void main()<br>
+      {<br>
+      char str[10],a;<br>
+      printf("enter the string=");<br>
+      scanf("%s",&str);<br>
+      a=length(str,a);<br>
+      printf("The character at this bound number=%c",str[a]);<br>
+      getch();<br>
+      }<br>
+      int length(char str[],int a)<br>
+      {<br>
+      printf("enter the bound number=");<br>
+      scanf("%d",&a); <br>
+      return a;<br>
+      }<br><br>
+      </div>
+      <div class="out">
+        <p>OUTPUT:<br>
+        Enter the string=you<br>
+        Enter the bound number=1<br>
+      The character at this bound no=o</p>
+      </div>
+      <b>14.Enter string and then enter character from user and print character bound number.</b><br><br>
+      <div class="col">
+      #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int p(int);<br>
+void main()<br>
+{<br>
+int i;<br>
+i=p(i);<br>
+printf("bound number is=%d",i+1);<br>
+getch();<br>
+}<br>
+int p(int i)<br>
+{<br>
+char str[10];<br>
+char c;<br>
+int count=0;<br>
+printf("enter the string=");<br>
+scanf("%s",&str);<br>
+while(str[count]!='\0')<br>
+{<br>
+count++;<br>
+}<br>
+printf("enter the char=");<br>
+scanf("%s",&c);<br>
+for(i=0;i<count;i++)<br>
+{<br>
+if(str[i]==c)<br>
+{<br>
+return i;<br>
+}<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=you<br>
+  Enter the character=o<br>
+  Bound number at this character=1</p>
+</div>
+  <b>15.Enter sentence from user and count spaces,character,word in the sentence.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+    #include &lt;conio.h&gt;<br>
+      #include &lt;string.h&gt;<br>
+        void main()<br>
+        {<br>
+        char str[100];<br>
+        int i,space=0,character=0,word=1;<br>
+        printf("enter the string=");<br>
+        gets(str);<br>
+        for(i=0;str[i]!='\0';i++)<br>
+        {<br>
+        if(str[i]==' ' || str[i]=='\n' || str[i]=='\t')<br>
+        {
+        word++;<br>
+        }<br>
+        if(str[i]==' ')<br>
+        {<br>
+        space++;<br>
+        }<br>
+        if(str[i]!=' ')<br>
+        {<br>
+        character++;<br>
+        }<br>
+        }<br>
+        printf("total no of word=%d\n",word);<br>
+        printf("total no of space=%d\n",space);<br>
+        printf("total no of character=%d",character);<br>
+        getch();<br>
+        }<br><br>
+        </div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=you are the best<br>
+  total no of word=4<br>
+  total no of space=2<br>
+  total no of character=13</p>
+</div>        
+        <b>16.Enter string and convert it into integer.</b><br><br>
+        <div class="col">
+      #include &lt;stdio.h&gt;<br>
+        #include &lt;conio.h&gt;<br>
+          #include &lt;string.h&gt;<br>
+            int integer(char [],int,int,int);<br>
+            void main()<br>
+            {<br>
+            char str[100];<br>
+            int i,sum=0,temp;<br>
+            printf("enter the string=");<br>
+            scanf("%s",&str);<br>
+            sum=integer(str,i,sum,temp);<br>
+            printf("After converting string in integer\n");<br>
+            printf("%d",sum);<br>
+            getch();<br>
+            }<br>
+            int integer(char str[],int i,int sum,int temp)<br>
+            {<br>
+            for(i=0;str[i];i++)<br>
+            {<br>
+            temp=str[i]-48;<br>
+            sum=sum*10+temp;<br>
+            }<br>
+            return sum;<br>
+            }<br><br>
+            </div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=123<br>
+  After converting string in integer=123</p>
+</div>            
+
+              <b>17.Enter string and convert it into float.</b><br><br>
+              <div class="col">
+           #include &lt;stdio.h&gt;<br>
+             #include &lt;conio.h&gt;<br>
+               #include &lt;string.h&gt;<br>
+                 int integer(char [],int,int,int);<br>
+                 void main()<br>
+                 {<br>
+                 char str[100];<br>
+                 float i,sum=0,temp;<br>
+                 printf("enter the string=");<br>
+                 scanf("%s",&str);<br>
+                 sum=integer(str,i,sum,temp);<br>
+                 printf("After converting string in float\n");<br>
+                 printf("%f",sum);<br>
+                 getch();<br>
+                 }<br>
+                 int integer(char str[],int i,int sum,int temp)<br>
+                 {<br>
+                 for(i=0;str[i];i++)<br>
+                 {<br>
+                 temp=str[i]-48;<br>
+                 sum=sum*10+temp;<br>
+                 }<br>
+                 return sum;<br>
+                 }<br><br>
+                 </div>
+  <div class="out">
+    <p>OUTPUT:<br>
+    Enter the string=123<br>
+    After converting string in float=123.0000</p>
+  </div>               
+  <b>18.Copy string into another string in reverse order.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+    #include &lt;t;conio.h&gt;<br>
+      #include &lt;string.h&gt;<br>
+        void main()<br>
+        {<br>
+        char str[10],a=0;<br>
+        char str1[10];<br>
+        int i,k=0,p=0;<br>
+        printf("enter the word=")<br>     scanf("%s",&str);<br>
+        while(str[a]!='\0')<br>
+        {<br>
+        a++; <br>
+        }<br>
+        p=a-1;<br>
+        for(i=p;i>=0;i--) <br>
+        {<br>
+        str1[k]=str[i];<br>
+        k++;<br>
+        }<br>
+        str1[k]='\0';<br>
+        printf("After copying string into another string in reverse order=");<br>
+        for(k=0;str[k];k++)<br>
+        {<br>
+        printf("%c",str1[k]);<br>
+        }<br>
+        getch();<br>
+        }<br><br>
+        </div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=top<br>
+  After copying string into another in reverse order=pot</p>
+</div>        
+        <b>19.Check string is palindrome or not.</b><br><br>
+        <div class="col">
+        #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+void main()<br>
+{<br>
+char str[10],a=0;<br>
+char str1[10]; <br>
+int i,k=0,p=0;<br>
+printf("enter the word="); <br>
+scanf("%s",&str);<br>
+while(str[a]!='\0')<br>
+{<br>
+a++;<br>
+}<br>
+p=a-1;<br>
+for(i=p;i>=0;i--)<br>
+{<br>
+str1[k]=str[i];<br>
+k++;<br>
+}<br>
+for(i=0;i<a;i++)<br>
+{<br>
+if(str[i]==str1[i])<br>
+{<br>
+printf("palindrome");<br>
+break;<br>
+}<br>
+else<br>
+{<br>
+printf("not");<br>
+}<br>
+}<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+Enter the string=wow<br>
+  Palindrome</p>
+</div>
+<b>20.Enter two string from user and concantemate.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+    #include &lt;string.h&gt;<br>
+      int concat(char[],char[],int,int);<br>
+      void main()<br>
+      {<br>
+      char str[100],str1[100];<br>
+      int first,second;<br>
+      printf("enter the string=");<br>
+      gets(str);<br>
+      printf("enter the string=");<br>
+      gets(str1);<br>
+      first=concat(str,str1,first,second);<br>
+      printf("After concantemate both strings=\n%s",str);<br>
+
+      getch();<br>
+      }<br>
+      int concat(char str[],char str1[],int first,int second)<br>
+      {<br>
+      for(first=0;str[first];first++);
+      for(second=0;str1[second];second++)<br>
+      {<br>
+      str[first]=str1[second];<br>
+      first++;<br>
+      }<br>
+      str[first]='\0';<br>
+      return str;<br>
+      }<br><br>
+      </div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=pankaj<br>
+  Enter the string=sharma<br>
+  After concantemate the string=<br>
+  pankajsharma</p>
+</div>      
+      <b>21.Enter string and display text alignment right,left and center.</b><br><br>
+      <div class="col">
+      #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+printf("press1 for left");<br>
+printf("press2 for right");<br>
+printf("press3 for center");<br>
+char str[100];<br>
+int button;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+printf("press the button=");<br>
+scanf("%d",&button);<br>
+switch(button)<br>
+{<br>
+case 1:left(str);<br>
+break;<br>
+case 2:right(str);<br>
+break;<br>
+case 3:center(str); <br>
+break;<br>
+}<br>
+getch();<br>
+}<br>
+int left(char str[])<br>
+{<br>
+printf("%s",str);<br>
+}<br>
+int right(char str[])<br>
+{<br>
+printf("%600s",str);<br>
+}<br>
+int center(char str[])<br>
+{<br>
+printf("%500s",str);<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=pop<br>
+  press the button=1<br>
+  pop</p>
+</div>
+<b>22.Trim the extra space between string.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt; <br>
+    #include &lt;string.h&gt;<br>
+      void main()<br>
+      {<br>
+      int i=0,j=0;<br><br>
+      char str[100],str1[100];<br>
+      printf("enter the string=");<br>
+      gets(str);<br>
+      while(str[i]!='\0')<br>
+      {<br>
+      if(str[i]!=' ')<br>
+      {<br>
+      str1[j]=str[i];<br>
+      j++;<br>
+      }<br>
+      i++;<br>
+      }<br>
+      str1[j]='\0';<br>
+      printf("After triming spces=%s",str1);<br>
+getch();<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the string=p a n k a j<br>
+  After triming spaces=pankaj</p>
+</div>
+<b>23.Enter character from user and print as a string.</b><br><br>
+     <div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+void main()<br>
+{<br>
+char s,s1[100];<br>
+int i,j=0;<br>
+for(i=0;i<6;i++)<br>
+{<br>
+printf("enter the character=");<br>
+scanf("%s",&s);<br>
+s1[j]=s;<br>
+j++;<br>
+}<br>
+printf("Ater combine all character=%s",s1);<br>
+getch();<br>
+}<br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the character=p<br>
+   Enter the character=a<br>
+    Enter the character=n<br>
+ Enter the character=k<br>
+  Enter the character=a<br>
+   Enter the character=j<br>
+  After combing all character=pankaj</p>
+</div>
+<b>24.WAP of replace words of string.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int replace(char [],char [],char[],int,int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+char str1[100],str2[100];<br>
+int i,j;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+for(i=0;str[i];i++);<br>
+printf("enter the word=");<br>
+gets(str1);<br>
+printf("enter the word=");<br>
+gets(str2);<br>
+replace(str,str1,str2,i,j);<br>
+getch();<br>
+}<br>
+int replace(char str[],char str1[],char str2[],int i,int j)<br>
+{<br>
+for(j=0;j<i;j++)<br>
+{<br>
+if(str[j]!=' ')<br>
+{<br>
+if(str[j]==str1[j])<br>
+{<br>
+str[j]=str2[j];<br>
+}<br>
+}<br>
+}<br>
+printf("After replace word=\n");<br>
+for(j=0;j<i;j++)<br>
+{<br>
+printf("%c",str[j]);<br>
+}<br>
+}<br>
+</div>
+ <div class="out">
+   <p>OUTPUT:<br>
+   Enter the string=pop is live<br>
+   Enter the word=pop<br>
+   Enter the word=top<br>
+   After replacing word=top is live</p>
+ </div>
+<b>25.Print the string in ascending order.</b><br><break>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int ascending(char [],char,int);<br>
+void main()<br>
+{<br>
+char arr[100],temp;<br>
+int i,k;<br>
+printf("enter the string=");<br>
+scanf("%s",&arr);<br>
+ascending(arr,temp,i);<br>
+getch();<br>
+}<br>
+int ascending(char arr[],char temp,int i)<br>
+{<br>
+int k;<br>
+for(k=0;arr[k];k++);<br>
+for(i=0;i<k;i++)<br>
+{<br>
+for(int j=i+1;j<k;j++)<br>
+{<br>
+if(arr[i]>arr[j])<br>
+{<br>
+temp=arr[i];<br>
+arr[i]=arr[j];<br>
+arr[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+printf("\nstring in ascending order\n\n");<br>
+for(i=0;i<k;i++)<br>
+{<br>
+printf("%c",arr[i]);<br>
+}<br>
+}<br>
+</div>
+<div class="out">
+  <p>Enter the string=pankaj<br>
+  string in ascending order<br>
+  aajknp</p>
+</div>
+  <b>26.Print string in descending order.</b><br><br>
+  <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int ascending(char [],char,int);<br>
+void main()<br>
+{<br>
+char arr[100],temp;<br>
+int i,k;<br>
+printf("enter the string=");<br>
+scanf("%s",&arr);<br>
+ascending(arr,temp,i);<br>
+getch();<br>
+}<br>
+int ascending(char arr[],char temp,int i)<br>
+{<br>
+int k;<br>
+for(k=0;arr[k];k++);<br>
+for(i=0;i<k;i++)<br>
+{<br>
+for(int j=i+1;j<k;j++)<br>
+{<br>
+if(arr[i]<arr[j])<br>
+{<br>
+temp=arr[i];<br>
+arr[i]=arr[j];<br>
+arr[j]=temp;<br>
+}<br>
+}<br>
+}<br>
+printf("\nstring in descending order\n\n");<br>
+for(i=0;i<k;i++)<br>
+{<br>
+printf("%c",arr[i]);<br>
+}<br>
+}<br>
+</div>
+<div class="out">
+  <p>Enter the string=pankaj<br>
+  string in descending order<br>
+  pnkjaa</p>
+</div>
+</details>
+ <b class='e' style="font-size:34px"><p>Recursion ?</p></b>
+ <p>The process of recursion involves solving a problem by turning it into smaller varieties of itself. Recursion in stack in data structure is when functions call themselves directly or indirectly. The process in which a function calls itself could happen directly as well as indirectly.</p>
+   <b class='e' style="font-size:24px">Programs of Recursion</b><br><br>
+<b>1.WAP of converting binary to decimal using recursion.</b><br><br>
+ <div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int binary(int,int,int,int);<br>
+void main()<br>
+{<br>
+int n,rem,sum=0,base=1;<br>
+printf("enter the binary number=");<br>
+scanf("%d",&n);<br>
+sum=binary(n,rem,sum,base);<br>
+printf("After converting binary to decimal=%d",sum);<br>
+getch();<br>
+}<br>
+int binary(int n,int rem,int sum,int base)<br>
+{<br>
+if(n>0)<br>
+{<br>
+rem=n%10;<br>
+sum=sum+rem*base;<br>
+n=n/10;<br>
+base=base*2;<br>
+return binary(n,rem,sum,base);<br>
+}<br>
+return sum;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the binary number=1001<br>
+  After converting number from binary to decimal=9</p>
+</div>
+<details>
+  <summary class='e'style=font-size:24px>Tab to see more programs.<br></summary><br>
+<b>2.WAP of converting decimal to binary using recursion.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int binary(int,int,int,int);<br>
+void main()<br>
+{<br>
+int n,rem,sum=0,base=1;<br>
+printf("enter the decimal number=");<br>
+scanf("%d",&n);<br>
+sum=binary(n,rem,sum,base);<br>
+printf("After converting decimal to binary=%d",sum);<br>
+getch();<br>
+}<br>
+int binary(int n,int rem,int sum,int base)<br>
+{<br>
+if(n>0)<br>
+{<br>
+rem=n%2;<br>
+sum=sum+rem*base;<br>
+n=n/2;<br>
+base=base*10;<br>
+return binary(n,rem,sum,base);<br>
+}<br>
+return sum;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+    Enter the decimal number=9<br>
+    After converting number from decimal to binary=1001</p>
+</div>
+<b>3.Program of find smallest element of array using recursion.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,min;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+max=arr[0];<br>
+i=0;<br>
+max=bit(arr,i,min);<br>
+printf("smallest element of array is=%d",min);<br>
+getch();<br>
+}<br>
+int bit(int arr[],int i,int min)<br>
+{<br>
+if(i<5)<br>
+{<br>
+if(arr[i]<min)<br>
+{<br>
+min=arr[i];<br>
+}<br>
+return bit(arr,i+1,min);<br>
+}<br>
+return min;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+    Enter the value in 1index=4<br>
+    Enter the value in 2index=2<br>
+    Enter the value in 3index=3<br>
+    Enter the value in 4index=1<br>
+    Enter the value in 5index=5<br>
+    smallest element of array=1</p>
+</div>
+<b>4.Program of find largest element of array.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,max;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("enter the value=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+max=arr[0];<br>
+i=0;<br>
+max=bit(arr,i,max);<br>
+printf("largest element of array is=%d",max);<br>
+getch();<br>
+}<br>
+int bit(int arr[],int i,int max)<br>
+{<br>
+if(i<5)<br>
+{<br>
+if(arr[i]>max)<br>
+{<br>
+max=arr[i];<br>
+}<br>
+return bit(arr,i+1,max);<br>
+}<br>
+return max;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+    Enter the value in 1index=4<br>
+    Enter the value in 2index=2<br>
+    Enter the value in 3index=3<br>
+    Enter the value in 4index=1<br>
+    Enter the value in 5index=5<br>
+    largest element of array=5</p>
+</div>
+<b>5.Program of find factorial of number using recursion.</b><br><br>
+<div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int n,f=1,i=1;<br>
+printf("enter the number=");<br>
+scanf("%d",&n);<br>
+fact(n,f,i);<br>
+getch();<br>
+}<br>
+int fact(int n,int f,int i)<br>
+{<br>
+if(i<=n)<br>
+{<br>
+f=f*i;<br>
+return fact(n,f,i+1);<br>
+}<br>
+printf("factorial of number=%d",f);<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the number=5<br>
+  Factorial of a number=120</p>
+</div>
+<b>6.Program of print fabonaac series using recursion.</b><br><br>
+<div class="col">
+  #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int n,i=1,a=0,b=1,c;<br>
+printf("enter the number=");<br>
+scanf("%d",&n);<br>
+fab(n,i,a,b,c);<br>
+getch();<br>
+}<br>
+int fab(int n,int i,int a,int b,int c)<br>
+{<br>
+if(i<=n)<br>
+{<br>
+printf("fabonaac series=%d",a);<br>
+c=a+b;<br>
+b=a;<br>
+a=c;<br>
+return fab(n,i+1,a,b,c);<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the number=5<br>
+  Fabonaac series=01123</p>
+</div>
+<b>7.Program to add all digit in array using recursion.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],i,sum=0;<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("emter the value=");<br>
+scanf("%d",&arr[i]);<br>
+}<br>
+i=0;<br>
+add(arr,i,sum);<br>
+getch();<br>
+}<br>
+int add(int arr[],int i,int sum)<br>
+{<br>
+if(i<5)<br>
+{<br>
+sum=sum+arr[i];<br>
+return add(arr,i+1,sum);<br>
+}<br>
+printf("sum of all digit=%d",sum);<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the value=1<br>
+  Enter the value=2<br>
+  Enter the value=3<br>
+  Enter the value=4<br>
+  Enter the value=5<br>
+  sum of all digit=15<br>
+  </p>
+</div>
+</details>
+ <b class='e' style="font-size:34px"><p>Linked List</p></b>
+ <p>Singly linked list orsimply called linked list is a linear data structure consisting of elements called nodes where each node is composed of ywo parts : information part and a link part also called the next pointer part. The information part contains user supplied data and the link part which is a pointer that points tob the next node in the linked list . The link part of the last node is set to NULL that maeks thev end of the node.</p>
+
+  <b class='e' style="font-size:24px"><p>Types Of Linked List</p></b>
+  <br>
+    <div class="l">
+      <div class="m">
+        <p style="font-size:50px">SINGLE</p>
+      </div>
+      <div class="m">
+        <p style="font-size:50px">CIRCULAR</p>
+      </div>
+      <div class="m">
+        <p style="font-size:50px">LIST</p>
+      </div>
+    </div>
+  <b>1.Circular linked list</b>
+  <p>the main drawback of singly linked list is that from a given node,we can access all the nodes that follow it but not the one preceding it. To overcome this problem, we make slight modifications in the singly linked list by replacing the NULL pointer in the last node of the list with the address of the first node. Such a list is called a singly linked circular list.</p><br>
+  <b>2.Bubbly Linked List</b>
+  <p>A bubbly linked list is a linear collection of elements called nodes such that each node consists of three parts :<br>
+  1)An information part INFO which contains user supplied data.<br>
+  2)A pointer part FLINK that points to the next node.<br>
+  3)A pointer part PLINK that points to the previous node.</p>
+  <b class='e' style="font-size:24px">Programs of linked list</b><br><br>
+<b>1.perform all operation like insertion at end,delete at end etc in linked list.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+int data;<br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n"); <br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%d",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%d",&new->data);<br>
+new->link=NULL;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value in pos=");<br>
+scanf("%d",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start;<br>
+printf("values are=");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d ",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+<p>printf("\npress1 for insert\n");<br>
+  printf("press2 for delete\n");<br>
+  printf("press3 for insert at bigining\n");<br>
+  printf("press4 for delete at bigining\n");<br>
+  printf("press5 for delete at position\n");<br>
+  printf("press6 for delete at end\n");<br>
+  printf("press7 for exit\n");</p>
+press the button=1<br>
+Enter the value=10<br>
+press the button=3<br>
+  Enter the value=20<br>
+  press the button=2<br>
+    value=20,10</p>
+</div>
+<details>
+   <summary class='e'style=font-size:24px>Tab to see more programs.<br></summary><br>
+   <b>2.Perform all operations of integer linked list in string linked list.</b><br><br>
+   <div class="col">
+   #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+char data[100];<br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%s",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%s",&new->data);<br>
+new->link=NULL;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value in pos=");<br>
+scanf("%s",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start;<br>
+printf("values are=");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%s ",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer; <br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  printf("\npress1 for insert\n");<br>
+    printf("press2 for delete\n");<br>
+    printf("press3 for insert at bigining\n");<br>
+    printf("press4 for delete at bigining\n");<br>
+    printf("press5 for delete at position\n");<br>
+    printf("press6 for delete at end\n");<br>
+    printf("press7 for exit\n");<br>
+  press the button=1<br>
+  Enter the value=pop<br>
+  press the button=3<br>
+  Enter the value=top<br>
+  press the button=2<br>
+  value=top,pop</p>
+</div>
+<b>3.Perform all operations of single linked list in circular linked list.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+int data;<br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL; <br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("press1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)
+{
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%d",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%d",&new->data);<br>
+new->link=start;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value in pos=");<br>
+scanf("%d",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start; <br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+  temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert\n");<br>
+    printf("press2 for delete\n");<br>
+    printf("press3 for insert at bigining\n");<br>
+    printf("press4 for delete at bigining\n");<br>
+    printf("press5 for delete at position\n");<br>
+    printf("press6 for delete at end\n");<br>
+    printf("press7 for exit\n");<br>
+press the button=1<br>
+  Enter the value=10<br>
+  press the button=3<br>
+Enter the value=20<br>
+  press the button=2<br>
+  value=20,10</p>
+</div>
+<b>4.Perform all operations of single linked list in bubbly linked list.</b><br><br>
+<div class="col">
+ #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br> 
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+int data;<br>
+struct node *left; <br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("press1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%d",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value=");<br>
+scanf("%d",&new->data);<br>
+pointer->link=new;<br>
+new->left=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the value in pos=");<br>
+scanf("%d",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the pos=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert\n");<br>
+    printf("press2 for delete\n");<br>
+    printf("press3 for insert at bigining\n");<br>
+    printf("press4 for delete at bigining\n");<br>
+    printf("press5 for delete at position\n");<br>
+    printf("press6 for delete at end\n");<br>
+    printf("press7 for exit\n");<br>
+  press the button=1<br>
+  Enter the value=10<br>
+  press the button=3<br>
+  Enter the value=20<br>
+  press the button=2<br>
+  value=20,10</p>
+</div>
+<b>5.Create string circular linked list and perform operations of single list.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+char data[100];<br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL; <br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&new->data);<br>
+new->link=start;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string in position=");<br>
+scanf("%s",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start; <br>
+printf("strings are=");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%s ",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+  temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert\n");<br>
+    printf("press2 for delete\n");<br>
+    printf("press3 for insert at bigining\n");<br>
+    printf("press4 for delete at bigining\n");<br>
+    printf("press5 for delete at position\n");<br>
+    printf("press6 for delete at end\n");<br>
+    printf("press7 for exit\n");<br>
+  press the button=1<br>
+  Enter the value=pop<br>
+  press the button=3<br>
+Enter the value=top<br>
+press the button=2<br>
+  value=top,pop</p>
+</div>
+<b>6.Create string bubbly linked list and perform all operations.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int push();<br>
+int pop();<br>
+int insert();<br>
+int deletebig();<br>
+int deletepos();<br>
+int deletend();<br>
+struct node <br>
+{<br>
+char data[100];<br>
+struct node *left;<br>
+struct node *link;<br>
+};<br>
+struct node *start=NULL;<br>
+struct node *new=NULL;<br>
+struct node *pointer=NULL;<br>
+struct node *temp=NULL;<br>
+int main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert\n");<br>
+printf("press2 for delete\n");<br>
+printf("press3 for insert at bigining\n");<br>
+printf("press4 for delete at bigining\n");<br>
+printf("press5 for delete at position\n");<br>
+printf("press6 for delete at end\n");<br>
+printf("press7 for exit\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+if(a<=7)<br>
+{<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:pop();<br>
+break;<br>
+case 3:insert();<br>
+break;<br>
+case 4:deletebig();<br>
+break;<br>
+case 5:deletepos();<br>
+break;<br>
+case 6:deletend();<br>
+break;<br>
+case 7:return 0;<br>
+break;<br>
+}<br>
+}<br>
+else<br>
+{<br>
+printf("press valid button\n");<br>
+}<br>
+}<br>
+return 0;<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&start->data);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string=");<br>
+scanf("%s",&new->data);<br>
+pointer->link=new;<br>
+new->left=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int insert()<br>
+{<br>
+pointer=start;<br>
+int pos;<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+pos--;<br>
+while(pos!=1)<br>
+{<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the string in position=");<br>
+scanf("%s",&new->data);<br>
+new->link=NULL;<br>
+new->link=pointer->link;<br>
+pointer->link=new;<br>
+}<br>
+int deletebig()<br>
+{<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+start=start->link;<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int pop()<br>
+{<br>
+printf("strings are=");<br>
+pointer=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%s ",pointer->data);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int deletepos()<br>
+{<br>
+int pos;<br>
+printf("enter the position=");<br>
+scanf("%d",&pos);<br>
+pointer=start;<br>
+pos--;<br>
+while(pos!=0)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+pos--;<br>
+}<br>
+temp->link=pointer->link;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br>
+int deletend()<br>
+{<br>
+pointer=start;<br>
+temp=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+temp=pointer;<br>
+pointer=pointer->link;<br>
+}<br>
+temp->link=NULL;<br>
+free(pointer);<br>
+pointer=NULL;<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert\n");<br>
+    printf("press2 for delete\n");<br>
+    printf("press3 for insert at bigining\n");<br>
+    printf("press4 for delete at bigining\n");<br>
+    printf("press5 for delete at position\n");<br>
+    printf("press6 for delete at end\n");<br>
+    printf("press7 for exit\n");<br>
+press the button=1<br>
+  Enter the value=pop<br>
+  press the button=3<br>
+  Enter the value=top<br>
+  press the button=2<br>
+  value=top,pop</p>
+</div>
+<b>7.Enter two polynomial equation and perform additon operation and print result.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct node <br>
+{<br>
+int data;<br>
+int expo;<br>
+struct node *link;<br>
+};<br>
+struct node *start,*new,*pointer;<br>
+struct node *start1,*new1,*point;<br>
+void main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert first equation\n");<br>
+printf("press2 for insert second equation\n");<br>
+printf("press3 for manipulation of equation\n");<br>
+printf("press4 for display mainpulation of equation\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:push1();<br>
+break;<br>
+case 3:pop();<br>
+break;<br>
+case 4:dis();<br>
+break;<br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&start->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start->expo);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&new->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new->expo);<br>
+new->link=NULL;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int push1()<br>
+{<br>
+if(start1==NULL)<br>
+{<br>
+start1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&start1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start1->expo);<br>
+start1->link=NULL;<br>
+point=start1;<br>
+}<br>
+else<br>
+{<br>
+new1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&new1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new1->expo);<br>
+new1->link=NULL;<br>
+point->link=new1;<br>
+point=point->link;<br>
+}<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start; <br>
+point=start1;<br>
+while(pointer!=NULL)<br>
+{<br>
+if(pointer->expo==point->expo)<br>
+{<br>
+pointer->data=pointer->data+point->data;<br>
+pointer=pointer->link;<br>
+point=point->link;<br>
+}<br>
+else if(pointer->expo>point->expo)<br>
+{<br>
+pointer=pointer->link;<br>
+}<br>
+else<br>
+{<br>
+point=point->link;<br>
+}<br>
+}<br>
+}<br>
+int dis()<br>
+{<br>
+pointer=start;<br>
+printf("Result of manipulation=\n");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d^%d ",pointer->data,pointer->expo);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert first equation\n");<br>
+  printf("press2 for insert second equation\n");<br>
+  printf("press3 for manipulation of equation\n");<br>
+  printf("press4 for display mainpulation of equation\n");<br>
+Press the button=1<br>
+Enter the first equation coff=3<br>
+Enter the power of coff=3<br>
+Press the button=1<br>
+Enter the first equation coff=2<br>
+Enter the power of coff=2<br>
+Press the button=1<br>
+Enter the first equation coff=4<br>
+Enter the power of coff=6<br>
+Press the button=2<br>
+Enter the second equation coff=3<br>
+Enter the power of coff=3<br>
+Press the button=2<br>
+Enter the second equation coff=2<br>
+Enter the power of coff=2<br>
+Press the button=2<br>
+Enter the second equation coff=4<br>
+Enter the power of coff=6<br>
+press the button=3<br>
+press the button=4<br>
+result of manipulation=<br>
+6^3+4^2+8^6</p>
+</div>
+<b>8.Enter two polynomial equation dynamically and perform substraction operation and print the result.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct node <br>
+{<br>
+int data;<br>
+int expo;<br>
+struct node *link;<br>
+};<br>
+struct node *start,*new,*pointer;<br>
+struct node *start1,*new1,*point;<br>
+void main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert first equation\n");<br>
+printf("press2 for insert second equation\n");<br>
+printf("press3 for manipulation of equation\n");<br>
+printf("press4 for display mainpulation of equation\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:push1();<br>
+break;<br>
+case 3:pop();<br>
+break;<br>
+case 4:dis();<br>
+break;<br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&start->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start->expo);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&new->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new->expo);<br>
+new->link=NULL;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int push1()<br>
+{<br>
+if(start1==NULL)<br>
+{<br>
+start1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&start1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start1->expo);<br>
+start1->link=NULL;<br>
+point=start1;<br>
+}<br>
+else<br>
+{<br>
+new1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&new1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new1->expo);<br>
+new1->link=NULL;<br>
+point->link=new1;<br>
+point=point->link;<br>
+}<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start;<br>
+point=start1;<br>
+while(pointer!=NULL)<br>
+{<br>
+if(pointer->expo==point->expo)<br>
+{<br>
+pointer->data=pointer->data-point->data;<br>
+pointer=pointer->link;<br>
+point=point->link;<br>
+}<br>
+else if(pointer->expo>point->expo)<br>
+{<br>
+pointer=pointer->link;<br>
+}<br>
+else<br>
+{<br>
+point=point->link;<br>
+}<br>
+}<br>
+}<br>
+int dis()<br>
+{<br>
+pointer=start;<br>
+printf("Result of manipulation=\n");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d^%d ",pointer->data,pointer->expo);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  printf("\npress1 for insert first equation\n");<br>
+    printf("press2 for insert second equation\n");<br>
+    printf("press3 for manipulation of equation\n");<br>
+    printf("press4 for display mainpulation of equation\n");<br>
+  Press the button=1<br>
+Enter the first equation coff=3<br>
+  Enter the power of coff=3<br>
+Press the button=1<br>
+  Enter the first equation coff=2<br>
+  Enter the power of coff=2<br>
+  Press the button=1<br>
+Enter the first equation coff=4<br>
+  Enter the power of coff=6<br>
+  Press the button=2<br>
+  Enter the second equation coff=3<br>
+  Enter the power of coff=3<br>
+  Press the button=2<br>
+  Enter the second equation coff=2<br>
+  Enter the power of coff=2<br>
+  Press the button=2<br>
+Enter the second equation coff=4<br>
+  Enter the power of coff=6<br>
+  press the button=3<br>
+  press the button=4<br>
+  result of manipulation=<br>
+  0^3-0^2-0^6</p>
+</div>
+    <b>9.Enter two polynomaial equation and perform multiplication operation and print the result.</b><br><br>
+    <div class="col">
+    #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct node <br>
+{<br>
+int data;<br>
+int expo;<br>
+struct node *link;<br>
+};<br>
+struct node *start,*new,*pointer;<br>
+struct node *start1,*new1,*point;<br>
+void main()<br>
+{<br>
+int n=1,a;<br>
+while(n!=0)<br>
+{<br>
+printf("\npress1 for insert first equation\n");<br>
+printf("press2 for insert second equation\n");<br>
+printf("press3 for manipulation of equation\n");<br>
+printf("press4 for display mainpulation of equation\n");<br>
+printf("\npress the button=");<br>
+scanf("%d",&a);<br>
+switch(a)<br>
+{<br>
+case 1:push();<br>
+break;<br>
+case 2:push1();<br>
+break;<br>
+case 3:pop();<br>
+break;<br>
+case 4:dis();<br>
+break;<br>
+}<br>
+}<br>
+getch();<br>
+}<br>
+int push()<br>
+{<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&start->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start->expo);<br>
+start->link=NULL;<br>
+pointer=start;<br>
+}<br>
+else<br>
+{<br>
+new=malloc(sizeof(struct node));<br>
+printf("enter the coff=");<br>
+scanf("%d",&new->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new->expo);<br>
+new->link=NULL;<br>
+pointer->link=new;<br>
+pointer=pointer->link;<br>
+}<br>
+}<br>
+int push1()<br>
+{<br>
+if(start1==NULL)<br>
+{<br>
+start1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&start1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&start1->expo);<br>
+start1->link=NULL;<br>
+point=start1;<br>
+}<br>
+else<br>
+{<br>
+new1=malloc(sizeof(struct node));<br>
+printf("enter the coff in second equation=");<br>
+scanf("%d",&new1->data);<br>
+printf("enter the expo=");<br>
+scanf("%d",&new1->expo);<br>
+new1->link=NULL;<br>
+point->link=new1;<br>
+point=point->link;<br>
+}<br>
+}<br>
+int pop()<br>
+{<br>
+pointer=start;<br>
+point=start1;<br>
+while(pointer!=NULL)<br>
+{<br>
+if(pointer->expo==point->expo)<br>
+{<br>
+pointer->data=pointer->data*point->data;<br>
+pointer=pointer->link;<br>
+point=point->link;<br>
+}<br>
+else if(pointer->expo>point->expo)<br>
+{<br>
+pointer=pointer->link;<br>
+}<br>
+else<br>
+{<br>
+point=point->link;<br>
+}<br>
+}<br>
+}<br>
+int dis()<br>
+{<br>
+pointer=start;<br>
+printf("Result of manipulation=\n");<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d^%d ",pointer->data,pointer->expo);<br>
+pointer=pointer->link;<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  <p>printf("\npress1 for insert first equation\n");<br>
+    printf("press2 for insert second equation\n");<br>
+    printf("press3 for manipulation of equation\n");<br>
+    printf("press4 for display mainpulation of equation\n");<br>
+  Press the button=1<br>
+  Enter the first equation coff=3<br>
+  Enter the power of coff=3<br>
+Press the button=1<br>
+  Enter the first equation coff=2<br>
+  Enter the power of coff=2<br>
+  Press the button=1<br>
+  Enter the first equation coff=4<br>
+  Enter the power of coff=6<br>
+  Press the button=2<br>
+  Enter the second equation coff=3<br>
+  Enter the power of coff=3<br>
+  Press the button=2<br>
+  Enter the second equation coff=2<br>
+  Enter the power of coff=2<br>
+  Press the button=2<br>
+  Enter the second equation coff=4<br>
+  Enter the power of coff=6<br>
+  press the button=3<br>
+  press the button=4<br>
+  result of manipulation=<br>
+  9^3*4^2*16^6</p>
+</div>
+</details>
+ <b class='e' style="font-size:34px"><p>TREES</p></b>
+ <p>In computer science, a tree is a widely used abstract data type that represents a hierarchical tree structure with a set of connected nodes. Each node in the tree can be connected to many children (depending on the type of tree), but must be connected to exactly one parent,[1] except for the root node, which has no parent (i.e., the root node as the top-most node in the tree hierarchy).<br><br>
+   <div class="l">
+     <div class="m">
+       <p style="font-size:50px">TREES</p>
+     </div>
+     <div class="m">
+       <p style="font-size:50px">NODES</p>
+     </div>
+     <div class="m">
+       <p style="font-size:50px">EDGES</p>
+     </div>
+   </div><br><br>
+ These constraints mean there are no cycles or "loops" (no node can be its own ancestor), and also that each child can be treated like the root node of its own subtree, making recursion a useful technique for tree traversal. In contrast to linear data structures, many trees cannot be represented by relationships between neighboring nodes (parent and children nodes of a node under consideration if they exists) in a single straight line (called edge or link between two adjacent nodes).</p>
+   <b class='e' style="font-size:24px">Programs of trees</b><br><br>
+   <b>1.Create binary tree from pre-order and in-order traversal.</b><br><br>
+   <div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct no<br>
+{<br>
+int data;<br>
+struct no *left;<br>
+struct no *right;<br>
+};<br>
+void main()<br>
+{<br>
+int a[4],a1[4],i,j,temp,hemp,s,m;<br>
+for(i=0;i<4;i++)<br>
+{<br>
+printf("enter the preorder=");<br>
+scanf("%d",&a[i]);<br>
+}<br>
+for(j=0;j<4;j++)<br>
+{<br>
+printf("enter the inorder=");<br>
+scanf("%d",&a1[j]);<br>
+}<br>
+tree(a,a1,i,j,temp,hemp,m);<br>
+getch();<br>
+}<br>
+int tree(int a[],int a1[],int i,int j,int temp,int hemp,int s,int m)<br>
+{<br>
+struct no *start=NULL;<br>
+struct no *new=NULL;<br>
+struct no *pointer=NULL;<br>
+struct no *p=NULL;<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct no));<br>
+start->data=a[0];<br>
+start->left=NULL;<br>
+start->right=NULL;<br>
+pointer=start;<br>
+p=start;<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+if(a1[j]==a[0])<br>
+{<br>
+temp=j;<br>
+s=j;<br>
+m=j;<br>
+}<br>
+}<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=0;j<=s;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->left=new;<br>
+pointer=pointer->left;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=s;j<temp;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->right=new;<br>
+pointer=pointer->right;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+hemp=j;<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=3;i++)<br>
+{<br>
+for(j=m;j<=3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=4;i++)<br>
+{<br>
+for(j=m;j<3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+printf("According to pre-order and in-order after traversing from left to right tree look like:-\n");<br>
+pointer=start;<br>
+p=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->left;<br>
+}<br>
+pointer=start->left;<br>
+pointer=pointer->right;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->right;<br>
+}<br>
+p=p->right;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->right;<br>
+}<br>
+p=start->right;<br>
+p=p->left;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->left;<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the pre-order=1<br>
+  Enter the pre-order=2<br>
+  Enter the pre-order=4<br>
+Enter the pre-order=3<br>
+Enter the in-order=4<br>
+Enter the in-order=2<br>
+Enter the in-order=1<br>
+Enter the in-order=3<br>
+According to pre-order and in-order traversal of tree ,tree look like=<br>
+1,2,4,3</p>
+</div>
+<details>
+ <summary class='e'style=font-size:24px>Tab to see more programs.<br></summary><br>
+<b>2.Display left view of the tree.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct no<br>
+{<br>
+int data;<br>
+struct no *left;<br>
+struct no *right;<br>
+};<br>
+void main()<br>
+{<br>
+int a[4],a1[4],i,j,temp,hemp,s,m;<br>
+for(i=0;i<4;i++)<br>
+{<br>
+printf("enter the preorder=");<br>
+scanf("%d",&a[i]);<br>
+}<br>
+for(j=0;j<4;j++)<br>
+{<br>
+printf("enter the inorder=");<br>
+scanf("%d",&a1[j]);<br>
+}<br>
+tree(a,a1,i,j,temp,hemp,m);<br>
+getch();<br>
+}<br>
+int tree(int a[],int a1[],int i,int j,int temp,int hemp,int s,int m)<br>
+{<br>
+struct no *start=NULL;<br>
+struct no *new=NULL;<br>
+struct no *pointer=NULL;<br>
+struct no *p=NULL;<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct no));<br>
+start->data=a[0];<br>
+start->left=NULL;<br>
+start->right=NULL;<br>
+pointer=start;<br>
+p=start;<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+if(a1[j]==a[0])<br>
+{<br>
+temp=j;<br>
+s=j;<br>
+m=j;<br>
+}<br>
+}<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=0;j<=s;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->left=new;<br>
+pointer=pointer->left;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=s;j<temp;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->right=new;<br>
+pointer=pointer->right;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+hemp=j;<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=3;i++)<br>
+{<br>
+for(j=m;j<=3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=4;i++)<br>
+{<br>
+for(j=m;j<3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+} <br>
+}<br>
+printf("Left view of tree look like:-\n");<br>
+pointer=start;<br>
+p=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->left;<br>
+}<br>
+pointer=start->left;<br>
+pointer=pointer->right;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->right;<br>
+}<br>
+}<br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the pre-order=1<br>
+Enter the pre-order=2<br>
+  Enter the pre-order=4<br>
+  Enter the pre-order=3<br>
+  Enter the in-order=4<br>
+  Enter the in-order=2<br>
+  Enter the in-order=1<br>
+  Enter the in-order=3<br>
+  According to pre-order and in-order traversal of tree ,left tree look like=<br>
+  1,2,4</p>
+</div>
+<b>3.Print right view of tree.</b><br><br>
+<div class="col">
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct no<br>
+{<br>
+int data;<br>
+struct no *left;<br>
+struct no *right;<br>
+};<br><br>
+void main()<br>
+{<br>
+int a[4],a1[4],i,j,temp,hemp,s,m;<br>
+for(i=0;i<4;i++)<br>
+{<br>
+printf("enter the preorder=");<br>
+scanf("%d",&a[i]);<br>
+}<br>
+for(j=0;j<4;j++)<br>
+{<br>
+printf("enter the inorder=");<br>
+scanf("%d",&a1[j]);<br>
+}<br>
+tree(a,a1,i,j,temp,hemp,m);<br>
+getch();<br>
+}<br>
+int tree(int a[],int a1[],int i,int j,int temp,int hemp,int s,int m)<br>
+{<br>
+struct no *start=NULL;<br>
+struct no *new=NULL;<br>
+struct no *pointer=NULL;<br>
+struct no *p=NULL;<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct no));<br>
+start->data=a[0];<br>
+start->left=NULL;<br>
+start->right=NULL;<br>
+pointer=start;<br>
+p=start;<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+if(a1[j]==a[0])<br>
+{<br>
+temp=j;<br>
+s=j;<br>
+m=j;<br>
+}<br>
+}<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=0;j<=s;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->left=new;<br>
+pointer=pointer->left;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=s;j<temp;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->right=new;<br>
+pointer=pointer->right;<br>
+s=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+hemp=j;<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=3;i++)<br>
+{<br>
+for(j=m;j<=3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=4;i++)<br>
+{<br>
+for(j=m;j<3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+printf("According to pre-order and in-order after traversing from left to right left tree look like:-\n");<br>
+pointer=start;<br>
+p=start;<br>
+p=p->right;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->right;<br>
+}<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+  Enter the pre-order=1<br>
+  Enter the pre-order=2<br>
+  Enter the pre-order=4<br>
+  Enter the pre-order=3<br>
+Enter the in-order=4<br>
+  Enter the in-order=2<br>
+  Enter the in-order=1<br>
+  Enter the in-order=3<br>
+According to pre-order and in-order traversal of tree ,right tree look like=<br>
+  3</p>
+  </div>
+  <b>4.WAP to count total no of nodes in binary tree.</b><br><br>
+  <div class="col">
+    #include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+struct no<br>
+{<br>
+int data;<br>
+struct no *left;<br>
+struct no *right;<br>
+};<br>
+void main()<br>
+{<br>
+int a[4],a1[4],i,j,temp,hemp,s,m;<br>
+for(i=0;i<4;i++)<br>
+{<br>
+printf("enter the preorder=");<br>
+scanf("%d",&a[i]);<br>
+}<br>
+for(j=0;j<4;j++)<br>
+{<br>
+printf("enter the inorder=");<br>
+scanf("%d",&a1[j]);<br>
+}<br>
+tree(a,a1,i,j,temp,hemp,m);<br>
+getch();<br>
+}<br>
+int tree(int a[],int a1[],int i,int j,int temp,int hemp,int s,int m)<br>
+{<br>
+struct no *start=NULL;<br>
+struct no *new=NULL;<br>
+struct no *pointer=NULL;<br>
+struct no *p=NULL;<br>
+int count=0;<br>
+if(start==NULL)<br>
+{<br>
+start=malloc(sizeof(struct no));<br>
+start->data=a[0];<br>
+start->left=NULL;<br>
+start->right=NULL;<br>
+pointer=start;<br>
+p=start;<br>
+count++;<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+if(a1[j]==a[0])<br>
+{<br>
+temp=j;<br>
+s=j;<br>
+m=j;<br>
+}<br>
+}<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=0;j<=s;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->left=new;<br>
+pointer=pointer->left;<br>
+s=i;<br>
+count++;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=1;i<=2;i++)<br>
+{<br>
+for(j=s;j<temp;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+pointer->right=new;<br>
+pointer=pointer->right;<br>
+s=i;<br>
+count++;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(j=0;j<4;j++)<br>
+{<br>
+hemp=j;<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=3;i++)<br>
+{<br>
+for(j=m;j<=3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+count++;<br>
+}<br>
+}<br>
+}<br>
+if(start!=NULL)<br>
+{<br>
+for(i=3;i<=4;i++)<br>
+{<br>
+for(j=m;j<3;j++)<br>
+{<br>
+if(a[i]==a1[j])<br>
+{<br>
+new=malloc(sizeof(struct no));<br>
+new->data=a[i];<br>
+new->left=NULL;<br>
+new->right=NULL;<br>
+p->right=new;<br>
+p=p->right;<br>
+m=i;<br>
+count++;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+printf("According to pre-order and in-order after traversing from left to right tree look like:-\n");<br>
+pointer=start;<br>
+p=start;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->left;<br>
+}<br>
+pointer=start->left;<br>
+pointer=pointer->right;<br>
+while(pointer!=NULL)<br>
+{<br>
+printf("%d",pointer->data);<br>
+pointer=pointer->right;<br>
+}<br>
+p=p->right;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->right;<br>
+}<br>
+p=start->right;<br>
+p=p->left;<br>
+while(p!=NULL)<br>
+{<br>
+printf("%d",p->data);<br>
+p=p->left;<br>
+}<br>
+printf("\n\ntotal no of nodes in binary tree are=");<br>
+printf("%d",count);<br>
+}<br><br>
+</div>
+<div class="out">
+  <p>OUTPUT:<br>
+    Enter the pre-order=1<br>
+    Enter the pre-order=2<br>
+    Enter the pre-order=4<br>
+    Enter the pre-order=3<br>
+    Enter the in-order=4<br>
+    Enter the in-order=2<br>
+    Enter the in-order=1<br>
+    Enter the in-order=3<br>
+    According to pre-order and in-order traversal of tree ,tree look like=<br>
+    1,2,4,3<br>
+    Total no of nodes in binary tree=4</p>
+</div>
+</details>
+     <div class="t">
+     
+     </div>
+  
+            
+     
+       <br>
+     
+     <div class="w"><br>
+       <b style="color:white">Web Custom</b><br><br>
+       <b>Follow Us @Web Developer</b><br><br>
+       <b>HELP</b><br>
+       support<br>
+       FAQs<br>
+       Terms and Condition<br>
+       Privacy Policy<br><br>
+       <b>Company</b><br>
+       About Us<br>
+       Contact Us <br><br>
+       @2023 Web Custom.com. All rigth reserved.
+     </div>
+     </body>
+</html>

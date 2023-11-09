@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include&lt;stdio.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+int sort(int [],int,int,int);<br>
+void main()<br>
+{<br>
+int arr[5]={5,4,3,2,1},i,j,temp;<br>
+i=sort(arr,i,j,temp);<br>
+printf("your sorted array is=\n");<br>
+for(i=0;i<5;i++)<br>
+{<br>
+printf("%d",arr[i]);<br>
+}<br>
+getch();<br>
+}<br>
+int sort(int arr[],int i,int j,int temp)<br>
+{<br>
+if(i<5)<br>
+{<br>
+temp=arr[i];<br>
+j=i-1;<br>
+while(j>=0 && temp<arr[j])<br>
+{<br>
+arr[j+1]=arr[j];<br>
+j=j-1;<br>
+}<br>
+arr[j+1]=temp;<br>
+return sort(arr,i+1,j,temp);<br>
+}<br>
+return i;<br>
+} <br>
+ <p>OUTPUT:<br>
+   your sorted array is:=<br>
+   1,2,3,4,5</p>
+</body>
+</html>

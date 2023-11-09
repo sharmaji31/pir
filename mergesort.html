@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include&lt;stdio.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+int a[11] = { 10, 14, 19, 26, 27, 31, 33, 35, 42, 44, 0 };<br>
+int b[10];<br>
+int main() <br>
+{ <br>
+int i,low=0,high=10;<br>
+sort(low,high);<br>
+printf("\nList after sorting\n");<br>
+for(i = 0; i <=10; i++)<br>
+printf("%d ", a[i]);<br>
+}<br>
+int sort(int low, int high)<br>
+{<br>
+int mid;<br>
+if(low < high) <br>
+{<br>
+mid =(low + high) / 2;<br>
+sort(low, mid);<br>
+sort(mid+1, high);<br>
+merging(low, mid, high);<br>
+} <br>
+}<br>
+int merging(int low, int mid, int high)
+{
+int l1, l2, i;<br>
+for(l1 = low, l2 = mid + 1, i = low; l1 <= mid && l2 <= high; i++)<br>
+{<br>
+if(a[l1] <= a[l2])<br>
+{<br>
+b[i] = a[l1];<br>
+l1++;<br>
+}<br>
+else<br>
+{<br>
+b[i] = a[l2];<br>
+l2++;<br>
+}<br>
+}<br>
+while(l1 <= mid)    <br>
+{<br>
+b[i] = a[l1];<br>
+i++;l1++;<br>
+}<br>
+while(l2 <= high)  <br>
+{<br>
+b[i] = a[l2];<br>
+i++;l2++;<br>
+}<br>
+for(i = low; i <= high; i++)<br>
+a[i] = b[i];<br>
+}<br>
+
+</body>
+
+</html>

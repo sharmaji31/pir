@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[5],arr1[5],i=0,a=0;<br>
+for(i=0;i<5;i++)<br>
+  {<br>
+  printf("enter value at %dindex=",i+1);<br>
+  scanf("%d",&arr[i]);<br>
+  }<br>
+  for(i=0;i<5;i++)<br>
+    {<br>
+    arr1[a]=arr[i];<br>
+    a++;<br>
+    }<br>
+    printf("value copied in second array\n");<br>
+    for(a=4;a>=0;a--)<br>
+    {<br>
+    printf("%d",arr1[a]);<br>
+    }<br>
+    getch();<br>
+    }<br><br>
+    <p>OUTPUT:<br>
+      Enter the value in 0index=1<br>
+      Enter the value in 1index=2<br>
+      Enter the value in 2index=3<br>
+      Enter the value in 3index=4<br>
+      Enter the value in 4index=5<br>
+      values copied in second array=<br>
+      5,4,3,2,1</p>
+</body>
+
+</html>

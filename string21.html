@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+      #include &lt;stdio.h&gt;<br>
+      #include &lt;conio.h&gt;<br>
+      void main()<br>
+      {<br>
+      printf("press1 for left");<br>
+      printf("press2 for right");<br>
+      printf("press3 for center");<br>
+      char str[100];<br>
+      int button;<br>
+      printf("enter the string=");<br>
+      gets(str);<br>
+      printf("press the button=");<br>
+      scanf("%d",&button);<br>
+      switch(button)<br>
+      {<br>
+      case 1:left(str);<br>
+      break;<br>
+      case 2:right(str);<br>
+      break;<br>
+      case 3:center(str); <br>
+      break;<br>
+      }<br>
+      getch();<br>
+      }<br>
+      int left(char str[])<br>
+      {<br>
+      printf("%s",str);<br>
+      }<br>
+      int right(char str[])<br>
+      {<br>
+      printf("%600s",str);<br>
+      }<br>
+      int center(char str[])<br>
+      {<br>
+      printf("%500s",str);<br>
+      }<br><br>
+        <p>OUTPUT:<br>
+          Enter the string=pop<br>
+          press the button=1<br>
+          pop</p>
+</body>
+
+</html>

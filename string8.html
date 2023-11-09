@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+      #include &lt;stdio.h&gt;<br>
+      #include &lt;conio.h&gt;<br>
+      #include &lt;string.h&gt;<br>
+      int copy(char [],char [],int,int);<br>
+      void main()<br>
+      {<br>
+      char str[100],str1[100];<br>
+      int i=0,a=0;<br>
+      printf("enter the word=");<br>
+      scanf("%s",&str);<br>
+      copy(str,str1,i,a);<br>
+      printf("after copying string\n");<br>
+      printf("%s",str1);<br>
+      getch();<br>
+      }<br>
+      int copy(char str[],char str1[],int i,int a)<br>
+      {<br>
+      for(i=0;str[i];i++)<br>
+      {<br>
+      str1[a]=str[i];<br>
+      a++;<br>
+      }<br>
+      return str1;<br>
+      }<br><br>
+       <p>OUTPUT:<br>
+         Enter the string=you are the best<br>
+         After copying string in second string=<br>
+         you are the best</p>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int replace(char [],char [],char[],int,int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+char str1[100],str2[100];<br>
+int i,j;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+for(i=0;str[i];i++);<br>
+printf("enter the word=");<br>
+gets(str1);<br>
+printf("enter the word=");<br>
+gets(str2);<br>
+replace(str,str1,str2,i,j);<br>
+getch();<br>
+}<br>
+int replace(char str[],char str1[],char str2[],int i,int j)<br>
+{<br>
+for(j=0;j<i;j++)<br>
+  {<br>
+  if(str[j]!=' ')<br>
+  {<br>
+  if(str[j]==str1[j])<br>
+  {<br>
+  str[j]=str2[j];<br>
+  }<br>
+  }<br>
+  }<br>
+  printf("After replace word=\n");<br>
+  for(j=0;j<i;j++)<br>
+    {<br>
+    printf("%c",str[j]);<br>
+    }<br>
+    }<br>
+       <p>OUTPUT:<br>
+         Enter the string=pop is live<br>
+         Enter the word=pop<br>
+         Enter the word=top<br>
+         After replacing word=top is live</p>
+</body>
+
+</html>

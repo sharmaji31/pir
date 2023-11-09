@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt; <br>
+int toggle(char [],int);<br>
+void main() <br>
+{<br>
+char str[100];<br>
+int i;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+toggle(str,i);<br>
+printf("string in toggle case\n");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int toggle(char str[],int i)<br>
+{<br>
+for(i=0;str[i]!='\0';i++)<br>
+{<br>
+if(str[i]>='a'&&str[i]<='z')<br>
+  {<br>
+  str[i]=str[i]-32;<br>
+  }<br>
+  else if(str[i]>='A'&&str[i]<='Z')<br>
+    {<br>
+    str[i]=str[i]+32;<br>
+    }<br>
+    } <br>
+    return str;<br>
+    }<br><br>
+      <p>OUTPUT:<br>
+        Enter the string=YoU aRe the BeSt<br>
+        string in toggle case=<br>
+        YOu ArE THE bEsT</p>
+</body>
+
+</html>

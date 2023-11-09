@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int matrix(int [2][3],int [2][3],int,int);<br>
+void main()<br>
+{<br>
+int arr[2][3],arr1[2][3],i,j;<br>
+for(i=0;i<2;i++)<br>
+  {<br>
+  for(j=0;j<3;j++)<br>
+    {<br>
+    printf("enter the value in arr=");<br>
+    scanf("%d",&arr[i][j]);<br>
+    }<br>
+    }<br>
+    matrix(arr,arr1,i,j);<br>
+    getch();<br>
+    }<br>
+    int matrix(int arr[2][3],int arr1[2][3],int i,int j)<br>
+    {<br>
+    for(i=0;i<2;i++)<br>
+      {<br>
+      for(j=0;j<3;j++)<br>
+        {<br>
+        arr1[i][j]=arr[i][j];<br>
+        }<br>
+        }<br>
+        printf("After copying matrix value in another matrix\n");<br>
+        for(i=0;i<2;i++)<br>
+          {<br>
+          for(j=0;j<3;j++)<br>
+            {<br>
+            printf("%d",arr1[i][j]);<br>
+            }<br>
+            printf("\n");<br>
+            }<br>
+            }<br><br>
+  <p>OUTPUT:<br>
+    Enter values in arr[1][1]=1<br>
+    Enter values in arr[1][2]=2<br>
+    Enter value in arr[1][3]=3<br>
+    Enter values in arr[2][1]=4<br>
+    Enter values in arr[2][2]=5<br>
+    Enter values in arr1[2][3]=6<br>
+    matrix=<br>
+    1 2 3<br>
+    4 5 6<br>
+    </p>            
+</body>
+
+</html>

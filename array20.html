@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+int max(int [],int);<br>
+void main()<br>
+{<br>
+int arr[5],i;<br>
+max(arr,i);<br>
+getch();<br>
+}<br>
+int max(int arr[],int i)<br>
+{<br>
+for(i=0;i<5;i++)<br>
+  {<br>
+  printf("enter the value=");
+  scanf("%d",&arr[i]);<br>
+  }<br>
+  printf("The local minima of array is=\n");<br>
+  for(i=0;i<5;i++)<br>
+    {<br>
+    if(arr[i]<arr[i+1])<br>
+      {<br>
+      if(arr[i]<arr[i-1])<br>
+        {<br>
+        printf("%d",arr[i]);<br>
+        }<br>
+        }<br>
+        }<br>
+        }<br><br>
+          <p>OUTPUT:<br>
+            Enter the values=30<br>
+            Enter the values=10<br>
+            Enter the values=20<br>
+            Enter the values=40<br>
+            Enter the values=50<br>
+            the local maxima of array is=10</p>
+</body>
+
+</html>

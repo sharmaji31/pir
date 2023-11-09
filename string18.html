@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+ #include &lt;stdio.h&gt;<br>
+ #include &lt;t;conio.h&gt;<br>
+ #include &lt;string.h&gt;<br>
+ void main()<br>
+ {<br>
+ char str[10],a=0;<br>
+ char str1[10];<br>
+ int i,k=0,p=0;<br>
+ printf("enter the word=")<br> scanf("%s",&str);<br>
+ while(str[a]!='\0')<br>
+ {<br>
+ a++; <br>
+ }<br>
+ p=a-1;<br>
+ for(i=p;i>=0;i--) <br>
+ {<br>
+ str1[k]=str[i];<br>
+ k++;<br>
+ }<br>
+ str1[k]='\0';<br>
+ printf("After copying string into another string in reverse order=");<br>
+ for(k=0;str[k];k++)<br>
+ {<br>
+ printf("%c",str1[k]);<br>
+ }<br>
+ getch();<br>
+ }<br><br>
+   <p>OUTPUT:<br>
+     Enter the string=top<br>
+     After copying string into another in reverse order=pot</p>
+</body>
+
+</html>

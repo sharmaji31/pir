@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+ #include&lt;stdio.h&gt;<br>
+ #include&lt;conio.h&gt;<br>
+ int sort(char [][100],char [100],int,int);<br>
+ void main()<br>
+ { <br>
+ int i,j;<br>
+ char arr[20][100],temp[100];<br>
+ for(i=0;i<5;i++)<br>
+ {<br>
+ printf("Enter the string in %dindex=",i+1);<br>
+ scanf("%s",&arr[i]);<br>
+ }<br>
+ i=0;<br>
+ sort(arr,temp,i,j);<br>
+ getch();<br>
+ }<br>
+ int sort(char arr[][100],char temp[100],int i,int j)<br>
+ {<br>
+ if(i<5-1)<br>
+   { <br>
+   for(j=i+1;j<=5;j++)<br>
+     { <br>
+     if(strcmp(arr[i],arr[j])>0)<br>
+     { <br>
+     strcpy(temp,arr[i]);<br>
+     strcpy(arr[i],arr[j]);<br>
+     strcpy(arr[j],temp);<br>
+     } <br>
+     } <br>
+     return sort(arr,temp,i+1,j);<br>
+     } <br>
+     printf("your sorted array is:=\n");<br>
+     for(i=0;i<=5;i++)<br>
+       { <br>
+       printf("%s",arr[i]);<br>
+       printf("\n");<br>
+       }<br>
+       }<br>
+<p>OUTPUT:<br>
+  Enter the string in 1index=ram<br>
+  Enter the string in 1index=mohan<br>
+  Enter the string in 1index=rohan<br>
+  Enter the string in 1index=manish<br>
+  Enter the string in 1index=sohan<br>
+  your sorted string is=<br>
+  mohan<br>
+  manish<br>
+  ram<br>
+  rohan<br>
+  sohan<br>       
+</body>
+</html>

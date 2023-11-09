@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  #include &lt;string.h&gt;<br>
+  int upper(char [],int);<br>
+  void main()<br>
+  {<br>
+  char str[10];<br>
+  int a=0;<br>
+  printf("enter the word=");<br>
+  scanf("%s",&str); <br>
+  upper(str,a);<br>
+  printf("uppercase=");<br>
+  printf("%s",str);<br>
+  getch();<br>
+  }<br>
+  int upper(char str[],int a)<br>
+  {<br>
+  while(str[a]!='\0')<br>
+  {<br>
+  str[a]=str[a]-32;<br>
+  a++;<br>
+  }<br>
+  return str;<br>
+  }<br><br>
+    <p>OUTPUT:<br>
+      Enter the string=pankaj<br>
+      uppercase=PANKAJ</p>
+</body>
+</html>

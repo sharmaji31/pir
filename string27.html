@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include&lt;stdio.h&gt;<br>
+  #include&lt;conio.h&gt; <br>
+    #include&lt;string.h&gt;<br>
+      void main() <br>
+      { <br>
+      int i=0,j=0; <br>
+      char str[100],str1[100]; <br>
+      printf("enter the string="); <br>
+      gets(str); <br>
+      while(str[i]!='\0') <br>
+      { <br>
+      if(!(str[i]==' ' && str[i+1]==' ')) <br>
+      { <br>
+      str1[j]=str[i]; <br>
+      j++; <br>
+      } <br>
+      i++; <br>
+      } <br>
+      str1[j]='\0'; <br>
+      printf("After triming spces=%s",str1); <br>
+      getch(); <br>
+      } <br>
+</body>
+
+</html>

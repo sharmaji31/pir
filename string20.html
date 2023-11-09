@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int concat(char[],char[],int,int);<br>
+void main()<br>
+{<br>
+char str[100],str1[100];<br>
+int first,second;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+printf("enter the string=");<br>
+gets(str1);<br>
+first=concat(str,str1,first,second);<br>
+printf("After concantemate both strings=\n%s",str);<br>
+
+getch();<br>
+}<br>
+int concat(char str[],char str1[],int first,int second)<br>
+{<br>
+for(first=0;str[first];first++);
+for(second=0;str1[second];second++)<br>
+{<br>
+str[first]=str1[second];<br>
+first++;<br>
+}<br>
+str[first]='\0';<br>
+return str;<br>
+}<br><br>
+  <p>OUTPUT:<br>
+    Enter the string=pankaj<br>
+    Enter the string=sharma<br>
+    After concantemate the string=<br>
+    pankajsharma</p>
+</body>
+
+</html>

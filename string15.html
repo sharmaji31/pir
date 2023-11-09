@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  #include &lt;string.h&gt;<br>
+  void main()<br>
+  {<br>
+  char str[100];<br>
+  int i,space=0,character=0,word=1;<br>
+  printf("enter the string=");<br>
+  gets(str);<br>
+  for(i=0;str[i]!='\0';i++)<br>
+  {<br>
+  if(str[i]==' ' || str[i]=='\n' || str[i]=='\t')<br>
+  {
+  word++;<br>
+  }<br>
+  if(str[i]==' ')<br>
+  {<br>
+  space++;<br>
+  }<br>
+  if(str[i]!=' ')<br>
+  {<br>
+  character++;<br>
+  }<br>
+  }<br>
+  printf("total no of word=%d\n",word);<br>
+  printf("total no of space=%d\n",space);<br>
+  printf("total no of character=%d",character);<br>
+  getch();<br>
+  }<br><br>
+    <p>OUTPUT:<br>
+      Enter the string=you are the best<br>
+      total no of word=4<br>
+      total no of space=2<br>
+      total no of character=13</p>
+</body>
+
+</html>

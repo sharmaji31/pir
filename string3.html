@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt; <br>
+int sentence(char [],int);<br>
+void main()<br>
+{<br>
+int i;<br>
+char str[100];<br>
+printf("enter the string=");<br>
+gets(str);<br>
+sentence(str,i);<br>
+printf("string in sentence case\n");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int sentence(char str[],int i)<br>
+{<br>
+if(str[0]>='a' && str[0]<='z')<br>
+  {<br>
+  str[0]-=32;<br>
+  }<br>
+  for(i=1;str[i]!='\0';i++)<br>
+  {<br>
+  if(str[i]>='A' && str[i]<='Z')<br>
+    str[i]+=32;<br>
+    }<br>
+    return str;<br>
+    }<br><br>
+    
+    <p>OUTPUT:<br>
+      Enter the string=you are the best<br>
+      string in sentence case=<br>
+      You are the best</p>
+</body>
+
+</html>

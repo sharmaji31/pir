@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  #include &lt;string.h&gt;<br>
+  int ascending(char [],char,int);<br>
+  void main()<br>
+  {<br>
+  char arr[100],temp;<br>
+  int i,k;<br>
+  printf("enter the string=");<br>
+  scanf("%s",&arr);<br>
+  ascending(arr,temp,i);<br>
+  getch();<br>
+  }<br>
+  int ascending(char arr[],char temp,int i)<br>
+  {<br>
+  int k;<br>
+  for(k=0;arr[k];k++);<br>
+  for(i=0;i<k;i++)<br>
+    {<br>
+    for(int j=i+1;j<k;j++)<br>
+      {<br>
+      if(arr[i]<arr[j])<br>
+        {<br>
+        temp=arr[i];<br>
+        arr[i]=arr[j];<br>
+        arr[j]=temp;<br>
+        }<br>
+        }<br>
+        }<br>
+        printf("\nstring in descending order\n\n");<br>
+        for(i=0;i<k;i++)<br>
+          {<br>
+          printf("%c",arr[i]);<br>
+          }<br>
+          }<br>
+          <p>Enter the string=pankaj<br>
+            string in descending order<br>
+            pnkjaa</p>
+</body>
+
+</html>

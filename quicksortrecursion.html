@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+  #include&lt;stdio.h&gt;<br>
+  void swap(int arr[], int i, int j) <br>
+  {<br>
+  int temp = arr[i];<br>
+  arr[i] = arr[j];<br>
+  arr[j] = temp;<br>
+  }<br>
+  int partition(int arr[], int low, int high)<br>
+  {<br>
+  int pivot = arr[high]; <br>
+  int i = (low - 1); <br>
+
+  for (int j = low; j < high; j++) <br>
+    {<br>
+    if (arr[j] < pivot) <br>
+      {<br>
+      i++;<br>
+      swap(arr, i, j);<br>
+      }<br>
+      }<br>
+
+      swap(arr, i + 1, high);<br>
+      return (i + 1);<br>
+      }<br>
+
+      void quicksort(int arr[], int low, int high)<br>
+      {<br>
+      if (low < high)<br>
+        {<br>
+
+        int pi = partition(arr, low, high);<br>
+
+
+        quicksort(arr, low, pi - 1);<br>
+        quicksort(arr, pi + 1, high);<br>
+        }<br>
+        }<br>
+        int main() {<br>
+        int arr[] = {12, 11, 13, 5, 6, 7};<br>
+        int n = sizeof(arr) / sizeof(arr[0]);<br>
+        printf("Unsorted array: ");<br>
+        for (int i = 0; i < n; i++) <br>
+          {<br>
+          printf("%d ", arr[i]);<br>
+          }<br>
+          quicksort(arr, 0, n - 1);<br>
+          printf("\nSorted array: ");<br>
+          for (int i = 0; i < n; i++) <br>
+            {<br>
+            printf("%d ", arr[i]);<br>
+            }<br>
+            return 0;<br>
+            }<br><br>
+            <p>OUTPUT:<br>
+              Unsorted array: 12 11 13 5 6 7<br>
+              Sorted array: 5 6 7 11 12 13<br>
+              [Process completed - press Enter]<br>
+            </p>
+</body>
+
+</html>

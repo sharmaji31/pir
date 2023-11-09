@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+    #include &lt;stdio.h&gt;<br>
+    #include &lt;conio.h&gt;<br>
+    void main()<br>
+    {<br>
+    int arr[2],i,j;<br>
+    for(i=0;i<2;i++)<br>
+      {<br>
+      printf("enter the values at %dindex=",i+1);<br>
+      scanf("%d",&arr[i]);<br>
+      }<br>
+      for(i=0;i<2;i++)<br>
+        {<br>
+        for(j=i+1;j<2;j++)<br>
+          {<br>
+          if(arr[i]==arr[j])<br>
+          {<br>
+          printf("Duplicates values are=\n");<br>
+          printf("%d",arr[i]);<br>
+          break;<br>
+          }<br>
+          else<br>
+          {<br>
+          printf("there is no duplicate values in array");
+          }<br>
+          }<br>
+          }<br>
+          getch();<br>
+          }<br><br>
+  <p>OUTPUT:<br>
+    Enter the value in 0index=1<br>
+    Enter the value in 1index=2<br>
+    Enter the value in 2index=1<br>
+    Enter the value in 3index=4<br>
+    Enter the value in 4index=5<br>
+    Duplicate value are=1</p>          
+</body>
+
+</html>

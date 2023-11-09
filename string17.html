@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+           #include &lt;stdio.h&gt;<br>
+           #include &lt;conio.h&gt;<br>
+           #include &lt;string.h&gt;<br>
+           int integer(char [],int,int,int);<br>
+           void main()<br>
+           {<br>
+           char str[100];<br>
+           float i,sum=0,temp;<br>
+           printf("enter the string=");<br>
+           scanf("%s",&str);<br>
+           sum=integer(str,i,sum,temp);<br>
+           printf("After converting string in float\n");<br>
+           printf("%f",sum);<br>
+           getch();<br>
+           }<br>
+           int integer(char str[],int i,int sum,int temp)<br>
+           {<br>
+           for(i=0;str[i];i++)<br>
+           {<br>
+           temp=str[i]-48;<br>
+           sum=sum*10+temp;<br>
+           }<br>
+           return sum;<br>
+           }<br><br>
+               <p>OUTPUT:<br>
+                 Enter the string=123<br>
+                 After converting string in float=123.0000</p>
+</body>
+
+</html>

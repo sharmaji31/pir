@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int tittle(char [],int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+int i;<br>
+printf("enter the string=");<br>
+gets(str);<br>
+tittle(str,i);<br>
+printf("string in tittle case\n");<br>
+printf("%s",str);<br>
+getch();<br>
+}<br>
+int tittle(char str[],int i)<br>
+{<br>
+for(i=0;str[i];i++)<br>
+{<br>
+if(str[i]>='A' && str[i]<='Z')<br>
+  {<br>
+  str[i]=str[i]+32;<br>
+  }<br>
+  }<br>
+  str[0]=str[0]-32;<br>
+  for(i=1;str[i];i++)<br>
+  {<br>
+  if(str[i]==' ')<br>
+  str[i]=str[i]-32;<br>
+  }<br>
+  return str;<br>
+  }<br><br>
+    <p>OUTPUT:<br>
+      Enter the string=you are the best<br>
+      string in title case=<br>
+      You Are The Best</p>
+</body>
+
+</html>

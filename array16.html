@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+void main()<br>
+{<br>
+int arr[3],i,j,k;<br>
+for(i=0;i<3;i++)<br>
+  {<br>
+  printf("enter the values=");<br>
+  scanf("%d",&arr[i]);<br>
+  }<br>
+  printf("possible combination of values\n");<br>
+  for(i=0;i<3;i++)<br>
+    {<br>
+    for(j=i;j<3;j++)<br>
+      {<br>
+      for(k=i;k<3;k++)<br>
+        {<br>
+        printf("%d %d %d\n",arr[i],arr[j],arr[k]);<br>
+        }<br>
+        }<br>
+        }<br>
+        getch();<br>
+        }<br><br>
+        <p>OUTPUT:<br>
+          possible combination of values are=<br>
+          111<br>
+          112<br>
+          113<br>
+          221<br>
+          222<br>
+          223<br>
+          333<br>
+          331<br>
+          332</p>
+</body>
+
+</html>

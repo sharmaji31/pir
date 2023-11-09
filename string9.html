@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt; <br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int vowel(char [],int,int);<br>
+void main()<br>
+{<br>
+char str[100];<br>
+int i,count=0;<br>
+printf("enter the word=");<br>
+scanf("%s",&str);<br>
+count=vowel(str,i,count);<br>
+printf("total no of vowel=%d",count);<br>
+getch();<br>
+}<br>
+int vowel(char str[],int i,int count)<br>
+{<br>
+for(i=0;str[i];i++)<br>
+{<br>
+switch(str[i])<br>
+{<br>
+case 'a': <br>
+case 'i':<br>
+case 'o':<br>
+case 'u':<br>
+count++;<br>
+}<br>
+}<br>
+return count;<br>
+}<br><br>
+  <p>OUTPUT:<br>
+    Enter the word=you<br>
+    total no of vowels=2</p>
+</body>
+
+</html>

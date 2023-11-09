@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+      #include &lt;stdio.h&gt;<br>
+      #include &lt;conio.h&gt;<br>
+      #include &lt;string.h&gt;<br>
+      int check(char [],char,int,int);<br>
+      void main()<br>
+      {<br>
+      char str[100],n;<br>
+      int i,f=0;<br>
+      clrscr();<br>
+      printf("enter the string=");<br>
+      gets(str);<br>
+      printf("enter the character=");<br>
+      scanf("%c",&n); <br>
+      check(str,n,i,f);<br>
+      getch();<br>
+      }<br>
+      int check(char str[],char n,int i,int f)<br>
+      {<br>
+      for(i=0;str[i]!='\0';i++)<br>
+      {<br>
+      if(str[i]==n)<br>
+      {<br>
+      printf("this character is exist");<br>
+      break;<br>
+      }<br>
+      }<br>
+      if(str[i]!=n)<br>
+      printf("this character is not exist");<br>
+      }<br><br>
+        <p>OUTPUT:<br>
+          Enter the string=you<br>
+          Enter the character=0<br>
+          this character is exist</p>
+</body>
+
+</html>

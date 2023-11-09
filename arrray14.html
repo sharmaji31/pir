@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt;<br>
+  #include &lt;conio.h&gt;<br>
+  void main()<br>
+  {<br>
+  int arr[5],i,l=0,h=2,mid,a,b,k;<br>
+  for(i=0;i<3;i++)<br>
+    {<br>
+    printf("emter the height of building=");<br>
+    scanf("%d",&arr[i]);<br>
+    }<br>
+    mid=(l+h)/2;<br>
+    for(i=0;i<mid;i++)<br>
+      {<br>
+      if(arr[i]>arr[mid])<br>
+      {<br>
+      a=arr[i]; <br>
+      }<br>
+      }<br>
+      for(i=2;i<=2;i++)<br>
+        {<br>
+        if(arr[i]>arr[mid])<br>
+        {<br>
+        b=arr[i];<br>
+        }<br>
+        }<br>
+        if(b>a)<br>
+        {<br>
+        k=a-arr[mid];<br>
+        }<br>
+        else<br>
+        {<br>
+        k=b-arr[mid];<br>
+        }<br>
+        printf("water can store in %d block",k);<br>
+        getch(); <br>
+        }<br><br>
+        <p>OUTPUT:<br>
+          Enter the hieght of building=4<br>
+          Enter the hieght of building=2<br>
+          Enter the hieght of building=3<br>
+          water can store in 1 block</p>
+</body>
+
+</html>

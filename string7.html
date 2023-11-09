@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+#include &lt;stdio.h&gt;<br>
+#include &lt;conio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int string(char str[],char str1[],int i,j,o,p);<br>
+void main()<br>
+{<br>
+char str[10],str1[10];<br>
+int i=0,j=0,o=0,p=0;<br>
+printf("enter the string=");<br>
+scanf("%s",&str);<br>
+printf("enter the second string=");<br>
+scanf("%s",&str1);<br>
+p=string(str,str1,i,j,o,p);<br>
+if(p==0)<br>
+{<br>
+printf("string is same");<br>
+}<br>
+else <br>
+{<br>
+printf("string is not same");<br>
+}<br>
+getch();<br>
+}<br>
+int string(char str[],char str1[],int i,j,o,p)<br>
+{<br>
+for(i=0,j=0;str[i] &&str1[j];i++,j++)<br>
+{<br>
+if(str[i]==str1[j])<br>
+{<br>
+o++;<br>
+}<br>
+else<br>
+{<br>
+p++;<br>
+}<br>
+}<br>
+return p;<br>
+}<br><br>
+        <p>OUTPUT:<br>
+          Enter the first string=you are the best<br>
+          string in second string=your are best<br>
+          string is not same</p>
+</body>
+
+</html>

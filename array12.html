@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  #include &lt;stdio.h&gt; <br>
+  #include &lt;conio.h&gt;<br>
+  void main()<br>
+  {<br>
+  int arr[5],i,sum=0,rem,temp;<br>
+  for(i=0;i<5;i++)<br>
+    {<br>
+    printf("enter the number=");<br>
+    scanf("%d",&arr[i]);<br>
+    }<br>
+    for(i=0;i<5;i++)<br>
+      {<br>
+      temp=arr[i];<br>
+      sum=0;<br>
+      while(temp>0)<br>
+      {<br>
+      rem=temp%10;<br>
+      sum=sum*10+rem;<br>
+      temp=temp/10;<br>
+      }<br>
+      if(sum==arr[i])<br>
+      {<br>
+      printf("palindrome number is=%d\n",arr[i]);<br>
+      }<br>
+      }<br>
+      getch();<br>
+      }<br><br>
+      <p>OUTPUT:<br>
+        Enter the value in 0index=101<br>
+        Enter the value in 1index=202<br>
+        Enter the value in 2index=309<br>
+        Enter the value in 3index=404<br>
+        Enter the value in 4index=505<br>
+        Palindrome value are=<br>
+        101<br>
+        202<br>
+        404<br>
+        505</p>
+</body>
+
+</html>

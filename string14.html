@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+ #include &lt;stdio.h&gt;<br>
+ #include &lt;conio.h&gt;<br>
+ #include &lt;string.h&gt;<br>
+ int p(int);<br>
+ void main()<br>
+ {<br>
+ int i;<br>
+ i=p(i);<br>
+ printf("bound number is=%d",i+1);<br>
+ getch();<br>
+ }<br>
+ int p(int i)<br>
+ {<br>
+ char str[10];<br>
+ char c;<br>
+ int count=0;<br>
+ printf("enter the string=");<br>
+ scanf("%s",&str);<br>
+ while(str[count]!='\0')<br>
+ {<br>
+ count++;<br>
+ }<br>
+ printf("enter the char=");<br>
+ scanf("%s",&c);<br>
+ for(i=0;i<count;i++)<br>
+   {<br>
+   if(str[i]==c)<br>
+   {<br>
+   return i;<br>
+   }<br>
+   }<br>
+   }<br><br>
+     <p>OUTPUT:<br>
+       Enter the string=you<br>
+       Enter the character=o<br>
+       Bound number at this character=1</p>
+</body>
+
+</html>

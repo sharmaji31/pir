@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+            #include &lt;stdio.h&gt;<br>
+            #include &lt;conio.h&gt;<br>
+            #include &lt;string.h&gt;<br>
+            int conso(char [],int,int,int,int);<br>
+            void main()<br>
+            {<br>
+            char str[100];<br>
+            int i,count=0,a=0,b=0;<br>
+            printf("enter the word=");<br>
+            scanf("%s",&str);<br>
+            b=conso(str,i,count,a,b);<br>
+            printf("total no of consonent=%d",b);<br>
+            getch();<br>
+            }<br>
+            int conso(char str[],int i,count,a,b)<br>
+            {<br>
+            for(i=0;str[i];i++)<br>
+            {<br>
+            a++;<br>
+            switch(str[i])<br>
+            {<br>
+            case 'a':<br>
+            case 'i':<br>
+            case 'o':<br>
+            case 'u':<br>
+            count++;<br>
+            }<br>
+            }<br>
+            b=a-count;<br>
+            return b;<br>
+            }<br><br>
+              <p>OUTPUT:<br>
+                Enter the string=you<br>
+                Total no of consonent=1</p>
+</body>
+
+</html>
